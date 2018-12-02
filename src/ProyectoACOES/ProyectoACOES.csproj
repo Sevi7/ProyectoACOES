@@ -45,15 +45,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDLibrary.cs" />
-    <Compile Include="Error.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Proyecto.cs" />
+    <Compile Include="CrearNuevoProyecto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="CrearNuevoProyecto.Designer.cs">
+      <DependentUpon>CrearNuevoProyecto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TipoProyecto.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="CrearNuevoTipoProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearNuevoTipoProyecto.Designer.cs">
+      <DependentUpon>CrearNuevoTipoProyecto.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrearNuevoProyecto.resx">
+      <DependentUpon>CrearNuevoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearNuevoTipoProyecto.resx">
+      <DependentUpon>CrearNuevoTipoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

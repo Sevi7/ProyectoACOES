@@ -31,6 +31,11 @@ namespace ProyectoACOES
         public TipoProyecto(string n)
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            List<Object[]> consulta = bd.Select("SELECT * FROM TipoProyecto where nombre='" + n + "';");
+            if (consulta.Count == 0)
+            {
+                throw new Error("El tipo de proyecto " + n + " no se encuentra en el sistema");
+            }
             foreach(Object[] tupla in  bd.Select("SELECT * FROM TipoProyecto where nombre='" + n + "';"))
             {
                 nombre = (string)tupla[0];

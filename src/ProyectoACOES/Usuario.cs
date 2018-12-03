@@ -45,7 +45,12 @@ namespace ProyectoACOES
         public Usuario(string nif)
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            foreach (Object[] tupla in bd.Select("SELECT * FROM Usuario where nif='" + nif + "';"))
+            List<Object[]> consulta = bd.Select("SELECT * FROM Usuario where nif='" + nif + "';");
+            if (consulta.Count==0)
+            {
+                throw new Error("El N.I.F. " + nif + " no se encuentra en el sistema");
+            }
+            foreach (Object[] tupla in consulta)
             {
                 this.nif = (string)tupla[0];
                 this.alias = (string)tupla[1];
@@ -53,6 +58,7 @@ namespace ProyectoACOES
                 this.correo = (string)tupla[3];
                 this.rol = (string)tupla[4];
             }
+
         }
 
         public Usuario(string id, string alias, string contraseña, string correo, string rol)

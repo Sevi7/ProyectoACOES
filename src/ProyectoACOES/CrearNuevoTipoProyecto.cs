@@ -40,12 +40,13 @@ namespace ProyectoACOES
             try
             {
                 new TipoProyecto(tNombre.Text, tDescripcion.Text, new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), sociosdonantes);
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            this.Close();
+           
         }
 
 

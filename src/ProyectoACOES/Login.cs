@@ -54,14 +54,14 @@ namespace ProyectoACOES
         }
         public void formularioCoordiandor()
         {
-            this.Close();
+            this.Visible=false;
             Inicio form1 = new Inicio();
             form1.ShowDialog();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Close();
+            this.Visible=false;
             Registro form2 = new Registro();
             form2.ShowDialog();
         }

@@ -43,5 +43,17 @@ namespace ProyectoACOES
             nuevo.ShowDialog();
 
         }
+
+        private void bMod_Click(object sender, EventArgs e)
+        {
+            ModificarBeneficiario mod = new ModificarBeneficiario();
+            mod.ShowDialog();
+        }
+
+        private void bNota_Click(object sender, EventArgs e)
+        {
+            AñadirNota nota = new AñadirNota();
+            nota.ShowDialog();
+        }
     }
 }

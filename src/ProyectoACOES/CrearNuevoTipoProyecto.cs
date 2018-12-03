@@ -25,13 +25,13 @@ namespace ProyectoACOES
            Socio s = new Socio(tSocio.Text);
            tSocio.Text = "";
            sociosdonantes.Add(s);
-           listaSocios.Items.Add(s.NIF);
+           listaSocios.Items.Add(s.codigo_socio);
 
         }
 
         private void bCrear_Click(object sender, EventArgs e)
         {
-            new TipoProyecto(tNombre.Text, tDescripcion.Text, tCoordinador.Text, tResponsable.Text, sociosdonantes);
+            new TipoProyecto(tNombre.Text, tDescripcion.Text, new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), sociosdonantes);
         }
 
 

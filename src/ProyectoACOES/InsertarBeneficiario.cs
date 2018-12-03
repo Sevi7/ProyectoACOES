@@ -37,7 +37,7 @@ namespace ProyectoACOES
             textBox8.Text = "";
             textBox9.Text = "";
             textBox10.Text = "";
-            textBox11.Text = ""
+            textBox11.Text = "";
 
         }
 

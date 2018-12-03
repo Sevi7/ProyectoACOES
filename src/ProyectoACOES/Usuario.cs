@@ -1,0 +1,161 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using BDLibrary;
+
+namespace ProyectoACOES
+{
+    class Usuario
+    {
+        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
+        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
+
+        private int nif;
+        private string alias;
+        private string contraseña;
+        private string correo;
+        private string rol;
+
+
+        public Usuario(string usu, string contraseña)
+        {
+
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            object[] tupla = miBD.Select("Select * from Usuario where alias=" + usu + "and contraseña="+contraseña+";")[0];
+            if (tupla.Length > 0)
+            {
+                this.nif = (int)tupla[0];
+                this.alias = usu;
+                this.contraseña = contraseña;
+                this.correo = (string)tupla[3];
+                this.rol = (string)tupla[4];
+
+            }
+            else
+            {
+                throw new Error("no se encuentra en la base de datos");
+            }
+
+
+
+        }
+
+        public Usuario(string nif)
+        {
+            SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            foreach (Object[] tupla in bd.Select("SELECT * FROM Usuario where nif='" + nif + "';"))
+            {
+                this.nif = (int)tupla[0];
+                this.alias = (string)tupla[1];
+                this.contraseña = (string) tupla[2];
+                this.correo = (string)tupla[3];
+                this.rol = (string)tupla[4];
+            }
+        }
+
+        public Usuario(int id, string alias, string contraseña, string correo, string rol)
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            miBD.Insert("Insert into Usuario values(" + id + ",'" + alias + "','" + contraseña + "','" + correo + "','" + rol+"');");
+            this.nif = id;
+            this.alias = alias;
+            this.contraseña = contraseña;
+            this.correo = correo;
+            this.rol = rol;
+        }
+
+        public int nif_usuario
+        {
+            get
+            {
+                return this.nif;
+            }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("update Usuario set nif = '" + value + "' where nif=" + this.nif + ";");
+                this.nif = value;
+            }
+        }
+        public string alias_usuario
+        {
+            get
+            {
+                return this.alias;
+            }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("update Usuario set alias = '" + value + "' where nif=" + this.nif + ";");
+                this.alias = value;
+            }
+        }
+        public string contraseña_usuario
+        {
+            get
+            {
+                return this.contraseña;
+            }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("update Usuario set contraseña = '" + value + "' where nif=" + this.nif + ";");
+                this.contraseña = value;
+            }
+        }
+        public string rol_usuario
+        {
+            get
+            {
+                return this.rol;
+            }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("update Usuario set rol = '" + value + "' where nif=" + this.nif + ";");
+                this.rol = value;
+            }
+        }
+        public string correo_usuario
+        {
+            get
+            {
+                return this.correo;
+            }
+            set
+            {
+                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                miBD.Update("update Usuario set correo = '" + value + "' where nif=" + this.nif + ";");
+                this.correo = value;
+            }
+        }
+        public void borrarUsuario()
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            miBD.Delete("delete Usuario where nif="+this.nif+";");
+            this.nif = -1;
+            this.alias = null;
+            this.contraseña = null;
+            this.rol = null;
+            this.correo = null;
+
+        }
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+    }
+}

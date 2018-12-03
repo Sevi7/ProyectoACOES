@@ -26,21 +26,21 @@ namespace ProyectoACOES
             Socio s = new Socio(tSocio.Text);
             socios.Add(s);
             tSocio.Text = "";
-            listaSocios.Items.Add(s.NIF);
+            listaSocios.Items.Add(s.codigo_socio);
         }
 
         private void bAñadirBeneficiario_Click(object sender, EventArgs e)
         {
-            Beneficiario b = new Beneficiario(tBeneficiario.Text);
+            Beneficiario b = new Beneficiario(Int32.Parse(tBeneficiario.Text));
             beneficiarios.Add(b);
             tBeneficiario.Text = "";
-            listaBeneficiarios.Items.Add(b.NIF);
+            //listaBeneficiarios.Items.Add(b_codigo_beneficiario);
 
         }
 
         private void bCrearProyecto_Click(object sender, EventArgs e)
         {
-            new Proyecto(tNombre.Text, tTipoProyecto.Text, tCoordinador.Text, tResponsable.Text, tLocalidad.Text, socios, beneficiarios);
+            new Proyecto(tNombre.Text, new TipoProyecto(tTipoProyecto.Text), new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), tLocalidad.Text, socios, beneficiarios);
 
         }
 

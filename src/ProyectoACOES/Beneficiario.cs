@@ -62,9 +62,19 @@ namespace ProyectoACOES
             string cA, string o)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + a.Codigo + "','" + fN.ToLongDateString() + "','" +
-                fEA.ToString("yyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fSA.ToString("yyyy-MM-dd") + "','" + co + "','" +
-                cP + "','" + cA + "','" + o + "');");
+            if (a != null)
+            {
+                miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + a.Codigo + "','" + fN.ToString("yyyy - MM - dd") + "','" +
+               fEA.ToString("yyyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" +
+               fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
+            }
+            else
+            {
+                miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + -1 + "','" + fN.ToString("yyyy - MM - dd") + "','" +
+               fEA.ToString("yyyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" +
+               fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
+            }
+           
 
             codigo = Convert.ToInt32(miBD.Select("select max Codigo from Beneficiario;")[0][0]);
             nombre = n;

@@ -29,7 +29,7 @@ namespace ProyectoACOES
 
         public Calificacion(int b, int n,  String a, DateTime f){
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Insert("Insert into Calificacion values(" + b + ", " + n + ", '" + a + "', '" + f.ToLongDateString() + "');");
+            miBD.Insert("Insert into Calificacion values(" + b + ", " + n + ", '" + a + "', '" + f.ToString("yyyy-MM-dd") + "');");
             beneficiario = new Beneficiario(b);
             nota = n;
 

@@ -45,6 +45,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BDLibrary.cs" />
+    <Compile Include="Beneficiario.cs" />
+    <Compile Include="Agente.cs" />
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarBeneficiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarBeneficiario.Designer.cs">
+      <DependentUpon>InsertarBeneficiario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proyecto.cs" />
     <Compile Include="CrearNuevoProyecto.cs">
       <SubType>Form</SubType>
@@ -68,6 +81,9 @@
     <EmbeddedResource Include="CrearNuevoTipoProyecto.resx">
       <DependentUpon>CrearNuevoTipoProyecto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InsertarBeneficiario.resx">
+      <DependentUpon>InsertarBeneficiario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,6 +93,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

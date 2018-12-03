@@ -29,8 +29,11 @@ namespace ProyectoACOES
                   textBox6.Text, textBox9.Text, textBox10.Text, textBox11.Text);
              refrescarDatos();
             }
-            catch (Error) { }
-       
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
         }
         private void refrescarDatos()
         {

@@ -12,24 +12,57 @@ namespace ProyectoACOES
 {
     public partial class ConsultarBeneficiario : Form
     {
+        private Beneficiario beneficiario = null;
+
         public ConsultarBeneficiario()
         {
             InitializeComponent();
         }
 
-        private void ConsultarBeneficiario_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'aCOESDataSet.Beneficiario' Puede moverla o quitarla según sea necesario.
-            this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
+            try
+            {
+                tCodigo.Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
+                textBox3.Text = "";
+                textBox4.Text = "";
+                textBox5.Text = "";
+                textBox6.Text = "";
+                textBox7.Text = "";
+                textBox8.Text = "";
+                textBox9.Text = "";
+                textBox10.Text = "";
+                textBox11.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            DataSet ds = (DataSet)dataGridView1.DataSource;
-            DataTable dt = ds.Tables[dataGridView1.DataMember];
-            this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
-            DataRow[] resultSet = dt.Select("select * from beneficiario where codigo=" + textBox1.Text + ";");
+            beneficiario = new Beneficiario(Convert.ToInt32(tCodigo.Text));
+            textBox1.Text = beneficiario.nombre_Beneficiario;
+            textBox2.Text = beneficiario.apellidos_Beneficiario;
+            textBox3.Text = beneficiario.estado_Beneficiario;
+            textBox4.Text = beneficiario.sexo_Beneficiario;
+            textBox5.Text = beneficiario.beca_Beneficiario;
+            textBox6.Text = beneficiario.curso_Beneficiario;
+            textBox7.Text = beneficiario.proyecto_Beneficiario;
+            textBox8.Text = Convert.ToString(beneficiario.agente_Beneficiario.Codigo);
+            textBox9.Text = beneficiario.comunidadAct_Beneficiario;
+            textBox10.Text = beneficiario.comunidadProc_Beneficiario;
+            textBox11.Text = beneficiario.observaciones_Beneficiario;
+            dateTimePicker1.Value = beneficiario.fechaNacimiento_Beneficiario;
+            dateTimePicker2.Value = beneficiario.fechaEntradaAcoes_Beneficiario;
+            dateTimePicker3.Value = beneficiario.fechaEntradaProyecto_Beneficiario;
+            dateTimePicker4.Value = beneficiario.fechaSalidaProyecto_Beneficiario;
+            dateTimePicker5.Value = beneficiario.fechaAlta_Beneficiario;
+            dateTimePicker6.Value = beneficiario.fechaSalidaAcoes_Beneficiario;
         }
     }
 }

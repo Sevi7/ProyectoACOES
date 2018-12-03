@@ -41,6 +41,7 @@ namespace ProyectoACOES
         private void bCrearProyecto_Click(object sender, EventArgs e)
         {
             new Proyecto(tNombre.Text, new TipoProyecto(tTipoProyecto.Text), new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), tLocalidad.Text, socios, beneficiarios);
+            this.Close();
 
         }
 

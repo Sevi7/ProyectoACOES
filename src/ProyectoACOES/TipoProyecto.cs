@@ -19,7 +19,10 @@ namespace ProyectoACOES
 
         public TipoProyecto(string n, string d, Usuario c, Usuario r, List<Socio> socios)
         {
-            nombre=n;
+            SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            bd.Insert("INSERT into TipoProyecto values ('" + n + "','" + d + "','" + c.nif_usuario + "','" + r.nif_usuario + "');");
+            //insertar todos los socios
+            this.nombre=n;
             descripcion=d;
             coordinador=c;
             responsable=r;
@@ -30,22 +33,12 @@ namespace ProyectoACOES
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
             foreach(Object[] tupla in  bd.Select("SELECT * FROM TipoProyecto where nombre='" + n + "';"))
             {
-                nombre = (string)tupla[1];
+                nombre = (string)tupla[0];
                 descripcion = (string)tupla[1];
-                coordinador = new Usuario((string)tupla[1]);
-                responsable = new Usuario((string)tupla[1]);
+                coordinador = new Usuario((string)tupla[2]);
+                responsable = new Usuario((string)tupla[3]);
                 //coger socios
             }
-        }
-
-        public void añadirSociosTipoProyecto(List<Socio> socios)
-        {
-            sociosdonantes=socios;
-        }
-
-        public void añadirSocioTipoProyecto (string NIF)
-        {
-            sociosdonantes.Add(new Socio(NIF));
         }
         
         public string nombre_tipoproyecto

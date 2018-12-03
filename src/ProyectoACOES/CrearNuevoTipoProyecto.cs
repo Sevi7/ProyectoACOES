@@ -22,16 +22,30 @@ namespace ProyectoACOES
 
         private void bAñadir_Click(object sender, EventArgs e)
         {
-           Socio s = new Socio(tSocio.Text);
-           tSocio.Text = "";
-           sociosdonantes.Add(s);
-           listaSocios.Items.Add(s.codigo_socio);
-
+            try
+            {
+                Socio s = new Socio(tSocio.Text);
+                tSocio.Text = "";
+                sociosdonantes.Add(s);
+                listaSocios.Items.Add(s.codigo_socio);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void bCrear_Click(object sender, EventArgs e)
         {
-            new TipoProyecto(tNombre.Text, tDescripcion.Text, new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), sociosdonantes);
+            try
+            {
+                new TipoProyecto(tNombre.Text, tDescripcion.Text, new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), sociosdonantes);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            this.Close();
         }
 
 

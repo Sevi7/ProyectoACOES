@@ -28,7 +28,7 @@ namespace ProyectoACOES
         {
             DataSet ds = (DataSet)dataGridView1.DataSource;
             DataTable dt = ds.Tables[dataGridView1.DataMember];
-
+            this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
             DataRow[] resultSet = dt.Select("select * from beneficiario where codigo=" + textBox1.Text + ";");
         }
     }

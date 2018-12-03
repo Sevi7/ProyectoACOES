@@ -43,6 +43,7 @@ namespace ProyectoACOES
                 Beneficiario seleccionado = new Beneficiario(cod);
                 seleccionado.BorrarPaciente();
                 refrescarDatos();
+                this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
             }
         }
     }

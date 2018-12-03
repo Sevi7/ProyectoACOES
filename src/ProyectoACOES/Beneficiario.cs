@@ -39,22 +39,22 @@ namespace ProyectoACOES
 
             codigo = c;
             nombre = (string)tupla[1];
-            apellidos = (string)tupla[2];
-            estado = (string)tupla[3];
-            beca = (string)tupla[4];
+            if (tupla[2] != DBNull.Value) apellidos = (string)tupla[2];
+            if (tupla[3] != DBNull.Value) estado = (string)tupla[3];
+            if (tupla[4] != DBNull.Value) beca = (string)tupla[4];
             sexo = (string)tupla[5];
-            agente = new Agente(Convert.ToInt32(tupla[6]));
-            fechaNacimiento = Convert.ToDateTime(tupla[7]);
-            fechaEntradaAcoes = Convert.ToDateTime(tupla[8]);
-            proyecto = (string)tupla[9];
-            fechaEntradaProyecto = Convert.ToDateTime(tupla[10]);
-            fechaSalidaProyecto = Convert.ToDateTime(tupla[11]);
-            fechaAlta = Convert.ToDateTime(tupla[12]);
-            fechaSalidaAcoes = Convert.ToDateTime(tupla[13]);
-            curso = (string)tupla[14];
-            comunidadProc = (string)tupla[15];
-            comunidadAct = (string)tupla[16];
-            observaciones = (string)tupla[17];
+            if(tupla[6] != DBNull.Value) agente = new Agente(Convert.ToInt32(tupla[6]));
+            if(tupla[7] != DBNull.Value) fechaNacimiento = Convert.ToDateTime(tupla[7]);
+            if(tupla[8] != DBNull.Value) fechaEntradaAcoes = Convert.ToDateTime(tupla[8]);
+            if(tupla[9] != DBNull.Value) proyecto = (string)tupla[9];
+            if(tupla[10] != DBNull.Value) fechaEntradaProyecto = Convert.ToDateTime(tupla[10]);
+            if(tupla[11] != DBNull.Value) fechaSalidaProyecto = Convert.ToDateTime(tupla[11]);
+            if(tupla[12] != DBNull.Value) fechaAlta = Convert.ToDateTime(tupla[12]);
+            if(tupla[13] != DBNull.Value) fechaSalidaAcoes = Convert.ToDateTime(tupla[13]);
+            if(tupla[14] != DBNull.Value) curso = (string)tupla[14];
+            if(tupla[15] != DBNull.Value) comunidadProc = (string)tupla[15];
+            if(tupla[16] != DBNull.Value) comunidadAct = (string)tupla[16];
+            if(tupla[17] != DBNull.Value) observaciones = (string)tupla[17];
         }
         
         public Beneficiario(string n, string ap, string e, string b, string s, Agente a, 
@@ -62,21 +62,31 @@ namespace ProyectoACOES
             string cA, string o)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            if (a != null)
+            if (a == null && p!="")
             {
-                miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + a.Codigo + "','" + fN.ToString("yyyy - MM - dd") + "','" +
-               fEA.ToString("yyyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" +
+                miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "',null,'" + fN.ToString("yyyy - MM - dd") + "','" +
+               fEA.ToString("yyyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
+            }
+            else if(p == "" && a==null)
+            {
+                miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "',null,'" + fN.ToString("yyyy - MM - dd") + "','" +
+               fEA.ToString("yyyy-MM-dd") + "',null,'" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") +"', '"+
+               fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
+            }else if(p=="" && a != null)
+            {
+                miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "'," + a.Codigo + ",'" + fN.ToString("yyyy - MM - dd") + "','" +
+                fEA.ToString("yyyy-MM-dd") + "',null,'" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
+                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
             }
             else
             {
-                miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + -1 + "','" + fN.ToString("yyyy - MM - dd") + "','" +
-               fEA.ToString("yyyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" +
+                miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + a.Codigo + "','" + fN.ToString("yyyy - MM - dd") + "','" +
+               fEA.ToString("yyyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
             }
-           
 
-            codigo = Convert.ToInt32(miBD.Select("select max Codigo from Beneficiario;")[0][0]);
+            codigo = Convert.ToInt32(miBD.Select("select max(Codigo) from Beneficiario;")[0][0]);
             nombre = n;
             apellidos = ap;
             estado = e;

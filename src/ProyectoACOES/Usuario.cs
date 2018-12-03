@@ -23,9 +23,9 @@ namespace ProyectoACOES
         {
 
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            object[] tupla = miBD.Select("Select * from Usuario where alias='" + usu + "' and contraseña='"+contraseña+"';")[0];
-            if (tupla.Length > 0)
+            if (miBD.Select("Select * from Usuario where alias='" + usu + "' and contraseña='" + contraseña + "';").Capacity > 0)
             {
+                object[] tupla = miBD.Select("Select * from Usuario where alias='" + usu + "' and contraseña='" + contraseña + "';")[0];
                 this.nif = (string) tupla[0];
                 this.alias = usu;
                 this.contraseña = contraseña;

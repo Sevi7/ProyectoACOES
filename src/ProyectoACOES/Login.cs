@@ -16,6 +16,8 @@ namespace ProyectoACOES
         public Login()
         {
             InitializeComponent();
+            label1.Visible = false;
+
         }
 
         private void b_login_Click(object sender, EventArgs e) 
@@ -41,7 +43,7 @@ namespace ProyectoACOES
                 }
 
             }
-            catch (Error) { }
+            catch (Error) { label1.Visible = true; }
 
              
         }
@@ -52,10 +54,16 @@ namespace ProyectoACOES
         }
         public void formularioCoordiandor()
         {
+            this.Close();
             Inicio form1 = new Inicio();
             form1.ShowDialog();
         }
 
-
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            Registro form2 = new Registro();
+            form2.ShowDialog();
+        }
     }
 }

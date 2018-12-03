@@ -59,6 +59,12 @@
     <Compile Include="Beneficiario.cs" />
     <Compile Include="Agente.cs" />
     <Compile Include="Calificacion.cs" />
+    <Compile Include="ConsultarBeneficiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultarBeneficiario.Designer.cs">
+      <DependentUpon>ConsultarBeneficiario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,11 +90,6 @@
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="Socio.cs" />
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="EliminarBeneficiario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +132,9 @@
     <EmbeddedResource Include="EliminarBeneficiario.resx">
       <DependentUpon>EliminarBeneficiario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultarBeneficiario.resx">
+      <DependentUpon>ConsultarBeneficiario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,17 +169,6 @@
     </None>
     <None Include="ACOESDataSet.xss">
       <DependentUpon>ACOESDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

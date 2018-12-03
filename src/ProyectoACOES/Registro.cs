@@ -29,6 +29,7 @@ namespace ProyectoACOES
 
         private void irLogin()
         {
+            this.Close();
             Login lg = new Login();
             lg.ShowDialog();
         }

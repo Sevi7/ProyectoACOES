@@ -27,5 +27,23 @@ namespace ProyectoACOES
         {
             textBox1.Text = "";
         }
+
+        private void EliminarBeneficiario_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'aCOESDataSet.Beneficiario' Puede moverla o quitarla según sea necesario.
+            this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
+
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int cod = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+                Beneficiario seleccionado = new Beneficiario(cod);
+                seleccionado.BorrarPaciente();
+                refrescarDatos();
+            }
+        }
     }
 }

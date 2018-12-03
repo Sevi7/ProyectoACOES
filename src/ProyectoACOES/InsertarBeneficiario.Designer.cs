@@ -401,7 +401,7 @@
             this.Controls.Add(this.apellidosT);
             this.Controls.Add(this.Nombre);
             this.Name = "InsertarBeneficiario";
-            this.Text = "Form1";
+            this.Text = "Insertar Beneficiario";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -63,7 +63,7 @@ namespace ProyectoACOES
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + a.Codigo + "','" + fN.ToLongDateString() + "','" +
-                fEA.ToLongDateString() + "','" + p + "','" + fEP.ToLongDateString() + "','" + fSP.ToLongDateString() + "','" + fSA.ToLongDateString() + "','" + co + "','" +
+                fEA.ToString("dd-MM-yyyy") + "','" + p + "','" + fEP.ToString("dd-MM-yyyy") + "','" + fSP.ToString("dd-MM-yyyy") + "','" + fSA.ToString("dd-MM-yyyy") + "','" + co + "','" +
                 cP + "','" + cA + "','" + o + "');");
 
             codigo = Convert.ToInt32(miBD.Select("select max Codigo from Beneficiario;")[0][0]);

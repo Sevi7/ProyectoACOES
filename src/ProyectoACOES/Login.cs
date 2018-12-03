@@ -26,7 +26,6 @@ namespace ProyectoACOES
                 if (user1.rol_usuario == "C001")
                 {
                     formularioCoordiandor();
-();
                 }else if(user1.rol_usuario == "CG001")
                 {
 
@@ -36,7 +35,11 @@ namespace ProyectoACOES
                 }else if(user1.rol_usuario == "A001")
                 {
 
+                }else if(user1.rol_usuario == "administrador")
+                {
+                    formularioCoordiandor();
                 }
+
             }
             catch (Error) { }
 

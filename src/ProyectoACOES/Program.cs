@@ -16,7 +16,7 @@ namespace ProyectoACOES
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InsertarBeneficiario());
+            Application.Run(new Login());
         }
     }
 }

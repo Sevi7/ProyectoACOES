@@ -21,7 +21,7 @@ namespace ProyectoACOES
         {
             if(textBox5.Text == "CG001" || textBox5.Text == "R001" || textBox5.Text == "C001" || textBox5.Text == "A001")
             {
-                Usuario user = new Usuario(Convert.ToInt32(textBox1.Text), textBox2.Text, textBox3.Text, textBox5.Text, textBox4.Text);
+                Usuario user = new Usuario(textBox1.Text, textBox2.Text, textBox3.Text, textBox5.Text, textBox4.Text);
                 refresh();
                 irLogin();
             }

@@ -12,7 +12,7 @@ namespace ProyectoACOES
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
-        private int nif;
+        private string nif;
         private string alias;
         private string contraseña;
         private string correo;
@@ -23,10 +23,10 @@ namespace ProyectoACOES
         {
 
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            object[] tupla = miBD.Select("Select * from Usuario where alias=" + usu + "and contraseña="+contraseña+";")[0];
+            object[] tupla = miBD.Select("Select * from Usuario where alias='" + usu + "' and contraseña='"+contraseña+"';")[0];
             if (tupla.Length > 0)
             {
-                this.nif = (int)tupla[0];
+                this.nif = (string) tupla[0];
                 this.alias = usu;
                 this.contraseña = contraseña;
                 this.correo = (string)tupla[3];
@@ -47,7 +47,7 @@ namespace ProyectoACOES
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
             foreach (Object[] tupla in bd.Select("SELECT * FROM Usuario where nif='" + nif + "';"))
             {
-                this.nif = (int)tupla[0];
+                this.nif = (string)tupla[0];
                 this.alias = (string)tupla[1];
                 this.contraseña = (string) tupla[2];
                 this.correo = (string)tupla[3];
@@ -55,7 +55,7 @@ namespace ProyectoACOES
             }
         }
 
-        public Usuario(int id, string alias, string contraseña, string correo, string rol)
+        public Usuario(string id, string alias, string contraseña, string correo, string rol)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             miBD.Insert("Insert into Usuario values(" + id + ",'" + alias + "','" + contraseña + "','" + correo + "','" + rol+"');");
@@ -66,7 +66,7 @@ namespace ProyectoACOES
             this.rol = rol;
         }
 
-        public int nif_usuario
+        public string nif_usuario
         {
             get
             {
@@ -75,7 +75,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Usuario set nif = '" + value + "' where nif=" + this.nif + ";");
+                miBD.Update("update Usuario set nif = '" + value + "' where nif='" + this.nif + "';");
                 this.nif = value;
             }
         }
@@ -88,7 +88,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Usuario set alias = '" + value + "' where nif=" + this.nif + ";");
+                miBD.Update("update Usuario set alias = '" + value + "' where nif='" + this.nif + "';");
                 this.alias = value;
             }
         }
@@ -101,7 +101,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Usuario set contraseña = '" + value + "' where nif=" + this.nif + ";");
+                miBD.Update("update Usuario set contraseña = '" + value + "' where nif='" + this.nif + "';");
                 this.contraseña = value;
             }
         }
@@ -114,7 +114,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Usuario set rol = '" + value + "' where nif=" + this.nif + ";");
+                miBD.Update("update Usuario set rol = '" + value + "' where nif='" + this.nif + "';");
                 this.rol = value;
             }
         }
@@ -127,15 +127,15 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Usuario set correo = '" + value + "' where nif=" + this.nif + ";");
+                miBD.Update("update Usuario set correo = '" + value + "' where nif='" + this.nif + "';");
                 this.correo = value;
             }
         }
         public void borrarUsuario()
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Delete("delete Usuario where nif="+this.nif+";");
-            this.nif = -1;
+            miBD.Delete("delete Usuario where nif='"+this.nif+"';");
+            this.nif = null;
             this.alias = null;
             this.contraseña = null;
             this.rol = null;

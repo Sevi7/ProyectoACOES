@@ -325,6 +325,25 @@ namespace ProyectoACOES
             }
         }
 
+        public void BorrarPaciente()
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            miBD.Delete("delete Beneficiario where Codigo =" + codigo + ";");
+
+            codigo = -1;
+            nombre = null;
+            apellidos = null;
+            estado = null;
+            beca = null;
+            sexo = null;
+            agente = null;
+            proyecto = null;           
+            curso = null;
+            comunidadProc = null;
+            comunidadAct = null;
+            observaciones = null;
+        }
+
         public override bool Equals(object obj)
         {
             return base.Equals(obj);

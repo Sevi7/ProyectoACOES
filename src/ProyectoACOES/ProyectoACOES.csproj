@@ -52,6 +52,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EliminarBeneficiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarBeneficiario.Designer.cs">
+      <DependentUpon>EliminarBeneficiario.cs</DependentUpon>
+    </Compile>
     <Compile Include="InsertarBeneficiario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearNuevoTipoProyecto.resx">
       <DependentUpon>CrearNuevoTipoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarBeneficiario.resx">
+      <DependentUpon>EliminarBeneficiario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InsertarBeneficiario.resx">
       <DependentUpon>InsertarBeneficiario.cs</DependentUpon>

@@ -87,6 +87,14 @@ namespace ProyectoACOES
 
         }
 
+        public int codigo_Beneficiario
+        {
+            get
+            {
+                return codigo;
+            }
+        }
+
         public string nombre_Beneficiario
         {
             get

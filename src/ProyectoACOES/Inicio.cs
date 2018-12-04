@@ -55,5 +55,12 @@ namespace ProyectoACOES
             AñadirNota nota = new AñadirNota();
             nota.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ConsultarBeneficiario con = new ConsultarBeneficiario();
+            con.ShowDialog();
+
+        }
     }
 }

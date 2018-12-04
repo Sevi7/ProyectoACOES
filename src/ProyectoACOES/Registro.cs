@@ -19,7 +19,7 @@ namespace ProyectoACOES
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(textBox5.Text == "CG001" || textBox5.Text == "R001" || textBox5.Text == "C001" || textBox5.Text == "A001")
+            if(textBox4.Text == "CG001" || textBox4.Text == "R001" || textBox4.Text == "C001" || textBox4.Text == "A001")
             {
                 Usuario user = new Usuario(textBox1.Text, textBox2.Text, textBox3.Text, textBox5.Text, textBox4.Text);
                 refresh();
@@ -29,7 +29,7 @@ namespace ProyectoACOES
 
         private void irLogin()
         {
-            this.Close();
+            this.Visible=false;
             Login lg = new Login();
             lg.ShowDialog();
         }
@@ -41,6 +41,13 @@ namespace ProyectoACOES
             textBox3.Text = "";
             textBox4.Text = "";
             textBox5.Text = "";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Login log = new Login();
+            log.ShowDialog();
         }
     }
 }

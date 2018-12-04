@@ -66,6 +66,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tCodigo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.bBuscar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Nombre
@@ -162,7 +163,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(169, 40);
+            this.label1.Location = new System.Drawing.Point(153, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(372, 39);
             this.label1.TabIndex = 10;
@@ -363,26 +364,36 @@
             // 
             // tCodigo
             // 
-            this.tCodigo.Location = new System.Drawing.Point(338, 109);
+            this.tCodigo.Location = new System.Drawing.Point(275, 103);
             this.tCodigo.Name = "tCodigo";
             this.tCodigo.Size = new System.Drawing.Size(100, 20);
             this.tCodigo.TabIndex = 36;
-            this.tCodigo.TextChanged += new System.EventHandler(this.Codigo_Introducido);
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(292, 112);
+            this.label17.Location = new System.Drawing.Point(229, 106);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 13);
             this.label17.TabIndex = 37;
             this.label17.Text = "Código";
+            // 
+            // bBuscar
+            // 
+            this.bBuscar.Location = new System.Drawing.Point(381, 101);
+            this.bBuscar.Name = "bBuscar";
+            this.bBuscar.Size = new System.Drawing.Size(75, 23);
+            this.bBuscar.TabIndex = 38;
+            this.bBuscar.Text = "Buscar";
+            this.bBuscar.UseVisualStyleBackColor = true;
+            this.bBuscar.Click += new System.EventHandler(this.bBuscar_Click);
             // 
             // ModificarBeneficiario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 638);
+            this.Controls.Add(this.bBuscar);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.tCodigo);
             this.Controls.Add(this.button1);
@@ -468,5 +479,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox tCodigo;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button bBuscar;
     }
 }

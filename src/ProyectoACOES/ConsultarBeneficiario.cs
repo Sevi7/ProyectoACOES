@@ -54,7 +54,7 @@ namespace ProyectoACOES
                 textBox5.Text = beneficiario.beca_Beneficiario;
                 textBox6.Text = beneficiario.curso_Beneficiario;
                 textBox7.Text = beneficiario.proyecto_Beneficiario;
-                textBox8.Text = Convert.ToString(beneficiario.agente_Beneficiario.Codigo);
+                if (textBox8.Text != "") textBox8.Text = Convert.ToString(beneficiario.agente_Beneficiario.Codigo);
                 textBox9.Text = beneficiario.comunidadAct_Beneficiario;
                 textBox10.Text = beneficiario.comunidadProc_Beneficiario;
                 textBox11.Text = beneficiario.observaciones_Beneficiario;

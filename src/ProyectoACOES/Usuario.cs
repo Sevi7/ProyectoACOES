@@ -64,7 +64,11 @@ namespace ProyectoACOES
         public Usuario(string id, string alias, string contraseña, string correo, string rol)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Insert("Insert into Usuario values(" + id + ",'" + alias + "','" + contraseña + "','" + correo + "','" + rol+"');");
+            if (id == "")
+            {
+                throw new Error("N.I.F. es obligartrio");
+            }
+            miBD.Insert("Insert into Usuario values('" + id + "','" + alias + "','" + contraseña + "','" + correo + "','" + rol+"');");
             this.nif = id;
             this.alias = alias;
             this.contraseña = contraseña;

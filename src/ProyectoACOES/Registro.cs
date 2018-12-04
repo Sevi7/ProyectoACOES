@@ -19,11 +19,21 @@ namespace ProyectoACOES
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {          
             if(textBox4.Text == "CG001" || textBox4.Text == "R001" || textBox4.Text == "C001" || textBox4.Text == "A001")
             {
                 Usuario user = new Usuario(textBox1.Text, textBox2.Text, textBox3.Text, textBox5.Text, textBox4.Text);
                 refresh();
                 irLogin();
+            }else
+            {
+                MessageBox.Show("Código incorrecto, no puede registrarse como usuario del sistema");
+            }
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message);
             }
         }
 

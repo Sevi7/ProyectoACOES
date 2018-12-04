@@ -311,7 +311,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Beneficiario set Curso = " + Int32.Parse(value) + " where Codigo=" + codigo + ";");
+                miBD.Update("update Beneficiario set Curso ='" + value + "' where Codigo=" + codigo + ";");
                 curso = value;
             }
         }

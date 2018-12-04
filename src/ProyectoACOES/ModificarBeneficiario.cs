@@ -41,9 +41,11 @@ namespace ProyectoACOES
             if(textBox7.Text != beneficiario.proyecto_Beneficiario){
                 beneficiario.proyecto_Beneficiario = textBox7.Text;
             }
+            /*
             if(textBox8.Text != Convert.ToString(beneficiario.agente_Beneficiario.Codigo)){
                 beneficiario.agente_Beneficiario = new Agente(Convert.ToInt32(textBox8.Text));
             }
+             * */
             if(textBox9.Text != beneficiario.comunidadAct_Beneficiario){
                 beneficiario.comunidadAct_Beneficiario = textBox9.Text;
             }
@@ -93,7 +95,7 @@ namespace ProyectoACOES
 
         private void Codigo_Introducido(object sender, EventArgs e)
         {
-            beneficiario = new Beneficiario(Convert.ToInt32(tCodigo.Text));
+            beneficiario = new Beneficiario(Int32.Parse(tCodigo.Text));
             textBox1.Text = beneficiario.nombre_Beneficiario;
             textBox2.Text = beneficiario.apellidos_Beneficiario;
             textBox3.Text = beneficiario.estado_Beneficiario;
@@ -101,7 +103,7 @@ namespace ProyectoACOES
             textBox5.Text = beneficiario.beca_Beneficiario;
             textBox6.Text = beneficiario.curso_Beneficiario;
             textBox7.Text = beneficiario.proyecto_Beneficiario;
-            textBox8.Text = Convert.ToString(beneficiario.agente_Beneficiario.Codigo);
+            //textBox8.Text = Convert.ToString(beneficiario.agente_Beneficiario.Codigo);
             textBox9.Text = beneficiario.comunidadAct_Beneficiario;
             textBox10.Text = beneficiario.comunidadProc_Beneficiario;
             textBox11.Text = beneficiario.observaciones_Beneficiario;

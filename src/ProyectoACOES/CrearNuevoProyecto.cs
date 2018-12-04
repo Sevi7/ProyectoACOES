@@ -39,16 +39,17 @@ namespace ProyectoACOES
 
         private void bAñadirBeneficiario_Click(object sender, EventArgs e)
         {
-            try
+            //try
             {
                 Beneficiario b = new Beneficiario(Int32.Parse(tBeneficiario.Text));
                 beneficiarios.Add(b);
                 tBeneficiario.Text = "";
+                listaBeneficiarios.Items.Add(b.codigo_Beneficiario);
                 //listaBeneficiarios.Items.Add(b_codigo_beneficiario);
             }
-            catch (Exception ex)
+            //catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+               // MessageBox.Show("Error: " + ex.Message);
             }
         }
 

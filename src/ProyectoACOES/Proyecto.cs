@@ -32,7 +32,7 @@ namespace ProyectoACOES
 
             foreach(Beneficiario b in bf)
             {
-                bd.Update("UPDATE Beneficiario set proyecto='" + id + "' where codigo=" + b.codigo_Beneficiario + ";");
+                bd.Update("UPDATE Beneficiario set proyecto=" + id + " where codigo=" + b.codigo_Beneficiario + ";");
             }
             nombre=n;
             tipoproyecto=tp;

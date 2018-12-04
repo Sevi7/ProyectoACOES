@@ -46,7 +46,7 @@ namespace ProyectoACOES
             if(tupla[6] != DBNull.Value) agente = new Agente(Convert.ToInt32(tupla[6]));
             if(tupla[7] != DBNull.Value) fechaNacimiento = Convert.ToDateTime(tupla[7]);
             if(tupla[8] != DBNull.Value) fechaEntradaAcoes = Convert.ToDateTime(tupla[8]);
-            if(tupla[9] != DBNull.Value) proyecto = (string)tupla[9];
+            if(tupla[9] != DBNull.Value) proyecto = tupla[9].ToString();
             if(tupla[10] != DBNull.Value) fechaEntradaProyecto = Convert.ToDateTime(tupla[10]);
             if(tupla[11] != DBNull.Value) fechaSalidaProyecto = Convert.ToDateTime(tupla[11]);
             if(tupla[12] != DBNull.Value) fechaAlta = Convert.ToDateTime(tupla[12]);
@@ -65,7 +65,7 @@ namespace ProyectoACOES
             if (a == null && p!="")
             {
                 miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "',null,'" + fN.ToString("yyyy - MM - dd") + "','" +
-               fEA.ToString("yyyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
+               fEA.ToString("yyyy-MM-dd") + "'," + Int32.Parse(p) + ",'" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
             }
             else if(p == "" && a==null)
@@ -82,7 +82,7 @@ namespace ProyectoACOES
             else
             {
                 miBD.Insert("insert into Beneficiario values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + a.Codigo + "','" + fN.ToString("yyyy - MM - dd") + "','" +
-               fEA.ToString("yyyy-MM-dd") + "','" + p + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
+               fEA.ToString("yyyy-MM-dd") + "','" + Int32.Parse(p) + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
             }
 
@@ -235,9 +235,14 @@ namespace ProyectoACOES
             }
             set
             {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Beneficiario set Proyecto = '" + value + "' where Codigo=" + codigo + ";");
-                proyecto = value;
+                
+                if (value != "")
+                {
+                    SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                    miBD.Update("update Beneficiario set Proyecto = " + Int32.Parse(value) + " where Codigo=" + codigo + ";");
+                    proyecto = value;
+                }
+
             }
         }
 
@@ -306,7 +311,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Beneficiario set Curso = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Beneficiario set Curso = " + Int32.Parse(value) + " where Codigo=" + codigo + ";");
                 curso = value;
             }
         }

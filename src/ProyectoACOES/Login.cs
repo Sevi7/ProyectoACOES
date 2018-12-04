@@ -30,7 +30,7 @@ namespace ProyectoACOES
                     formularioCoordiandor();
                 }else if(user1.rol_usuario == "CG001")
                 {
-
+                    formularioCoordiandor();
                 }else if(user1.rol_usuario == "R001")
                 {
 

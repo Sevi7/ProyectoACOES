@@ -22,6 +22,7 @@ namespace ProyectoACOES
             if (tAsignatura.Text != "" && tNota.Text != "" && tCodigo.Text != "")
             {
                 new Calificacion(Convert.ToInt32(tCodigo.Text), Convert.ToInt32(tNota.Text), tAsignatura.Text,  dFecha.Value);
+                this.Close();
             }
         }
     }

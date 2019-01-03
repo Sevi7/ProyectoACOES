@@ -95,9 +95,9 @@ namespace ProyectoACOES
                 }
                 refrescarDatos();
             }
-            catch (Exception e)
+            catch (Exception e1)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(e1.Message);
             }
         }
         private void refrescarDatos()
@@ -140,9 +140,9 @@ namespace ProyectoACOES
                 dateTimePicker5.Value = beneficiario.fechaAlta_Beneficiario;
                 dateTimePicker6.Value = beneficiario.fechaSalidaAcoes_Beneficiario;
             }
-            catch (Exception e)
+            catch (Exception e1)
             {
-                MessageBox.Show(e.Message);
+                MessageBox.Show(e1.Message);
             }
         }
 

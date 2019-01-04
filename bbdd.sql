@@ -177,7 +177,7 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Socio](
-	[codigo] [varchar](50) NOT NULL,
+	[codigo] [int] IDENTITY(1,1) NOT NULL,
 	[nombre] [varchar](50) NOT NULL,
 	[apellidos] [varchar](50) NULL,
 	[estado] [varchar](50) NULL,
@@ -199,7 +199,7 @@ CREATE TABLE [dbo].[Socio](
 	[numCuenta] [varchar](50) NULL,
  CONSTRAINT [PK_Socio] PRIMARY KEY CLUSTERED 
 (
-	[numero] ASC
+	[codigo] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 

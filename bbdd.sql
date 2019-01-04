@@ -197,6 +197,7 @@ CREATE TABLE [dbo].[Socio](
 	[fechaBaja] [datetime] NULL,
 	[observaciones] [varchar](250) NULL,
 	[numCuenta] [varchar](50) NULL,
+	[eliminado] [bit] NOT NULL,
  CONSTRAINT [PK_Socio] PRIMARY KEY CLUSTERED 
 (
 	[codigo] ASC

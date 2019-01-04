@@ -4,13 +4,6 @@ DROP DATABASE [ACOES]
 /****** Object:  Database [ACOES]    Script Date: 03/01/2019 13:43:16 ******/
 CREATE DATABASE [ACOES]
 GO
-ALTER DATABASE [ACOES] SET COMPATIBILITY_LEVEL = 120
-GO
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [ACOES].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
 ALTER DATABASE [ACOES] SET ANSI_NULL_DEFAULT OFF 
 GO
 ALTER DATABASE [ACOES] SET ANSI_NULLS OFF 
@@ -184,7 +177,7 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Socio](
-	[numero] [nchar](10) NOT NULL,
+	[codigo] [nchar](10) NOT NULL,
 	[nombre] [varchar](50) NOT NULL,
 	[apellidos] [varchar](50) NULL,
 	[estado] [varchar](50) NULL,

@@ -177,7 +177,7 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[Socio](
-	[codigo] [nchar](10) NOT NULL,
+	[codigo] [varchar](50) NOT NULL,
 	[nombre] [varchar](50) NOT NULL,
 	[apellidos] [varchar](50) NULL,
 	[estado] [varchar](50) NULL,

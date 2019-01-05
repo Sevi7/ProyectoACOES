@@ -64,6 +64,7 @@
             // 
             this.contra.Location = new System.Drawing.Point(145, 99);
             this.contra.Name = "contra";
+            this.contra.PasswordChar = '*';
             this.contra.Size = new System.Drawing.Size(100, 20);
             this.contra.TabIndex = 3;
             // 

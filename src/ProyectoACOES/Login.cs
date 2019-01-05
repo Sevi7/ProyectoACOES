@@ -36,7 +36,7 @@ namespace ProyectoACOES
 
                 }else if(user1.rol_usuario == "A001")
                 {
-
+                    formularioCoordiandor();
                 }else if(user1.rol_usuario == "administrador")
                 {
                     formularioCoordiandor();

@@ -17,20 +17,6 @@ namespace ProyectoACOES
             InitializeComponent();
         }
 
-        
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            EliminarBeneficiario elim = new EliminarBeneficiario();
-            elim.ShowDialog();
-        }
-
-        private void insertBen_Click(object sender, EventArgs e)
-        {
-            InsertarBeneficiario insert = new InsertarBeneficiario();
-            insert.ShowDialog();
-        }
-
         private void crearTipoProyecto_Click(object sender, EventArgs e)
         {
             CrearNuevoTipoProyecto tipoProyecto = new CrearNuevoTipoProyecto();
@@ -44,23 +30,16 @@ namespace ProyectoACOES
 
         }
 
-        private void bMod_Click(object sender, EventArgs e)
-        {
-            ModificarBeneficiario mod = new ModificarBeneficiario();
-            mod.ShowDialog();
-        }
-
         private void bNota_Click(object sender, EventArgs e)
         {
             AñadirNota nota = new AñadirNota();
             nota.ShowDialog();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            ConsultarBeneficiario con = new ConsultarBeneficiario();
-            con.ShowDialog();
-
+            GestionSocios socios = new GestionSocios();
+            socios.ShowDialog();
         }
     }
 }

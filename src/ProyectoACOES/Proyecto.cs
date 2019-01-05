@@ -17,9 +17,9 @@ namespace ProyectoACOES
         private Usuario responsable;
         private string localidad;
         private List<Socio> sociosparticipantes;
-        private List<Beneficiario> beneficiarios;
+        private List<Ninio> ninios;
 
-        public Proyecto(string n, TipoProyecto tp, Usuario c, Usuario r, string l, List<Socio> socios, List<Beneficiario> bf)
+        public Proyecto(string n, TipoProyecto tp, Usuario c, Usuario r, string l, List<Socio> socios, List<Ninio> bf)
         {
             SQLSERVERDB bd = new SQLSERVERDB (BD_SERVER,BD_NAME);
             bd.Insert("INSERT into Proyecto values ('"+n+"','"+tp.nombre_tipoproyecto+"','"+c.nif_usuario+"','"+r.nif_usuario+"','"+l+"')");
@@ -30,9 +30,9 @@ namespace ProyectoACOES
             }
             */
 
-            foreach(Beneficiario b in bf)
+            foreach(Ninio b in bf)
             {
-                bd.Update("UPDATE Beneficiario set proyecto=" + id + " where codigo=" + b.codigo_Beneficiario + ";");
+                bd.Update("UPDATE Ninio set proyecto=" + id + " where codigo=" + b.codigo_Beneficiario + ";");
             }
             nombre=n;
             tipoproyecto=tp;
@@ -40,7 +40,7 @@ namespace ProyectoACOES
             responsable=r;
             localidad=l;
             sociosparticipantes=socios;
-            beneficiarios=bf;
+            ninios=bf;
         }
 
     }

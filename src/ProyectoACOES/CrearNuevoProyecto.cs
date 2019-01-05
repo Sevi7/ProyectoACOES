@@ -13,7 +13,7 @@ namespace ProyectoACOES
     public partial class CrearNuevoProyecto : Form
     {
         private List<Socio> socios = new List<Socio>();
-        private List<Beneficiario> beneficiarios = new List<Beneficiario>();
+        private List<Ninio> ninios = new List<Ninio>();
 
 
         public CrearNuevoProyecto()
@@ -25,7 +25,7 @@ namespace ProyectoACOES
         {
             try
             {
-                Socio s = new Socio(tSocio.Text);
+                Socio s = new Socio(Convert.ToInt32(tSocio.Text));
                 socios.Add(s);
                 tSocio.Text = "";
                 listaSocios.Items.Add(s.codigo_socio);
@@ -41,8 +41,8 @@ namespace ProyectoACOES
         {
             try
             {
-                Beneficiario b = new Beneficiario(Int32.Parse(tBeneficiario.Text));
-                beneficiarios.Add(b);
+                Ninio b = new Ninio(Int32.Parse(tBeneficiario.Text));
+                ninios.Add(b);
                 tBeneficiario.Text = "";
                 listaBeneficiarios.Items.Add(b.codigo_Beneficiario);
                 //listaBeneficiarios.Items.Add(b_codigo_beneficiario);
@@ -56,7 +56,7 @@ namespace ProyectoACOES
         private void bCrearProyecto_Click(object sender, EventArgs e)
         {
             try{
-                new Proyecto(tNombre.Text, new TipoProyecto(tTipoProyecto.Text), new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), tLocalidad.Text, socios, beneficiarios);
+                new Proyecto(tNombre.Text, new TipoProyecto(tTipoProyecto.Text), new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), tLocalidad.Text, socios, ninios);
                 this.Close();
             }
             catch (Exception ex)

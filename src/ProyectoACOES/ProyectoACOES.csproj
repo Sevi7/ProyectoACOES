@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACOESDataSet.cs">
+      <DependentUpon>ACOESDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ACOESDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -56,14 +59,15 @@
       <DependentUpon>AñadirNota.cs</DependentUpon>
     </Compile>
     <Compile Include="BDLibrary.cs" />
-    <Compile Include="Beneficiario.cs" />
     <Compile Include="Agente.cs" />
     <Compile Include="Calificacion.cs" />
-    <Compile Include="ConsultarBeneficiario.cs">
+    <Compile Include="Ninio.cs" />
+    <Compile Include="DataSet1.Designer.cs" />
+    <Compile Include="GestionSocios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ConsultarBeneficiario.Designer.cs">
-      <DependentUpon>ConsultarBeneficiario.cs</DependentUpon>
+    <Compile Include="GestionSocios.Designer.cs">
+      <DependentUpon>GestionSocios.cs</DependentUpon>
     </Compile>
     <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
@@ -77,12 +81,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarBeneficiario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModificarBeneficiario.Designer.cs">
-      <DependentUpon>ModificarBeneficiario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Registro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,18 +88,6 @@
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="Socio.cs" />
-    <Compile Include="EliminarBeneficiario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EliminarBeneficiario.Designer.cs">
-      <DependentUpon>EliminarBeneficiario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InsertarBeneficiario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InsertarBeneficiario.Designer.cs">
-      <DependentUpon>InsertarBeneficiario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Proyecto.cs" />
     <Compile Include="CrearNuevoProyecto.cs">
       <SubType>Form</SubType>
@@ -129,23 +115,14 @@
     <EmbeddedResource Include="CrearNuevoTipoProyecto.resx">
       <DependentUpon>CrearNuevoTipoProyecto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarBeneficiario.resx">
-      <DependentUpon>EliminarBeneficiario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConsultarBeneficiario.resx">
-      <DependentUpon>ConsultarBeneficiario.cs</DependentUpon>
+    <EmbeddedResource Include="GestionSocios.resx">
+      <DependentUpon>GestionSocios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InsertarBeneficiario.resx">
-      <DependentUpon>InsertarBeneficiario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModificarBeneficiario.resx">
-      <DependentUpon>ModificarBeneficiario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -169,6 +146,13 @@
     </None>
     <None Include="ACOESDataSet.xss">
       <DependentUpon>ACOESDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd" />
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

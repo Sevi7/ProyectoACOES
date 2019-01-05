@@ -24,7 +24,7 @@ namespace ProyectoACOES
         {
             try
             {
-                Socio s = new Socio(tSocio.Text);
+                Socio s = new Socio(Convert.ToInt32(tSocio.Text));
                 tSocio.Text = "";
                 sociosdonantes.Add(s);
                 listaSocios.Items.Add(s.codigo_socio);

@@ -59,6 +59,12 @@
     <Compile Include="BDLibrary.cs" />
     <Compile Include="Agente.cs" />
     <Compile Include="Calificacion.cs" />
+    <Compile Include="GestionNinio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionNinio.Designer.cs">
+      <DependentUpon>GestionNinio.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionarApadrinamientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearNuevoTipoProyecto.resx">
       <DependentUpon>CrearNuevoTipoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionNinio.resx">
+      <DependentUpon>GestionNinio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarApadrinamientos.resx">
       <DependentUpon>GestionarApadrinamientos.cs</DependentUpon>

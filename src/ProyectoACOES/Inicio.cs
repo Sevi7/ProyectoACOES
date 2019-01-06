@@ -41,5 +41,17 @@ namespace ProyectoACOES
             GestionSocios socios = new GestionSocios();
             socios.ShowDialog();
         }
+
+        private void bApadrinamientos_Click(object sender, EventArgs e)
+        {
+            GestionarApadrinamientos ga = new GestionarApadrinamientos();
+            ga.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GestionNinio ninios = new GestionNinio();
+            ninios.ShowDialog();
+        }
     }
 }

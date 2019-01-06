@@ -67,3 +67,5 @@ C:\Users\Sevi\GitHub\ProyectoACOESBueno\ProyectoACOES\src\ProyectoACOES\bin\Debu
 C:\Users\Sevi\GitHub\ProyectoACOESBueno\ProyectoACOES\src\ProyectoACOES\bin\Debug\ProyectoACOES.pdb
 C:\Users\Sevi\GitHub\ProyectoACOESBueno\ProyectoACOES\src\ProyectoACOES\obj\Debug\ProyectoACOES.exe
 C:\Users\Sevi\GitHub\ProyectoACOESBueno\ProyectoACOES\src\ProyectoACOES\obj\Debug\ProyectoACOES.pdb
+C:\Users\JulioMh\Desktop\ProyectoACOES\src\ProyectoACOES\obj\Debug\ProyectoACOES.GestionarApadrinamientos.resources
+C:\Users\JulioMh\Desktop\ProyectoACOES\src\ProyectoACOES\obj\Debug\ProyectoACOES.GestionNinio.resources

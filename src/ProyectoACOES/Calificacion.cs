@@ -19,7 +19,7 @@ namespace ProyectoACOES
 
         public Calificacion(Ninio b, String a, DateTime f){
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            object[] tupla = miBD.Select("select * from Calificacion where Asignatura = '" + a  + "' and Fecha = '" + f + "' and Ninio = " + b.codigo_Beneficiario + ";")[0];
+            object[] tupla = miBD.Select("select * from Calificacion where Asignatura = '" + a  + "' and Fecha = '" + f + "' and Ninio = " + b.Codigo + ";")[0];
 
             Ninio = new Ninio((int)tupla[0]);
             nota = (int)tupla[1];

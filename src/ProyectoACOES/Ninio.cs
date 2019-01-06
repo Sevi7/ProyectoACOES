@@ -13,13 +13,13 @@ namespace ProyectoACOES
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
-        private int codigo;
+        private readonly int codigo;
         private string nombre;
         private string apellidos;
         private string estado;
         private string beca;
         private string sexo;
-        private Agente agente;
+        private Usuario agente;
         private DateTime fechaNacimiento;
         private DateTime fechaEntradaAcoes;
         private string proyecto;
@@ -43,7 +43,7 @@ namespace ProyectoACOES
             if (tupla[3] != DBNull.Value) estado = (string)tupla[3];
             if (tupla[4] != DBNull.Value) beca = (string)tupla[4];
             sexo = (string)tupla[5];
-            if (tupla[6] != DBNull.Value) agente = new Agente(Convert.ToInt32(tupla[6]));
+            if (tupla[6] != DBNull.Value) agente = new Usuario((string)tupla[6]);
             if (tupla[7] != DBNull.Value) fechaNacimiento = Convert.ToDateTime(tupla[7]);
             if (tupla[8] != DBNull.Value) fechaEntradaAcoes = Convert.ToDateTime(tupla[8]);
             if (tupla[9] != DBNull.Value) proyecto = tupla[9].ToString();
@@ -57,58 +57,58 @@ namespace ProyectoACOES
             if (tupla[17] != DBNull.Value) observaciones = (string)tupla[17];
         }
 
-        public Ninio(string n, string ap, string e, string b, string s, Agente a,
-            DateTime fN, DateTime fEA, string p, DateTime fEP, DateTime fSP, DateTime fA, DateTime fSA, string co, string cP,
-            string cA, string o)
-        {
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            if (a == null && p != "")
-            {
-                miBD.Insert("insert into Ninio values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "',null,'" + fN.ToString("yyyy - MM - dd") + "','" +
-               fEA.ToString("yyyy-MM-dd") + "'," + Int32.Parse(p) + ",'" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
-               fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
-            }
-            else if (p == "" && a == null)
-            {
-                miBD.Insert("insert into Ninio values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "',null,'" + fN.ToString("yyyy - MM - dd") + "','" +
-               fEA.ToString("yyyy-MM-dd") + "',null,'" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
-               fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
-            }
-            else if (p == "" && a != null)
-            {
-                miBD.Insert("insert into Ninio values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "'," + a.Codigo + ",'" + fN.ToString("yyyy - MM - dd") + "','" +
+        public Ninio(string n, string ap, string e, string b, string s, Usuario a,
+             DateTime fN, DateTime fEA, string p, DateTime fEP, DateTime fSP, DateTime fA, DateTime fSA, string co, string cP,
+             string cA, string o)
+         {
+             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+             if (a == null && p != "")
+             {
+                 miBD.Insert("insert into Ninio values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "',null,'" + fN.ToString("yyyy - MM - dd") + "','" +
+                fEA.ToString("yyyy-MM-dd") + "'," + Int32.Parse(p) + ",'" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
+                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "',0);");
+             }
+             else if (p == "" && a == null)
+             {
+                 miBD.Insert("insert into Ninio values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "',null,'" + fN.ToString("yyyy - MM - dd") + "','" +
                 fEA.ToString("yyyy-MM-dd") + "',null,'" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
-                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
-            }
-            else
-            {
-                miBD.Insert("insert into Ninio values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + a.Codigo + "','" + fN.ToString("yyyy - MM - dd") + "','" +
-               fEA.ToString("yyyy-MM-dd") + "','" + Int32.Parse(p) + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
-               fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "');");
-            }
+                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "',0);");
+             }
+             else if (p == "" && a != null)
+             {
+                 miBD.Insert("insert into Ninio values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "'," + a.nif_usuario + ",'" + fN.ToString("yyyy - MM - dd") + "','" +
+                 fEA.ToString("yyyy-MM-dd") + "',null,'" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
+                 fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "',0);");
+             }
+             else
+             {
+                 miBD.Insert("insert into Ninio values('" + n + "', '" + ap + "','" + e + "','" + b + "','" + s + "','" + a.nif_usuario + "','" + fN.ToString("yyyy - MM - dd") + "','" +
+                fEA.ToString("yyyy-MM-dd") + "','" + Int32.Parse(p) + "','" + fEP.ToString("yyyy-MM-dd") + "','" + fSP.ToString("yyyy-MM-dd") + "','" + fA.ToString("yyyy - MM - dd") + "', '" +
+                fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "',0);");
+             }
 
-            codigo = Convert.ToInt32(miBD.Select("select max(Codigo) from Ninio;")[0][0]);
-            nombre = n;
-            apellidos = ap;
-            estado = e;
-            beca = b;
-            sexo = s;
-            agente = a;
-            fechaNacimiento = fN;
-            fechaEntradaAcoes = fEA;
-            proyecto = p;
-            fechaEntradaProyecto = fEP;
-            fechaSalidaProyecto = fSP;
-            fechaAlta = fA;
-            fechaSalidaAcoes = fSA;
-            curso = co;
-            comunidadProc = cP;
-            comunidadAct = cA;
-            observaciones = o;
+             codigo = Convert.ToInt32(miBD.Select("select max(Codigo) from Ninio;")[0][0]);
+             nombre = n;
+             apellidos = ap;
+             estado = e;
+             beca = b;
+             sexo = s;
+             agente = a;
+             fechaNacimiento = fN;
+             fechaEntradaAcoes = fEA;
+             proyecto = p;
+             fechaEntradaProyecto = fEP;
+             fechaSalidaProyecto = fSP;
+             fechaAlta = fA;
+             fechaSalidaAcoes = fSA;
+             curso = co;
+             comunidadProc = cP;
+             comunidadAct = cA;
+             observaciones = o;
 
-        }
+         } 
 
-        public int codigo_Beneficiario
+        public int Codigo
         {
             get
             {
@@ -116,7 +116,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string nombre_Beneficiario
+        public string Nombre
         {
             get
             {
@@ -130,7 +130,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string apellidos_Beneficiario
+        public string Apellidos
         {
             get
             {
@@ -144,7 +144,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string estado_Beneficiario
+        public string Estado
         {
             get
             {
@@ -153,12 +153,12 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Nombre = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set Estado = '" + value + "' where Codigo=" + codigo + ";");
                 estado = value;
             }
         }
 
-        public string beca_Beneficiario
+        public string Beca
         {
             get
             {
@@ -172,7 +172,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string sexo_Beneficiario
+        public string Sexo
         {
             get
             {
@@ -186,21 +186,21 @@ namespace ProyectoACOES
             }
         }
 
-        public Agente agente_Beneficiario
-        {
-            get
-            {
-                return agente;
-            }
-            set
-            {
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Agente = '" + value.Codigo + "' where Codigo=" + codigo + ";");
-                agente = value;
-            }
-        }
+        public Usuario Agente
+          {
+              get
+              {
+                  return agente;
+              }
+              set
+              {
+                  SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                  miBD.Update("update Ninio set Agente = '" + value.nif_usuario + "' where Codigo=" + codigo + ";");
+                  agente = value;
+              }
+          }
 
-        public DateTime fechaNacimiento_Beneficiario
+        public DateTime FechaNacimiento
         {
             get
             {
@@ -214,7 +214,7 @@ namespace ProyectoACOES
             }
         }
 
-        public DateTime fechaEntradaAcoes_Beneficiario
+        public DateTime FechaEntradaAcoes
         {
             get
             {
@@ -228,7 +228,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string proyecto_Beneficiario
+        public string Proyecto
         {
             get
             {
@@ -247,7 +247,7 @@ namespace ProyectoACOES
             }
         }
 
-        public DateTime fechaEntradaProyecto_Beneficiario
+        public DateTime FechaEntradaProyecto
         {
             get
             {
@@ -261,7 +261,7 @@ namespace ProyectoACOES
             }
         }
 
-        public DateTime fechaSalidaProyecto_Beneficiario
+        public DateTime FechaSalidaProyecto
         {
             get
             {
@@ -275,7 +275,7 @@ namespace ProyectoACOES
             }
         }
 
-        public DateTime fechaAlta_Beneficiario
+        public DateTime FechaAlta
         {
             get
             {
@@ -289,7 +289,7 @@ namespace ProyectoACOES
             }
         }
 
-        public DateTime fechaSalidaAcoes_Beneficiario
+        public DateTime FechaSalidaAcoes
         {
             get
             {
@@ -303,7 +303,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string curso_Beneficiario
+        public string Curso
         {
             get
             {
@@ -317,7 +317,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string comunidadProc_Beneficiario
+        public string ComunidadProc
         {
             get
             {
@@ -331,7 +331,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string comunidadAct_Beneficiario
+        public string ComunidadAct
         {
             get
             {
@@ -345,7 +345,7 @@ namespace ProyectoACOES
             }
         }
 
-        public string observaciones_Beneficiario
+        public string Observaciones
         {
             get
             {
@@ -359,38 +359,11 @@ namespace ProyectoACOES
             }
         }
 
-        public void BorrarPaciente()
+        public void BorrarNinio()
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Delete("delete Ninio where Codigo =" + codigo + ";");
-
-            codigo = -1;
-            nombre = null;
-            apellidos = null;
-            estado = null;
-            beca = null;
-            sexo = null;
-            agente = null;
-            proyecto = null;
-            curso = null;
-            comunidadProc = null;
-            comunidadAct = null;
-            observaciones = null;
+            miBD.Update("update Ninio set eliminado = 1 where codigo =" + codigo + ";");
         }
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
     }
 }

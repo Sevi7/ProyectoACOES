@@ -7,7 +7,7 @@ using BDLibrary;
 
 namespace ProyectoACOES
 {
-    class Usuario
+    public class Usuario
     {
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;

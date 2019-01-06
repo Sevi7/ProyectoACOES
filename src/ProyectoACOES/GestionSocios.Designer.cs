@@ -72,8 +72,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label21 = new System.Windows.Forms.Label();
-            this.tNumeroCuenta = new System.Windows.Forms.TextBox();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,13 +94,12 @@
             this.numCuentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.socioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aCOESDataSet = new ProyectoACOES.ACOESDataSet();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tNumeroCuenta = new System.Windows.Forms.TextBox();
             this.socioTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.SocioTableAdapter();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -462,6 +460,7 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codigo,
             this.nombreDataGridViewTextBoxColumn,
             this.apellidosDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn,
@@ -482,27 +481,18 @@
             this.observacionesDataGridViewTextBoxColumn,
             this.numCuentaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.socioBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 83);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(643, 206);
+            this.dataGridView1.Size = new System.Drawing.Size(651, 220);
             this.dataGridView1.TabIndex = 44;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // label21
+            // codigo
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(327, 338);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(95, 13);
-            this.label21.TabIndex = 45;
-            this.label21.Text = "Numero de cuenta";
-            // 
-            // tNumeroCuenta
-            // 
-            this.tNumeroCuenta.Location = new System.Drawing.Point(426, 331);
-            this.tNumeroCuenta.Name = "tNumeroCuenta";
-            this.tNumeroCuenta.Size = new System.Drawing.Size(200, 20);
-            this.tNumeroCuenta.TabIndex = 46;
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "codigo";
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -628,34 +618,31 @@
             this.aCOESDataSet.DataSetName = "ACOESDataSet";
             this.aCOESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(327, 338);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(95, 13);
+            this.label21.TabIndex = 45;
+            this.label21.Text = "Numero de cuenta";
+            // 
+            // tNumeroCuenta
+            // 
+            this.tNumeroCuenta.Location = new System.Drawing.Point(426, 331);
+            this.tNumeroCuenta.Name = "tNumeroCuenta";
+            this.tNumeroCuenta.Size = new System.Drawing.Size(200, 20);
+            this.tNumeroCuenta.TabIndex = 46;
+            // 
             // socioTableAdapter
             // 
             this.socioTableAdapter.ClearBeforeFill = true;
-            // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(667, 25);
-            this.fillByToolStrip.TabIndex = 47;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // GestionSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(667, 680);
-            this.Controls.Add(this.fillByToolStrip);
+            this.ClientSize = new System.Drawing.Size(675, 680);
             this.Controls.Add(this.tNumeroCuenta);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.dataGridView1);
@@ -707,8 +694,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,7 +747,9 @@
         private ACOESDataSet aCOESDataSet;
         private System.Windows.Forms.BindingSource socioBindingSource;
         private ACOESDataSetTableAdapters.SocioTableAdapter socioTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox tNumeroCuenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn estadoDataGridViewTextBoxColumn;
@@ -782,9 +769,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacionesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numCuentaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox tNumeroCuenta;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }

@@ -44,7 +44,7 @@ namespace ProyectoACOES
                 Ninio b = new Ninio(Int32.Parse(tBeneficiario.Text));
                 ninios.Add(b);
                 tBeneficiario.Text = "";
-                listaBeneficiarios.Items.Add(b.codigo_Beneficiario);
+                listaBeneficiarios.Items.Add(b.Codigo);
                 //listaBeneficiarios.Items.Add(b_codigo_beneficiario);
             }
             catch (Exception ex)

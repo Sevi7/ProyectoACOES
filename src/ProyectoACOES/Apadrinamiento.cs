@@ -21,7 +21,7 @@ namespace ProyectoACOES
         public Apadrinamiento(Socio s, Ninio n, Usuario a, int d)
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            bd.Insert("INSERT into Apadrinamiento values (" + s.codigo_socio + "," + n.codigo_Beneficiario + ",'" + a.nif_usuario + "'," + d +", "+0+");");
+            bd.Insert("INSERT into Apadrinamiento values (" + s.codigo_socio + "," + n.Codigo + ",'" + a.nif_usuario + "'," + d +", "+0+");");
             socio = s;
             ninio = n;
             agente = a;
@@ -57,7 +57,7 @@ namespace ProyectoACOES
                 throw new Error("El apadrinamiento corresponde a otro agente, usted no puede intervenir");
             }
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Update("update set eliminado = 1 where socio=" + socio.codigo_socio + " and ninio=" + ninio.codigo_Beneficiario + ";");
+            miBD.Update("update set eliminado = 1 where socio=" + socio.codigo_socio + " and ninio=" + ninio.Codigo + ";");
             eliminado = true;
 
         }

@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ProyectoACOES
 {
     public partial class GestionSocios : Form
     {
         private Socio seleccionado = null;
+
+
         public GestionSocios()
         {
             InitializeComponent();
@@ -25,17 +28,17 @@ namespace ProyectoACOES
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int codigo = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
                 seleccionado = new Socio(codigo);
-                refrescaDatos();
+                RefrescaDatos();
             }
         }
 
-        private void refrescaDatos()
+        private void RefrescaDatos()
         {
             if (seleccionado == null)
             {
@@ -55,21 +58,27 @@ namespace ProyectoACOES
                 tSector.Text = "";
                 tObservaciones.Text = "";
                 tNumeroCuenta.Text = "";
+                tCertificado.Checked = false;
             }
             else
             {
+                int cp = 0, tlf2 = 0;
+                if (tCodigoPostal.Text != "") cp = Convert.ToInt32(tCodigoPostal.Text);
+                if (tTelefonoMovil.Text != "") tlf2 = Convert.ToInt32(tTelefonoMovil.Text);
                 tNombre.Text = seleccionado.Nombre;
                 tApellido.Text = seleccionado.Apellidos;
                 tEstado.Text = seleccionado.Estado;
                 tNIF.Text = seleccionado.Nif;
                 tDireccion.Text = seleccionado.Direccion;
                 tPoblacion.Text = seleccionado.Poblacion;
-                tCodigoPostal.Text = Convert.ToString(seleccionado.CodigoPostal);
+                if (seleccionado.CodigoPostal != 0) tCodigoPostal.Text = Convert.ToString(seleccionado.CodigoPostal);
+                else tCodigoPostal.Text = "";
                 tProvincia.Text = seleccionado.Provincia;
                 tTelefonoFijo.Text = Convert.ToString(seleccionado.Tlf);
-                tTelefonoMovil.Text = Convert.ToString(seleccionado.TlfSecundario);
+                if (seleccionado.TlfSecundario != 0) tTelefonoMovil.Text = Convert.ToString(seleccionado.TlfSecundario);
+                else tTelefonoMovil.Text = "";
                 tCorreoElectronico.Text = Convert.ToString(seleccionado.Email);
-                tAgente.Text = seleccionado.Agente.Nombre +" "+ seleccionado.Agente.Apellidos;
+                tAgente.Text = seleccionado.Agente.nif_usuario;
                 tRelacion.Text = seleccionado.Relacion;
                 tSector.Text = seleccionado.Sector;
                 tFechaAlta.Value = seleccionado.FechaAlta;
@@ -82,22 +91,24 @@ namespace ProyectoACOES
 
         private void button5_Click(object sender, EventArgs e)
         {
-            String nombreA, apellidosA;
-            String[] tokens = tAgente.Text.Split(' ');
             try
             {
-                nombreA = tokens[0];
-                apellidosA = tokens[1];
+                int cp = 0, tlf2 = 0;
+                if (tCodigoPostal.Text != "") cp = Convert.ToInt32(tCodigoPostal.Text);
+                if (tTelefonoMovil.Text != "") tlf2 = Convert.ToInt32(tTelefonoMovil.Text);
                 seleccionado = new Socio(tNombre.Text, tApellido.Text, tEstado.Text, tNIF.Text, tDireccion.Text, tPoblacion.Text,
-                    Convert.ToInt32(tCodigoPostal.Text), tProvincia.Text, Convert.ToInt32(tTelefonoFijo.Text), Convert.ToInt32(tTelefonoMovil.Text),
-                    tCorreoElectronico.Text, new Agente(nombreA, apellidosA), tRelacion.Text, tCertificado.Checked, tSector.Text, tFechaAlta.Value,
+                    cp, tProvincia.Text, Convert.ToInt32(tTelefonoFijo.Text), tlf2,
+                    tCorreoElectronico.Text, new Usuario(tAgente.Text), tRelacion.Text, tCertificado.Checked, tSector.Text, tFechaAlta.Value,
                     tFechaBaja.Value, tObservaciones.Text, tNumeroCuenta.Text);
 
-            }catch(Exception ex)
+                this.socioTableAdapter.Fill(this.aCOESDataSet.Socio);
+                RefrescaDatos();
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-            
+
 
         }
 
@@ -111,16 +122,12 @@ namespace ProyectoACOES
                 seleccionado.Nif = tNIF.Text;
                 seleccionado.Direccion = tDireccion.Text;
                 seleccionado.Poblacion = tPoblacion.Text;
-                if (null != tCodigoPostal.Text) seleccionado.CodigoPostal = Convert.ToInt32(tCodigoPostal.Text);
+                if ("" != tCodigoPostal.Text) seleccionado.CodigoPostal = Convert.ToInt32(tCodigoPostal.Text);
                 seleccionado.Provincia = tProvincia.Text;
-                if (null != tTelefonoFijo.Text) seleccionado.Tlf = Convert.ToInt32(tTelefonoFijo.Text);
-                if (null != tTelefonoMovil.Text) seleccionado.TlfSecundario = Convert.ToInt32(tTelefonoMovil.Text);
+                if ("" != tTelefonoFijo.Text) seleccionado.Tlf = Convert.ToInt32(tTelefonoFijo.Text);
+                if ("" != tTelefonoMovil.Text) seleccionado.TlfSecundario = Convert.ToInt32(tTelefonoMovil.Text);
                 seleccionado.Email = tCorreoElectronico.Text;
-                if (null != tAgente.Text)
-                {
-                    String[] a = tAgente.Text.Split(' ');
-                    seleccionado.Agente = new Agente(a[0], a[1]);
-                }
+                if (seleccionado.Agente.nif_usuario != tAgente.Text) seleccionado.Agente = new Usuario(tAgente.Text);
                 seleccionado.Relacion = tRelacion.Text;
                 seleccionado.Certificado = tCertificado.Checked;
                 seleccionado.Sector = tSector.Text;
@@ -130,9 +137,9 @@ namespace ProyectoACOES
                 seleccionado.NumCuenta = tNumeroCuenta.Text;
 
                 this.socioTableAdapter.Fill(this.aCOESDataSet.Socio);
-                refrescaDatos();
+                RefrescaDatos();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
@@ -145,7 +152,7 @@ namespace ProyectoACOES
                 seleccionado.BorrarSocio();
                 seleccionado = null;
                 this.socioTableAdapter.Fill(this.aCOESDataSet.Socio);
-                refrescaDatos();
+                RefrescaDatos();
             }
             catch (Exception ex)
             {
@@ -153,23 +160,13 @@ namespace ProyectoACOES
             }
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.socioTableAdapter.FillBy(this.aCOESDataSet.Socio);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
             seleccionado = null;
-            refrescaDatos();
+            RefrescaDatos();
         }
+
+
     }
 }

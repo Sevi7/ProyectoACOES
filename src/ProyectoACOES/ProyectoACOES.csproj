@@ -44,14 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACOESDataSet.cs">
-      <DependentUpon>ACOESDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="ACOESDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ACOESDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Apadrinamiento.cs" />
     <Compile Include="AñadirNota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +59,12 @@
     <Compile Include="BDLibrary.cs" />
     <Compile Include="Agente.cs" />
     <Compile Include="Calificacion.cs" />
+    <Compile Include="GestionarApadrinamientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionarApadrinamientos.Designer.cs">
+      <DependentUpon>GestionarApadrinamientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ninio.cs" />
     <Compile Include="DataSet1.Designer.cs" />
     <Compile Include="GestionSocios.cs">
@@ -114,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrearNuevoTipoProyecto.resx">
       <DependentUpon>CrearNuevoTipoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionarApadrinamientos.resx">
+      <DependentUpon>GestionarApadrinamientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionSocios.resx">
       <DependentUpon>GestionSocios.cs</DependentUpon>

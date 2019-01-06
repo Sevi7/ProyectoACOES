@@ -30,14 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.aCOESDataSet = new ProyectoACOES.ACOESDataSet();
             this.apadrinamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aCOESDataSet = new ProyectoACOES.ACOESDataSet();
             this.apadrinamientoTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.ApadrinamientoTableAdapter();
-            this.socioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ninioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.agenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dineroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eliminadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tLocalidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tCoordinador = new System.Windows.Forms.TextBox();
@@ -50,69 +45,32 @@
             this.bAñadirSocio = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apadrinamientoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.socioDataGridViewTextBoxColumn,
-            this.ninioDataGridViewTextBoxColumn,
-            this.agenteDataGridViewTextBoxColumn,
-            this.dineroDataGridViewTextBoxColumn,
-            this.eliminadoDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.apadrinamientoBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(69, 33);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 104);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // aCOESDataSet
-            // 
-            this.aCOESDataSet.DataSetName = "ACOESDataSet";
-            this.aCOESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // apadrinamientoBindingSource
             // 
             this.apadrinamientoBindingSource.DataMember = "Apadrinamiento";
             this.apadrinamientoBindingSource.DataSource = this.aCOESDataSet;
             // 
+            // aCOESDataSet
+            // 
+            this.aCOESDataSet.DataSetName = "ACOESDataSet";
+            this.aCOESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // apadrinamientoTableAdapter
             // 
             this.apadrinamientoTableAdapter.ClearBeforeFill = true;
-            // 
-            // socioDataGridViewTextBoxColumn
-            // 
-            this.socioDataGridViewTextBoxColumn.DataPropertyName = "socio";
-            this.socioDataGridViewTextBoxColumn.HeaderText = "socio";
-            this.socioDataGridViewTextBoxColumn.Name = "socioDataGridViewTextBoxColumn";
-            // 
-            // ninioDataGridViewTextBoxColumn
-            // 
-            this.ninioDataGridViewTextBoxColumn.DataPropertyName = "ninio";
-            this.ninioDataGridViewTextBoxColumn.HeaderText = "ninio";
-            this.ninioDataGridViewTextBoxColumn.Name = "ninioDataGridViewTextBoxColumn";
-            // 
-            // agenteDataGridViewTextBoxColumn
-            // 
-            this.agenteDataGridViewTextBoxColumn.DataPropertyName = "agente";
-            this.agenteDataGridViewTextBoxColumn.HeaderText = "agente";
-            this.agenteDataGridViewTextBoxColumn.Name = "agenteDataGridViewTextBoxColumn";
-            // 
-            // dineroDataGridViewTextBoxColumn
-            // 
-            this.dineroDataGridViewTextBoxColumn.DataPropertyName = "dinero";
-            this.dineroDataGridViewTextBoxColumn.HeaderText = "dinero";
-            this.dineroDataGridViewTextBoxColumn.Name = "dineroDataGridViewTextBoxColumn";
-            // 
-            // eliminadoDataGridViewCheckBoxColumn
-            // 
-            this.eliminadoDataGridViewCheckBoxColumn.DataPropertyName = "eliminado";
-            this.eliminadoDataGridViewCheckBoxColumn.HeaderText = "eliminado";
-            this.eliminadoDataGridViewCheckBoxColumn.Name = "eliminadoDataGridViewCheckBoxColumn";
             // 
             // tLocalidad
             // 
@@ -227,8 +185,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.GestionarApadrinamientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apadrinamientoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,11 +198,6 @@
         private ACOESDataSet aCOESDataSet;
         private System.Windows.Forms.BindingSource apadrinamientoBindingSource;
         private ACOESDataSetTableAdapters.ApadrinamientoTableAdapter apadrinamientoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn socioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ninioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn agenteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dineroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn eliminadoDataGridViewCheckBoxColumn;
         private System.Windows.Forms.TextBox tLocalidad;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tCoordinador;

@@ -157,7 +157,7 @@ namespace ProyectoACOES
         {
             try
             {
-                this.socioTableAdapter.FillBy(this.aCOESDataSet.Socio);
+                //this.socioTableAdapter.FillBy(this.aCOESDataSet.Socio);
             }
             catch (System.Exception ex)
             {

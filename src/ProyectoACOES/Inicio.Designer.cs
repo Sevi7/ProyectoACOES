@@ -32,6 +32,7 @@
             this.crearProyecto = new System.Windows.Forms.Button();
             this.bNota = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.bApadrinamientos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // crearTipoProyecto
@@ -76,11 +77,22 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // bApadrinamientos
+            // 
+            this.bApadrinamientos.Location = new System.Drawing.Point(134, 183);
+            this.bApadrinamientos.Name = "bApadrinamientos";
+            this.bApadrinamientos.Size = new System.Drawing.Size(154, 23);
+            this.bApadrinamientos.TabIndex = 8;
+            this.bApadrinamientos.Text = "Gestion Apadrinamientos";
+            this.bApadrinamientos.UseVisualStyleBackColor = true;
+            this.bApadrinamientos.Click += new System.EventHandler(this.bApadrinamientos_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 235);
+            this.Controls.Add(this.bApadrinamientos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bNota);
             this.Controls.Add(this.crearProyecto);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Button crearProyecto;
         private System.Windows.Forms.Button bNota;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button bApadrinamientos;
     }
 }

@@ -24,10 +24,16 @@ namespace ProyectoACOES
         private void GestionarApadrinamientos_Load(object sender, EventArgs e)
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            string consultaSelect = "SELECT concat(s.nombre , concat (' ',  s.apellidos)) \"Socio\", concat(n.nombre , concat (' ',  n.apellidos)) \"Niño\", concat(a.nombre , concat (' ',  a.apellidos)) \"Agente\", ap.dinero \"Dinero\" FROM Apadrinamiento ap, Socio s, Ninio n, Usuario a where ap.socio=s.codigo and ap.ninio=n.codigo and ap.agente=a.nif and ap.eliminado=0;";
-            DataTable myTable = new DataTable();
+            string consultaSelect = "SELECT concat(s.nombre , concat (' ',  s.apellidos)) \"Socio\", concat(n.nombre , concat (' ',  n.apellidos)) \"Niño\", a.nif \"Agente\", ap.dinero \"Dinero\" FROM Apadrinamiento ap, Socio s, Ninio n, Usuario a where ap.socio=s.codigo and ap.ninio=n.codigo and ap.agente=a.nif and ap.eliminado=0;";
+            DataTable tablaN = new DataTable();
             SqlDataAdapter adaptador = new SqlDataAdapter(consultaSelect, bd.cadenaConexionSQLNCLI);
-            adaptador.Fill(myTable);
+            adaptador.Fill(tablaN);
+            dataGridView1.DataSource = tablaN;
+           
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 

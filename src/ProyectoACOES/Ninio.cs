@@ -12,8 +12,6 @@ namespace ProyectoACOES
     {
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
-
-        private readonly int codigo;
         private string nombre;
         private string apellidos;
         private string estado;
@@ -37,7 +35,7 @@ namespace ProyectoACOES
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             object[] tupla = miBD.Select("select * from Ninio where Codigo = " + c + ";")[0];
 
-            codigo = c;
+            Codigo = c;
             nombre = (string)tupla[1];
             if (tupla[2] != DBNull.Value) apellidos = (string)tupla[2];
             if (tupla[3] != DBNull.Value) estado = (string)tupla[3];
@@ -87,7 +85,7 @@ namespace ProyectoACOES
                 fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "',0);");
              }
 
-             codigo = Convert.ToInt32(miBD.Select("select max(Codigo) from Ninio;")[0][0]);
+             Codigo = Convert.ToInt32(miBD.Select("select max(Codigo) from Ninio;")[0][0]);
              nombre = n;
              apellidos = ap;
              estado = e;
@@ -106,15 +104,9 @@ namespace ProyectoACOES
              comunidadAct = cA;
              observaciones = o;
 
-         } 
+         }
 
-        public int Codigo
-        {
-            get
-            {
-                return codigo;
-            }
-        }
+        public int Codigo { get; }
 
         public string Nombre
         {
@@ -125,7 +117,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Nombre = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set Nombre = '" + value + "' where Codigo=" + Codigo + ";");
                 nombre = value;
             }
         }
@@ -139,7 +131,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Apellidos = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set Apellidos = '" + value + "' where Codigo=" + Codigo + ";");
                 apellidos = value;
             }
         }
@@ -153,7 +145,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Estado = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set Estado = '" + value + "' where Codigo=" + Codigo + ";");
                 estado = value;
             }
         }
@@ -167,7 +159,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Beca = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set Beca = '" + value + "' where Codigo=" + Codigo + ";");
                 beca = value;
             }
         }
@@ -181,7 +173,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Sexo = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set Sexo = '" + value + "' where Codigo=" + Codigo + ";");
                 sexo = value;
             }
         }
@@ -195,7 +187,7 @@ namespace ProyectoACOES
               set
               {
                   SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                  miBD.Update("update Ninio set Agente = '" + value.nif_usuario + "' where Codigo=" + codigo + ";");
+                  miBD.Update("update Ninio set Agente = '" + value.nif_usuario + "' where Codigo=" + Codigo + ";");
                   agente = value;
               }
           }
@@ -209,7 +201,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set FechaNacimiento = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set FechaNacimiento = '" + value + "' where Codigo=" + Codigo + ";");
                 fechaNacimiento = value;
             }
         }
@@ -223,7 +215,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set FechaEntradaAcoes = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set FechaEntradaAcoes = '" + value + "' where Codigo=" + Codigo + ";");
                 fechaEntradaAcoes = value;
             }
         }
@@ -240,7 +232,7 @@ namespace ProyectoACOES
                 if (value != "")
                 {
                     SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                    miBD.Update("update Ninio set Proyecto = " + Int32.Parse(value) + " where Codigo=" + codigo + ";");
+                    miBD.Update("update Ninio set Proyecto = " + Int32.Parse(value) + " where Codigo=" + Codigo + ";");
                     proyecto = value;
                 }
 
@@ -256,7 +248,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set FechaEntradaProyecto = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set FechaEntradaProyecto = '" + value + "' where Codigo=" + Codigo + ";");
                 fechaEntradaProyecto = value;
             }
         }
@@ -270,7 +262,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set FechaSalidaProyecto = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set FechaSalidaProyecto = '" + value + "' where Codigo=" + Codigo + ";");
                 fechaSalidaProyecto = value;
             }
         }
@@ -284,7 +276,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set FechaAlta = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set FechaAlta = '" + value + "' where Codigo=" + Codigo + ";");
                 fechaAlta = value;
             }
         }
@@ -298,7 +290,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set FechaSalidaAcoes = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set FechaSalidaAcoes = '" + value + "' where Codigo=" + Codigo + ";");
                 fechaSalidaAcoes = value;
             }
         }
@@ -312,7 +304,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Curso ='" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set Curso ='" + value + "' where Codigo=" + Codigo + ";");
                 curso = value;
             }
         }
@@ -326,7 +318,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set ComunidadProc = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set ComunidadProc = '" + value + "' where Codigo=" + Codigo + ";");
                 comunidadProc = value;
             }
         }
@@ -340,7 +332,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set ComunidadAct = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set ComunidadAct = '" + value + "' where Codigo=" + Codigo + ";");
                 comunidadAct = value;
             }
         }
@@ -354,7 +346,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Ninio set Observacioes = '" + value + "' where Codigo=" + codigo + ";");
+                miBD.Update("update Ninio set Observacioes = '" + value + "' where Codigo=" + Codigo + ";");
                 observaciones = value;
             }
         }
@@ -362,7 +354,7 @@ namespace ProyectoACOES
         public void BorrarNinio()
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Update("update Ninio set eliminado = 1 where codigo =" + codigo + ";");
+            miBD.Update("update Ninio set eliminado = 1 where codigo =" + Codigo + ";");
         }
 
     }

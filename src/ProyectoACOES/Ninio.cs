@@ -12,6 +12,7 @@ namespace ProyectoACOES
     {
         private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
         private static string BD_NAME = Properties.Settings.Default.BD_NAME;
+        private int codigo;
         private string nombre;
         private string apellidos;
         private string estado;
@@ -35,7 +36,7 @@ namespace ProyectoACOES
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             object[] tupla = miBD.Select("select * from Ninio where Codigo = " + c + ";")[0];
 
-            Codigo = c;
+            codigo = c;
             nombre = (string)tupla[1];
             if (tupla[2] != DBNull.Value) apellidos = (string)tupla[2];
             if (tupla[3] != DBNull.Value) estado = (string)tupla[3];
@@ -85,7 +86,7 @@ namespace ProyectoACOES
                 fSA.ToString("yyyy-MM-dd") + "','" + co + "','" + cP + "','" + cA + "','" + o + "',0);");
              }
 
-             Codigo = Convert.ToInt32(miBD.Select("select max(Codigo) from Ninio;")[0][0]);
+             codigo = Convert.ToInt32(miBD.Select("select max(Codigo) from Ninio;")[0][0]);
              nombre = n;
              apellidos = ap;
              estado = e;
@@ -106,7 +107,14 @@ namespace ProyectoACOES
 
          }
 
-        public int Codigo { get; }
+        public int Codigo 
+        {
+            get
+            {
+                return codigo;
+            }
+
+        }
 
         public string Nombre
         {

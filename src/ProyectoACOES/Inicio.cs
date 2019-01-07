@@ -12,8 +12,14 @@ namespace ProyectoACOES
 {
     public partial class Inicio : Form
     {
+        private Usuario usuario;
         public Inicio()
         {
+            InitializeComponent();
+        }
+        public Inicio(Usuario u)
+        {
+            usuario = u;
             InitializeComponent();
         }
 
@@ -44,7 +50,7 @@ namespace ProyectoACOES
 
         private void bApadrinamientos_Click(object sender, EventArgs e)
         {
-            GestionarApadrinamientos ga = new GestionarApadrinamientos();
+            GestionarApadrinamientos ga = new GestionarApadrinamientos(usuario);
             ga.ShowDialog();
         }
 

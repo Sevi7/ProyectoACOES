@@ -21,7 +21,7 @@ namespace ProyectoACOES
         {
             try
             {          
-            if(textBox4.Text == "CG001" || textBox4.Text == "R001" || textBox4.Text == "C001" || textBox4.Text == "A001")
+            if(textBox4.Text == "CG001" || textBox4.Text == "R001" || textBox4.Text == "C001" || textBox4.Text == "A001" || textBox4.Text == "administrador")
             {
                 Usuario user = new Usuario(textBox1.Text, textBox2.Text, textBox3.Text, textBox5.Text, textBox4.Text);
                 refresh();

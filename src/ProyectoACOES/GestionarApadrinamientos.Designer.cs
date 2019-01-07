@@ -33,17 +33,17 @@
             this.apadrinamientoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aCOESDataSet = new ProyectoACOES.ACOESDataSet();
             this.apadrinamientoTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.ApadrinamientoTableAdapter();
-            this.tLocalidad = new System.Windows.Forms.TextBox();
+            this.tDinero = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tCoordinador = new System.Windows.Forms.TextBox();
-            this.tTipoProyecto = new System.Windows.Forms.TextBox();
-            this.tNombre = new System.Windows.Forms.TextBox();
+            this.tAgente = new System.Windows.Forms.TextBox();
+            this.tNiño = new System.Windows.Forms.TextBox();
+            this.tSocio = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.titulo = new System.Windows.Forms.Label();
-            this.bAñadirSocio = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bApadrinar = new System.Windows.Forms.Button();
+            this.bDesapadrinar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apadrinamientoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -72,12 +72,12 @@
             // 
             this.apadrinamientoTableAdapter.ClearBeforeFill = true;
             // 
-            // tLocalidad
+            // tDinero
             // 
-            this.tLocalidad.Location = new System.Drawing.Point(353, 400);
-            this.tLocalidad.Name = "tLocalidad";
-            this.tLocalidad.Size = new System.Drawing.Size(119, 20);
-            this.tLocalidad.TabIndex = 40;
+            this.tDinero.Location = new System.Drawing.Point(353, 400);
+            this.tDinero.Name = "tDinero";
+            this.tDinero.Size = new System.Drawing.Size(119, 20);
+            this.tDinero.TabIndex = 40;
             // 
             // label7
             // 
@@ -88,26 +88,26 @@
             this.label7.TabIndex = 39;
             this.label7.Text = "Dinero";
             // 
-            // tCoordinador
+            // tAgente
             // 
-            this.tCoordinador.Location = new System.Drawing.Point(353, 357);
-            this.tCoordinador.Name = "tCoordinador";
-            this.tCoordinador.Size = new System.Drawing.Size(315, 20);
-            this.tCoordinador.TabIndex = 37;
+            this.tAgente.Location = new System.Drawing.Point(353, 357);
+            this.tAgente.Name = "tAgente";
+            this.tAgente.Size = new System.Drawing.Size(315, 20);
+            this.tAgente.TabIndex = 37;
             // 
-            // tTipoProyecto
+            // tNiño
             // 
-            this.tTipoProyecto.Location = new System.Drawing.Point(353, 315);
-            this.tTipoProyecto.Name = "tTipoProyecto";
-            this.tTipoProyecto.Size = new System.Drawing.Size(315, 20);
-            this.tTipoProyecto.TabIndex = 36;
+            this.tNiño.Location = new System.Drawing.Point(353, 315);
+            this.tNiño.Name = "tNiño";
+            this.tNiño.Size = new System.Drawing.Size(315, 20);
+            this.tNiño.TabIndex = 36;
             // 
-            // tNombre
+            // tSocio
             // 
-            this.tNombre.Location = new System.Drawing.Point(353, 274);
-            this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(315, 20);
-            this.tNombre.TabIndex = 35;
+            this.tSocio.Location = new System.Drawing.Point(353, 274);
+            this.tSocio.Name = "tSocio";
+            this.tSocio.Size = new System.Drawing.Size(315, 20);
+            this.tSocio.TabIndex = 35;
             // 
             // label3
             // 
@@ -146,36 +146,38 @@
             this.titulo.TabIndex = 30;
             this.titulo.Text = "Gestionar Apadrinamientos";
             // 
-            // bAñadirSocio
+            // bApadrinar
             // 
-            this.bAñadirSocio.Location = new System.Drawing.Point(181, 548);
-            this.bAñadirSocio.Name = "bAñadirSocio";
-            this.bAñadirSocio.Size = new System.Drawing.Size(75, 23);
-            this.bAñadirSocio.TabIndex = 41;
-            this.bAñadirSocio.Text = "Apadrinar";
-            this.bAñadirSocio.UseVisualStyleBackColor = true;
+            this.bApadrinar.Location = new System.Drawing.Point(181, 548);
+            this.bApadrinar.Name = "bApadrinar";
+            this.bApadrinar.Size = new System.Drawing.Size(75, 23);
+            this.bApadrinar.TabIndex = 41;
+            this.bApadrinar.Text = "Apadrinar";
+            this.bApadrinar.UseVisualStyleBackColor = true;
+            this.bApadrinar.Click += new System.EventHandler(this.bApadrinar_Click);
             // 
-            // button1
+            // bDesapadrinar
             // 
-            this.button1.Location = new System.Drawing.Point(353, 548);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
-            this.button1.TabIndex = 42;
-            this.button1.Text = "Desapadrinar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.bDesapadrinar.Location = new System.Drawing.Point(353, 548);
+            this.bDesapadrinar.Name = "bDesapadrinar";
+            this.bDesapadrinar.Size = new System.Drawing.Size(98, 23);
+            this.bDesapadrinar.TabIndex = 42;
+            this.bDesapadrinar.Text = "Desapadrinar";
+            this.bDesapadrinar.UseVisualStyleBackColor = true;
+            this.bDesapadrinar.Click += new System.EventHandler(this.bDesapadrinar_Click);
             // 
             // GestionarApadrinamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 664);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.bAñadirSocio);
-            this.Controls.Add(this.tLocalidad);
+            this.Controls.Add(this.bDesapadrinar);
+            this.Controls.Add(this.bApadrinar);
+            this.Controls.Add(this.tDinero);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.tCoordinador);
-            this.Controls.Add(this.tTipoProyecto);
-            this.Controls.Add(this.tNombre);
+            this.Controls.Add(this.tAgente);
+            this.Controls.Add(this.tNiño);
+            this.Controls.Add(this.tSocio);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -198,16 +200,16 @@
         private ACOESDataSet aCOESDataSet;
         private System.Windows.Forms.BindingSource apadrinamientoBindingSource;
         private ACOESDataSetTableAdapters.ApadrinamientoTableAdapter apadrinamientoTableAdapter;
-        private System.Windows.Forms.TextBox tLocalidad;
+        private System.Windows.Forms.TextBox tDinero;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tCoordinador;
-        private System.Windows.Forms.TextBox tTipoProyecto;
-        private System.Windows.Forms.TextBox tNombre;
+        private System.Windows.Forms.TextBox tAgente;
+        private System.Windows.Forms.TextBox tNiño;
+        private System.Windows.Forms.TextBox tSocio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label titulo;
-        private System.Windows.Forms.Button bAñadirSocio;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bApadrinar;
+        private System.Windows.Forms.Button bDesapadrinar;
     }
 }

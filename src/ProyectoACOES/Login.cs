@@ -27,19 +27,19 @@ namespace ProyectoACOES
                 Usuario user1 = new Usuario(usu.Text, contra.Text);
                 if (user1.rol_usuario == "C001")
                 {
-                    formularioCoordiandor();
+                    formulario(user1);
                 }else if(user1.rol_usuario == "CG001")
                 {
-                    formularioCoordiandor();
+                    formulario(user1);
                 }else if(user1.rol_usuario == "R001")
                 {
 
                 }else if(user1.rol_usuario == "A001")
                 {
-                    formularioCoordiandor();
+                    formulario(user1);
                 }else if(user1.rol_usuario == "administrador")
                 {
-                    formularioCoordiandor();
+                    formulario(user1);
                 }
 
             }
@@ -56,6 +56,12 @@ namespace ProyectoACOES
         {
             this.Visible=false;
             Inicio form1 = new Inicio();
+            form1.ShowDialog();
+        }
+        public void formulario(Usuario u)
+        {
+            this.Visible = false;
+            Inicio form1 = new Inicio(u);
             form1.ShowDialog();
         }
 

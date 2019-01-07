@@ -167,6 +167,11 @@ namespace ProyectoACOES
             RefrescaDatos();
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Socios socios = new Socios();
+            socios.ShowDialog();
+        }
     }
 }

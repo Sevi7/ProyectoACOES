@@ -140,5 +140,12 @@ namespace ProyectoACOES
             seleccionado = null;
             RefrescaDatos();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Inicio form1 = new Inicio();
+            form1.ShowDialog();
+        }
     }
 }

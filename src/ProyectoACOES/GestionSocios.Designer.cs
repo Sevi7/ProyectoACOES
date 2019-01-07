@@ -97,6 +97,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.tNumeroCuenta = new System.Windows.Forms.TextBox();
             this.socioTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.SocioTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.socioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -638,11 +639,22 @@
             // 
             this.socioTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 640);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(74, 20);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // GestionSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 680);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tNumeroCuenta);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.dataGridView1);
@@ -769,5 +781,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaBajaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacionesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numCuentaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

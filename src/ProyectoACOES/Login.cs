@@ -28,15 +28,14 @@ namespace ProyectoACOES
                 if (user1.rol_usuario == "C001")
                 {
                     formulario(user1);
-                }else if(user1.rol_usuario == "CG001")
+                } else if (user1.rol_usuario == "CG001")
                 {
                     formulario(user1);
-                }else if(user1.rol_usuario == "R001")
+                } else if (user1.rol_usuario == "R001")
                 {
 
-                }else if(user1.rol_usuario == "A001")
-                {
-                    formulario(user1);
+                } else if (user1.rol_usuario == "A001") { 
+                    formularioAgente(user1);   
                 }else if(user1.rol_usuario == "administrador")
                 {
                     formulario(user1);
@@ -47,6 +46,14 @@ namespace ProyectoACOES
 
              
         }
+
+        private void formularioAgente(Usuario user1)
+        {
+            this.Visible = false;
+            Socios form1 = new Socios();
+            form1.ShowDialog();
+        }
+
         public void refresh()
         {
             usu.Text = "";

@@ -42,12 +42,6 @@ namespace ProyectoACOES
             nota.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            GestionSocios socios = new GestionSocios();
-            socios.ShowDialog();
-        }
-
         private void bApadrinamientos_Click(object sender, EventArgs e)
         {
             GestionarApadrinamientos ga = new GestionarApadrinamientos(usuario);
@@ -56,6 +50,7 @@ namespace ProyectoACOES
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
             GestionNinio ninios = new GestionNinio();
             ninios.ShowDialog();
         }

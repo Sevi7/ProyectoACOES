@@ -50,14 +50,14 @@ namespace ProyectoACOES
                 
                 foreach(Object[] tupla in bd.Select("SELECT * from Socio"))
                 {
-                    tSocio.AutoCompleteCustomSource.Add(tupla[1].ToString()+" "+tupla[2].ToString());
+                    tSocio.AutoCompleteCustomSource.Add(tupla[1].ToString()+", "+tupla[2].ToString());
                 }
                 tSocio.AutoCompleteMode = AutoCompleteMode.Suggest;
                 tSocio.AutoCompleteSource = AutoCompleteSource.CustomSource;
 
                 foreach (Object[] tupla in bd.Select("SELECT * from Ninio"))
                 {
-                    tNiño.AutoCompleteCustomSource.Add(tupla[1].ToString() + " " + tupla[2].ToString());
+                    tNiño.AutoCompleteCustomSource.Add(tupla[1].ToString() + ", " + tupla[2].ToString());
                 }
                 tNiño.AutoCompleteMode = AutoCompleteMode.Suggest;
                 tNiño.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -80,26 +80,33 @@ namespace ProyectoACOES
             try
             {
                 SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                string snombre=tSocio.Text.Substring(0,tSocio.Text.IndexOf(','));
-                string sapellidos=tSocio.Text.Substring(tSocio.Text.IndexOf(',')+1);
-                List<Object[]> consulta = bd.Select("SELECT * FROM SOCIO where nombre='" + snombre + "' and apellidos='" + sapellidos +"';");
-                if (consulta.Count == 0){
-                    throw new Error ("El socio no se encuentra en el sistema");
+                string snombre = tSocio.Text.Substring(0, tSocio.Text.IndexOf(','));
+                string sapellidos = tSocio.Text.Substring(tSocio.Text.IndexOf(',') + 2);
+                List<Object[]> consulta = bd.Select("SELECT * FROM SOCIO where nombre='" + snombre + "' and apellidos='" + sapellidos + "';");
+                if (consulta.Count == 0)
+                {
+                    throw new Error("El socio no se encuentra en el sistema");
                 }
                 string nnombre = tNiño.Text.Substring(0, tNiño.Text.IndexOf(','));
-                string napellidos = tNiño.Text.Substring(tNiño.Text.IndexOf(',') + 1);
+                string napellidos = tNiño.Text.Substring(tNiño.Text.IndexOf(',') + 2);
                 List<Object[]> consulta2 = bd.Select("SELECT * FROM Ninio where nombre='" + nnombre + "' and apellidos='" + napellidos + "';");
                 if (consulta2.Count == 0)
                 {
                     throw new Error("El niño no se encuentra en el sistema");
                 }
-                if (usuario.rol_usuario.Equals("A001")){
-                    new Apadrinamiento(new Socio(Int32.Parse((string)consulta[0][0])), new Ninio(Int32.Parse((string)consulta2[0][0])), usuario, Int32.Parse(tDinero.Text));
-                }else{
-                    new Apadrinamiento(new Socio(Int32.Parse((string)consulta[0][0])), new Ninio(Int32.Parse((string)consulta2[0][0])), new Usuario(tAgente.Text), Int32.Parse(tDinero.Text));
+                Object[] tupla = consulta[0];
+                Object[] tupla2 = consulta2[0];
+
+                if (usuario.rol_usuario.Equals("A001"))
+                {
+                    new Apadrinamiento(new Socio(Int32.Parse(tupla[0].ToString())), new Ninio(Int32.Parse(tupla2[0].ToString())), usuario, Int32.Parse(tDinero.Text));
+                }
+                else
+                {
+                    new Apadrinamiento(new Socio(Int32.Parse(tupla[0].ToString())), new Ninio(Int32.Parse(tupla2[0].ToString())), new Usuario(tAgente.Text), Int32.Parse(tDinero.Text));
 
                 }
-                
+
                 tSocio.Text = "";
                 tNiño.Text = "";
                 tDinero.Text = "";
@@ -115,8 +122,8 @@ namespace ProyectoACOES
 
         private void bDesapadrinar_Click(object sender, EventArgs e)
         {
-            try
-            {
+           // try
+            //{
                 if (dataGridView1.SelectedRows.Count == 0)
                 {
                     SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
@@ -153,11 +160,11 @@ namespace ProyectoACOES
                     actualizarTabla();
                 }
             
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+          //  }
+            //catch (Exception ex)
+            //{
+              //  MessageBox.Show("Error: " + ex.Message);
+            //}
         }
 
         private void actualizarTabla ()

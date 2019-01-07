@@ -74,7 +74,7 @@
             // 
             // tDinero
             // 
-            this.tDinero.Location = new System.Drawing.Point(353, 354);
+            this.tDinero.Location = new System.Drawing.Point(353, 351);
             this.tDinero.Name = "tDinero";
             this.tDinero.Size = new System.Drawing.Size(98, 20);
             this.tDinero.TabIndex = 40;

@@ -31,7 +31,7 @@ namespace ProyectoACOES
         public Apadrinamiento(Socio s, Ninio n, Usuario u)
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            List<Object[]> consulta = bd.Select("SELECT * FROM Apadrinamiento where socio=" + s + " and ninio=" + n + ";");
+            List<Object[]> consulta = bd.Select("SELECT * FROM Apadrinamiento where socio=" + s.codigo_socio + " and ninio=" + n.Codigo + ";");
             if (consulta.Count == 0)
             {
                 throw new Error("El apadrinamiento no se encuentra en el sistema");
@@ -43,10 +43,10 @@ namespace ProyectoACOES
             if((bool) tupla[4]==true){
                 throw new Error("El apadrinamiento no se encuentra en el sistema");
             }
-            socio = new Socio(Int32.Parse((string)tupla[0]));
-            ninio = new Ninio (Int32.Parse((string)tupla[1]));
-            agente = new Usuario((string)tupla[2]);
-            dinero = Int32.Parse((string)tupla[3]);
+            socio = new Socio(Int32.Parse(tupla[0].ToString()));
+            ninio = new Ninio (Int32.Parse(tupla[1].ToString()));
+            agente = new Usuario(tupla[2].ToString());
+            dinero = Int32.Parse(tupla[3].ToString());
             eliminado= false;
         }
 
@@ -57,7 +57,7 @@ namespace ProyectoACOES
                 throw new Error("El apadrinamiento corresponde a otro agente, usted no puede intervenir");
             }
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Update("update set eliminado = 1 where socio=" + socio.codigo_socio + " and ninio=" + ninio.Codigo + ";");
+            miBD.Update("update Apadrinamiento set eliminado = 1 where socio=" + socio.codigo_socio + " and ninio=" + ninio.Codigo + ";");
             eliminado = true;
 
         }

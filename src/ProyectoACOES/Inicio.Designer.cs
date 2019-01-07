@@ -62,7 +62,7 @@
             this.bNota.Name = "bNota";
             this.bNota.Size = new System.Drawing.Size(127, 23);
             this.bNota.TabIndex = 5;
-            this.bNota.Text = "Añadir nota";
+            this.bNota.Text = "Gestion Calificaciones";
             this.bNota.UseVisualStyleBackColor = true;
             this.bNota.Click += new System.EventHandler(this.bNota_Click);
             // 

@@ -50,7 +50,7 @@ namespace ProyectoACOES
         private void formularioAgente(Usuario user1)
         {
             this.Visible = false;
-            Socios form1 = new Socios();
+            Socios form1 = new Socios(user1);
             form1.ShowDialog();
         }
 

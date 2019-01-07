@@ -27,7 +27,7 @@ namespace ProyectoACOES
         private void button1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            GestionSocios socios = new GestionSocios();
+            GestionSocios socios = new GestionSocios(usuario);
             socios.ShowDialog();
         }
 

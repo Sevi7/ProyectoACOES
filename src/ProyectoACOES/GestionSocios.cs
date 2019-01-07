@@ -14,11 +14,16 @@ namespace ProyectoACOES
     public partial class GestionSocios : Form
     {
         private Socio seleccionado = null;
-
+        private Usuario usuario;
 
         public GestionSocios()
         {
             InitializeComponent();
+        }
+        public GestionSocios(Usuario u)
+        {
+            InitializeComponent();
+            usuario = u;
         }
 
         private void GestionSocios_Load(object sender, EventArgs e)
@@ -170,7 +175,7 @@ namespace ProyectoACOES
         private void button1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Socios socios = new Socios();
+            Socios socios = new Socios(usuario);
             socios.ShowDialog();
         }
     }

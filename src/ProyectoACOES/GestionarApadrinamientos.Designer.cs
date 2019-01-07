@@ -74,15 +74,15 @@
             // 
             // tDinero
             // 
-            this.tDinero.Location = new System.Drawing.Point(353, 400);
+            this.tDinero.Location = new System.Drawing.Point(353, 354);
             this.tDinero.Name = "tDinero";
-            this.tDinero.Size = new System.Drawing.Size(119, 20);
+            this.tDinero.Size = new System.Drawing.Size(98, 20);
             this.tDinero.TabIndex = 40;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 407);
+            this.label7.Location = new System.Drawing.Point(46, 354);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 39;
@@ -90,14 +90,14 @@
             // 
             // tAgente
             // 
-            this.tAgente.Location = new System.Drawing.Point(353, 357);
+            this.tAgente.Location = new System.Drawing.Point(353, 389);
             this.tAgente.Name = "tAgente";
             this.tAgente.Size = new System.Drawing.Size(315, 20);
             this.tAgente.TabIndex = 37;
             // 
             // tNiño
             // 
-            this.tNiño.Location = new System.Drawing.Point(353, 315);
+            this.tNiño.Location = new System.Drawing.Point(353, 316);
             this.tNiño.Name = "tNiño";
             this.tNiño.Size = new System.Drawing.Size(315, 20);
             this.tNiño.TabIndex = 36;
@@ -112,29 +112,29 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 360);
+            this.label3.Location = new System.Drawing.Point(46, 389);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 13);
+            this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 33;
-            this.label3.Text = "Agente (Nombre y Apellidos)";
+            this.label3.Text = "Agente (N.I.F.)";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 322);
+            this.label2.Location = new System.Drawing.Point(46, 316);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 13);
+            this.label2.Size = new System.Drawing.Size(178, 13);
             this.label2.TabIndex = 32;
-            this.label2.Text = "Niño/a (Nombre y Apellidos)";
+            this.label2.Text = "Niño/a (Formato: Nombre, Apellidos)";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(45, 281);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 13);
+            this.label1.Size = new System.Drawing.Size(172, 13);
             this.label1.TabIndex = 31;
-            this.label1.Text = "Socio (Nombre y Apellidos)";
+            this.label1.Text = "Socio (Formato: Nombre, Apellidos)";
             // 
             // titulo
             // 
@@ -148,7 +148,7 @@
             // 
             // bApadrinar
             // 
-            this.bApadrinar.Location = new System.Drawing.Point(181, 548);
+            this.bApadrinar.Location = new System.Drawing.Point(188, 467);
             this.bApadrinar.Name = "bApadrinar";
             this.bApadrinar.Size = new System.Drawing.Size(75, 23);
             this.bApadrinar.TabIndex = 41;
@@ -158,7 +158,7 @@
             // 
             // bDesapadrinar
             // 
-            this.bDesapadrinar.Location = new System.Drawing.Point(353, 548);
+            this.bDesapadrinar.Location = new System.Drawing.Point(353, 467);
             this.bDesapadrinar.Name = "bDesapadrinar";
             this.bDesapadrinar.Size = new System.Drawing.Size(98, 23);
             this.bDesapadrinar.TabIndex = 42;

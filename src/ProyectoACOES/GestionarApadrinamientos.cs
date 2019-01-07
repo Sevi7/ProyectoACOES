@@ -29,7 +29,44 @@ namespace ProyectoACOES
 
         private void GestionarApadrinamientos_Load(object sender, EventArgs e)
         {
-            actualizarTabla();
+            try
+            {
+                actualizarTabla();
+                SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                if (usuario.rol_usuario.Equals("A001"))
+                {
+                    tAgente.Visible = false;
+                    label3.Visible = false;
+                }
+                else
+                {
+                    foreach (Object[] tupla in bd.Select("SELECT * from Usuario where rol='A001';"))
+                    {
+                        tAgente.AutoCompleteCustomSource.Add(tupla[0].ToString());
+                    }
+                    tAgente.AutoCompleteMode = AutoCompleteMode.Suggest;
+                    tAgente.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                }
+                
+                foreach(Object[] tupla in bd.Select("SELECT * from Socio"))
+                {
+                    tSocio.AutoCompleteCustomSource.Add(tupla[1].ToString()+" "+tupla[2].ToString());
+                }
+                tSocio.AutoCompleteMode = AutoCompleteMode.Suggest;
+                tSocio.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+                foreach (Object[] tupla in bd.Select("SELECT * from Ninio"))
+                {
+                    tNiño.AutoCompleteCustomSource.Add(tupla[1].ToString() + " " + tupla[2].ToString());
+                }
+                tNiño.AutoCompleteMode = AutoCompleteMode.Suggest;
+                tNiño.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo autocompletar el TextBox "+ex.ToString());
+            }
                
         }
 
@@ -42,7 +79,27 @@ namespace ProyectoACOES
         {
             try
             {
-                new Apadrinamiento(new Socio(Int32.Parse(tSocio.Text)), new Ninio(Int32.Parse(tNiño.Text)), new Usuario(tAgente.Text), Int32.Parse(tDinero.Text));
+                SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                string snombre=tSocio.Text.Substring(0,tSocio.Text.IndexOf(','));
+                string sapellidos=tSocio.Text.Substring(tSocio.Text.IndexOf(',')+1);
+                List<Object[]> consulta = bd.Select("SELECT * FROM SOCIO where nombre='" + snombre + "' and apellidos='" + sapellidos +"';");
+                if (consulta.Count == 0){
+                    throw new Error ("El socio no se encuentra en el sistema");
+                }
+                string nnombre = tNiño.Text.Substring(0, tNiño.Text.IndexOf(','));
+                string napellidos = tNiño.Text.Substring(tNiño.Text.IndexOf(',') + 1);
+                List<Object[]> consulta2 = bd.Select("SELECT * FROM Ninio where nombre='" + nnombre + "' and apellidos='" + napellidos + "';");
+                if (consulta2.Count == 0)
+                {
+                    throw new Error("El niño no se encuentra en el sistema");
+                }
+                if (usuario.rol_usuario.Equals("A001")){
+                    new Apadrinamiento(new Socio(Int32.Parse((string)consulta[0][0])), new Ninio(Int32.Parse((string)consulta2[0][0])), usuario, Int32.Parse(tDinero.Text));
+                }else{
+                    new Apadrinamiento(new Socio(Int32.Parse((string)consulta[0][0])), new Ninio(Int32.Parse((string)consulta2[0][0])), new Usuario(tAgente.Text), Int32.Parse(tDinero.Text));
+
+                }
+                
                 tSocio.Text = "";
                 tNiño.Text = "";
                 tDinero.Text = "";
@@ -60,13 +117,42 @@ namespace ProyectoACOES
         {
             try
             {
-            Apadrinamiento seleccionado = new Apadrinamiento(new Socio(Int32.Parse(dataGridView1.SelectedRows[0].Cells[1].Value.ToString())), new Ninio(Int32.Parse(dataGridView1.SelectedRows[0].Cells[3].Value.ToString())), new Usuario(dataGridView1.SelectedRows[0].Cells[4].Value.ToString()));
-            seleccionado.eliminarApadrinamiento(usuario);
-            tSocio.Text = "";
-            tNiño.Text = "";
-            tDinero.Text = "";
-            tAgente.Text = "";
-            actualizarTabla();
+                if (dataGridView1.SelectedRows.Count == 0)
+                {
+                    SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                    string snombre=tSocio.Text.Substring(0,tSocio.Text.IndexOf(','));
+                    string sapellidos=tSocio.Text.Substring(tSocio.Text.IndexOf(',')+1);
+                    List<Object[]> consulta = bd.Select("SELECT * FROM SOCIO where nombre='" + snombre + "' and apellidos='" + sapellidos +"';");
+                    if (consulta.Count == 0){
+                        throw new Error ("El socio no se encuentra en el sistema");
+                    }
+                    string nnombre = tNiño.Text.Substring(0, tNiño.Text.IndexOf(','));
+                    string napellidos = tNiño.Text.Substring(tNiño.Text.IndexOf(',') + 1);
+                    List<Object[]> consulta2 = bd.Select("SELECT * FROM Ninio where nombre='" + nnombre + "' and apellidos='" + napellidos + "';");
+                    if (consulta2.Count == 0)
+                    {
+                        throw new Error("El niño no se encuentra en el sistema");
+                    }
+                    Apadrinamiento ap = new Apadrinamiento(new Socio(Int32.Parse((string)consulta[0][0])), new Ninio(Int32.Parse((string)consulta2[0][0])), usuario);
+                    ap.eliminarApadrinamiento(usuario);
+                    tSocio.Text = "";
+                    tNiño.Text = "";
+                    tDinero.Text = "";
+                    tAgente.Text = "";
+                    actualizarTabla();
+                    
+                }
+                else
+                {
+                    Apadrinamiento seleccionado = new Apadrinamiento(new Socio(Int32.Parse(dataGridView1.SelectedRows[0].Cells[1].Value.ToString())), new Ninio(Int32.Parse(dataGridView1.SelectedRows[0].Cells[3].Value.ToString())), usuario);
+                    seleccionado.eliminarApadrinamiento(usuario);
+                    tSocio.Text = "";
+                    tNiño.Text = "";
+                    tDinero.Text = "";
+                    tAgente.Text = "";
+                    actualizarTabla();
+                }
+            
             }
             catch (Exception ex)
             {
@@ -83,6 +169,7 @@ namespace ProyectoACOES
             adaptador.Fill(tablaN);
             dataGridView1.DataSource = tablaN;
         }
+
 
      }
 }

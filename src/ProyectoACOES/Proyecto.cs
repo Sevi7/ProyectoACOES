@@ -24,12 +24,11 @@ namespace ProyectoACOES
             SQLSERVERDB bd = new SQLSERVERDB (BD_SERVER,BD_NAME);
             bd.Insert("INSERT into Proyecto values ('"+n+"','"+tp.nombre_tipoproyecto+"','"+c.nif_usuario+"','"+r.nif_usuario+"','"+l+"')");
             id=Int32.Parse(bd.Select("SELECT MAX (id) FROM Proyecto;")[0][0].ToString());
-            /*
+            
             foreach(Socio s in socios){
-                
+                bd.Insert("INSERT into Socio_Proyecto values (" + s.codigo_socio + ", '" + id + "');");
             }
-            */
-
+            
             foreach(Ninio b in bf)
             {
                 bd.Update("UPDATE Ninio set proyecto=" + id + " where codigo=" + b.Codigo + ";");

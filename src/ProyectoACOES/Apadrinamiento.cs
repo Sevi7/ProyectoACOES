@@ -37,7 +37,7 @@ namespace ProyectoACOES
                 throw new Error("El apadrinamiento no se encuentra en el sistema");
             }
             Object[] tupla = consulta[0];
-            if(u.rol_usuario.Equals("A001") && !((String)tupla[3]).Equals(u.nif_usuario)){
+            if(u.rol_usuario.Equals("A001") && !(tupla[2].ToString()).Equals(u.nif_usuario)){
                 throw new Error("El apadrinamiento corresponde a otro agente, usted no puede intervenir");
             }
             if((bool) tupla[4]==true){

@@ -37,15 +37,14 @@ namespace ProyectoACOES
 
         }
 
-        private void bAñadirBeneficiario_Click(object sender, EventArgs e)
+        private void bAñadirNiño_Click(object sender, EventArgs e)
         {
             try
             {
                 Ninio b = new Ninio(Int32.Parse(tBeneficiario.Text));
                 ninios.Add(b);
                 tBeneficiario.Text = "";
-                listaBeneficiarios.Items.Add(b.Codigo);
-                //listaBeneficiarios.Items.Add(b_codigo_beneficiario);
+                listaNiños.Items.Add(b.Codigo);
             }
             catch (Exception ex)
             {

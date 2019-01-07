@@ -52,7 +52,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(69, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(87, 112);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(545, 104);
             this.dataGridView1.TabIndex = 0;
@@ -130,7 +130,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 281);
+            this.label1.Location = new System.Drawing.Point(46, 281);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 13);
             this.label1.TabIndex = 31;
@@ -140,7 +140,7 @@
             // 
             this.titulo.AutoSize = true;
             this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titulo.Location = new System.Drawing.Point(83, 198);
+            this.titulo.Location = new System.Drawing.Point(124, 37);
             this.titulo.Name = "titulo";
             this.titulo.Size = new System.Drawing.Size(463, 39);
             this.titulo.TabIndex = 30;
@@ -170,7 +170,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 664);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(713, 530);
             this.Controls.Add(this.bDesapadrinar);
             this.Controls.Add(this.bApadrinar);
             this.Controls.Add(this.tDinero);

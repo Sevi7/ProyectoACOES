@@ -122,25 +122,27 @@ namespace ProyectoACOES
 
         private void bDesapadrinar_Click(object sender, EventArgs e)
         {
-           // try
-            //{
-                if (dataGridView1.SelectedRows.Count == 0)
+            try
+            {
+                if (dataGridView1.SelectedCells.Count <= 1)
                 {
                     SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
                     string snombre=tSocio.Text.Substring(0,tSocio.Text.IndexOf(','));
-                    string sapellidos=tSocio.Text.Substring(tSocio.Text.IndexOf(',')+1);
+                    string sapellidos=tSocio.Text.Substring(tSocio.Text.IndexOf(',')+2);
                     List<Object[]> consulta = bd.Select("SELECT * FROM SOCIO where nombre='" + snombre + "' and apellidos='" + sapellidos +"';");
                     if (consulta.Count == 0){
                         throw new Error ("El socio no se encuentra en el sistema");
                     }
                     string nnombre = tNiño.Text.Substring(0, tNiño.Text.IndexOf(','));
-                    string napellidos = tNiño.Text.Substring(tNiño.Text.IndexOf(',') + 1);
+                    string napellidos = tNiño.Text.Substring(tNiño.Text.IndexOf(',') + 2);
                     List<Object[]> consulta2 = bd.Select("SELECT * FROM Ninio where nombre='" + nnombre + "' and apellidos='" + napellidos + "';");
                     if (consulta2.Count == 0)
                     {
                         throw new Error("El niño no se encuentra en el sistema");
                     }
-                    Apadrinamiento ap = new Apadrinamiento(new Socio(Int32.Parse((string)consulta[0][0])), new Ninio(Int32.Parse((string)consulta2[0][0])), usuario);
+                    Object[] tupla = consulta[0];
+                    Object[] tupla2 = consulta2[0];
+                    Apadrinamiento ap = new Apadrinamiento(new Socio(Int32.Parse(tupla[0].ToString())), new Ninio(Int32.Parse(tupla2[0].ToString())), usuario);
                     ap.eliminarApadrinamiento(usuario);
                     tSocio.Text = "";
                     tNiño.Text = "";
@@ -160,11 +162,11 @@ namespace ProyectoACOES
                     actualizarTabla();
                 }
             
-          //  }
-            //catch (Exception ex)
-            //{
-              //  MessageBox.Show("Error: " + ex.Message);
-            //}
+            }
+            catch (Exception ex)
+            {
+              MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void actualizarTabla ()

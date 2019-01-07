@@ -59,6 +59,12 @@
     <Compile Include="BDLibrary.cs" />
     <Compile Include="Agente.cs" />
     <Compile Include="Calificacion.cs" />
+    <Compile Include="Socios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Socios.Designer.cs">
+      <DependentUpon>Socios.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionNinio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </Compile>
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Socios.resx">
+      <DependentUpon>Socios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ACOESDataSet.xsc">
       <DependentUpon>ACOESDataSet.xsd</DependentUpon>

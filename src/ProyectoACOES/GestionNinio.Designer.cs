@@ -93,6 +93,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.tAgente = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ninioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -606,11 +607,22 @@
             this.tAgente.Size = new System.Drawing.Size(173, 20);
             this.tAgente.TabIndex = 103;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 582);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 104;
+            this.button5.Text = "Salir";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // GestionNinio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(702, 617);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.tAgente);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button4);
@@ -732,5 +744,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox tAgente;
+        private System.Windows.Forms.Button button5;
     }
 }

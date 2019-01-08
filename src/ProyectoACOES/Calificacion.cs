@@ -54,7 +54,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Calificacion set nota = '" + value + "' where ninio= '" + ninio.Nombre + "' and asignatura = '" + asignatura + "' and fecha = '" + fecha + "';");
+                miBD.Update("update Calificacion set nota = '" + value + "' where ninio= " + ninio.Codigo + " and asignatura = '" + asignatura + "' and fecha = '" + fecha + "';");
                 nota = value;
             }
         }
@@ -68,7 +68,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Calificacion set Asignatura = '" + value + "' where ninio= '" + ninio.Nombre + "' and fecha = '" + fecha + "';");
+                miBD.Update("update Calificacion set Asignatura = '" + value + "' where ninio= " + ninio.Codigo + " and fecha = '" + fecha + "';");
                 asignatura = value;
             }
         }
@@ -82,7 +82,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Calificacion set fecha = '" + value + "' where ninio= '" + ninio.Nombre + "' and asignatura = '" + asignatura + "';");
+                miBD.Update("update Calificacion set fecha = '" + value + "' where ninio= " + ninio.Codigo + " and asignatura = '" + asignatura + "';");
                 fecha = value;
             }
         }

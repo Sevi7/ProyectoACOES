@@ -54,7 +54,15 @@ namespace ProyectoACOES
         private void cargarCalificaciones()
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            string consulta2Select = "SELECT Asignatura, Nota, Fecha FROM Calificacion WHERE ninio = " + seleccionado.Codigo + ";";
+            string consulta2Select;
+            if (seleccionado != null)
+            {
+                consulta2Select = "SELECT Asignatura, Nota, Fecha FROM Calificacion WHERE ninio = " + seleccionado.Codigo + ";";
+            }
+            else
+            {
+                consulta2Select = "SELECT Asignatura, Nota, Fecha FROM Calificacion WHERE 1 = 2;";
+            }
             DataTable tablaN = new DataTable();
             SqlDataAdapter adaptador = new SqlDataAdapter(consulta2Select, bd.cadenaConexionSQLNCLI);
             adaptador.Fill(tablaN);
@@ -80,10 +88,24 @@ namespace ProyectoACOES
             {
                 if (seleccionado != null && nota == null && tAsignatura.Text != "" && tNota.Text != "")
                 {
+                    if(Convert.ToInt32(tNota.Text) >= 0 && Convert.ToInt32(tNota.Text) <= 10){
                     SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
                     new Calificacion(seleccionado.Codigo, Convert.ToInt32(tNota.Text), tAsignatura.Text, dFecha.Value);
                     clean();
                     cargarCalificaciones();
+                    } else {
+                        throw new Error("Nota fuera de los valores permitidos");
+                    }
+                } else if (seleccionado == null){
+                    throw new Error("No has seleccionado ningún alumno");
+                } else if (nota != null){
+                    throw new Error("No puedes tener seleccionada una calificacion al insertar una");
+                } else if (tAsignatura.Text == "")
+                {
+                    throw new Error("Debes rellenar el campo: Asignatura");
+                } else if (tNota.Text == "")
+                {
+                    throw new Error("Debes rellenar el campo: Nota");
                 }
             }
             catch (Exception ex)
@@ -106,6 +128,22 @@ namespace ProyectoACOES
                     nota = null;
                     cargarCalificaciones();
                 }
+                else if (seleccionado == null)
+                {
+                    throw new Error("No has seleccionado ningún alumno");
+                }
+                else if (nota != null)
+                {
+                    throw new Error("No puedes tener seleccionada una calificacion al insertar una");
+                }
+                else if (tAsignatura.Text == "")
+                {
+                    throw new Error("Debes rellenar el campo: Asignatura");
+                }
+                else if (tNota.Text == "")
+                {
+                    throw new Error("Debes rellenar el campo: Nota");
+                }
             }
             catch (Exception ex)
             {
@@ -125,6 +163,14 @@ namespace ProyectoACOES
                     nota = null;
                     cargarCalificaciones();
                 }
+                else if (seleccionado == null)
+                {
+                    throw new Error("No has seleccionado ningún alumno");
+                }
+                else if (nota == null)
+                {
+                    throw new Error("No has seleccionado ninguna calificacion");
+                }
             }
             catch (Exception ex)
             {
@@ -135,8 +181,9 @@ namespace ProyectoACOES
         private void bLimpiar_click(object sender, EventArgs e)
         {
             seleccionado = null;
-            nota = null;
+            cargarCalificaciones();
             clean();
+            
         }
 
         private void clean()
@@ -144,7 +191,19 @@ namespace ProyectoACOES
             tAsignatura.Text = "";
             tNota.Text = "";
             dFecha.Value = Convert.ToDateTime("01/01/2019");
+            nota = null;
+            dataGridViewAlumnos.ClearSelection();
+            dataGridViewCalificaciones.ClearSelection();
         }
 
+        private void soloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

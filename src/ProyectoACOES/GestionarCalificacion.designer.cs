@@ -115,6 +115,8 @@
             // 
             // dataGridViewAlumnos
             // 
+            this.dataGridViewAlumnos.AllowUserToAddRows = false;
+            this.dataGridViewAlumnos.AllowUserToOrderColumns = true;
             this.dataGridViewAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAlumnos.Location = new System.Drawing.Point(25, 145);
             this.dataGridViewAlumnos.Name = "dataGridViewAlumnos";
@@ -134,6 +136,8 @@
             // 
             // dataGridViewCalificaciones
             // 
+            this.dataGridViewCalificaciones.AllowUserToAddRows = false;
+            this.dataGridViewCalificaciones.AllowUserToOrderColumns = true;
             this.dataGridViewCalificaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCalificaciones.Location = new System.Drawing.Point(25, 373);
             this.dataGridViewCalificaciones.Name = "dataGridViewCalificaciones";
@@ -192,6 +196,7 @@
             this.tNota.Name = "tNota";
             this.tNota.Size = new System.Drawing.Size(100, 26);
             this.tNota.TabIndex = 18;
+            this.tNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumeros);
             // 
             // GestionarCalificacion
             // 

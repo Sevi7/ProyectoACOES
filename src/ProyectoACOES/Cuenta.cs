@@ -28,8 +28,8 @@ namespace ProyectoACOES
             this.tipo = (string)cuenta[1];
             this.nombre = (string)cuenta[2];
             this.categoria = (string)cuenta[3];
-            this.cantidad = (double)cuenta[4];
-            this.fecha = (DateTime)cuenta[5];
+            this.cantidad =Convert.ToDouble(cuenta[4]);
+            this.fecha = Convert.ToDateTime(cuenta[5]);
             this.descripcion = (string)cuenta[6];
 
 
@@ -38,7 +38,7 @@ namespace ProyectoACOES
         public Cuenta(string t, string n, string cat, double cant, DateTime f, string des)
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            bd.Insert("Insert into Values('" + t + "','" + n + "','" + cat + "'," + cant + ",'" + f.ToString("yyyy-MM-dd") + "','" + des + "');");
+            bd.Insert("Insert into Cuenta values('" + t + "','" + n + "','" + cat + "'," + cant + ",'" + f.ToString("yyyy-MM-dd") + "','" + des + "');");
             this.id = Convert.ToInt32(bd.Select("SELECT max(id) from Cuenta")[0][0]);
             this.tipo = t;
             this.nombre = n;
@@ -151,6 +151,15 @@ namespace ProyectoACOES
                     descripcion = value;
                 }
             }
+        }
+
+        public void borrarCuenta()
+        {
+            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+            miBD.Delete("Delete from Cuenta where id=" + this.id + ";");
+
+
+
         }
 
     }

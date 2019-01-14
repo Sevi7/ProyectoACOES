@@ -59,8 +59,18 @@
     <Compile Include="BDLibrary.cs" />
     <Compile Include="Agente.cs" />
     <Compile Include="Calificacion.cs" />
+    <Compile Include="CuentaProyecto.cs" />
     <Compile Include="Cuenta.cs" />
-    <Compile Include="GestionarCalificacion.cs" />
+    <Compile Include="CuentaTipoProyecto.cs" />
+    <Compile Include="GestionEconomica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionEconomica.Designer.cs">
+      <DependentUpon>GestionEconomica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionarCalificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GestionarCalificacion.designer.cs">
       <DependentUpon>GestionarCalificacion.cs</DependentUpon>
     </Compile>
@@ -138,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarCalificacion.resx">
       <DependentUpon>GestionarCalificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionEconomica.resx">
+      <DependentUpon>GestionEconomica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionNinio.resx">
       <DependentUpon>GestionNinio.cs</DependentUpon>

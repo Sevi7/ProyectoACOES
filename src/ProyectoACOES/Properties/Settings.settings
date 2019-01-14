@@ -11,7 +11,7 @@
       <Value Profile="(Default)">Data Source=localhost;Initial Catalog=ACOES;Integrated Security=True</Value>
     </Setting>
     <Setting Name="BD_SERVER" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">localhost</Value>
+      <Value Profile="(Default)">DESKTOP-LD8L24Q\SQLEXPRESS</Value>
     </Setting>
     <Setting Name="BD_NAME" Type="System.String" Scope="Application">
       <Value Profile="(Default)">ACOES</Value>

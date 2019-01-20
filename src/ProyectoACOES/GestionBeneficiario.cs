@@ -90,5 +90,12 @@ namespace ProyectoACOES
                 tObservaciones.Text = "";
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            InicioResponsable form1 = new InicioResponsable(usuario);
+            form1.ShowDialog();
+        }
     }
 }

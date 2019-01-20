@@ -59,7 +59,7 @@ namespace ProyectoACOES
         private void formularioResponsable(Usuario user1)
         {
             this.Visible = false;
-            GestionEconomica form1 = new GestionEconomica(user1);
+            Inicio form1 = new Inicio(user1);
             form1.ShowDialog();
         }
 

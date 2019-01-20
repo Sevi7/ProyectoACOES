@@ -26,7 +26,6 @@ namespace ProyectoACOES
             Cuenta c = new Cuenta(p1.Text, p2.Text, p3.Text, Convert.ToDouble(p4.Text), p5.Value, p8.Text);
             this.cuentaTableAdapter1.Fill(this.aCOESDataSet.Cuenta);
             refrescarDatos();
-            e3.sele
             
         }
 

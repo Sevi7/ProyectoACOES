@@ -273,6 +273,7 @@
             this.button4.TabIndex = 18;
             this.button4.Text = "Limpiar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // beneficiarioBindingSource
             // 
@@ -330,7 +331,6 @@
         private ACOESDataSet aCOESDataSet;
         private System.Windows.Forms.BindingSource beneficiarioBindingSource;
         private ACOESDataSetTableAdapters.BeneficiarioTableAdapter beneficiarioTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label tNIF;
         private System.Windows.Forms.Label tNombre;
         private System.Windows.Forms.Label tApellidos;

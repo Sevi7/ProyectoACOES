@@ -58,10 +58,23 @@
     </Compile>
     <Compile Include="BDLibrary.cs" />
     <Compile Include="Agente.cs" />
+    <Compile Include="Beneficiario.cs" />
     <Compile Include="Calificacion.cs" />
     <Compile Include="CuentaProyecto.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="CuentaTipoProyecto.cs" />
+    <Compile Include="GestionarEconomia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionarEconomia.Designer.cs">
+      <DependentUpon>GestionarEconomia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionBeneficiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionBeneficiario.Designer.cs">
+      <DependentUpon>GestionBeneficiario.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionEconomica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +86,12 @@
     </Compile>
     <Compile Include="GestionarCalificacion.designer.cs">
       <DependentUpon>GestionarCalificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InicioResponsable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InicioResponsable.Designer.cs">
+      <DependentUpon>InicioResponsable.cs</DependentUpon>
     </Compile>
     <Compile Include="Socios.cs">
       <SubType>Form</SubType>
@@ -149,6 +168,12 @@
     <EmbeddedResource Include="GestionarCalificacion.resx">
       <DependentUpon>GestionarCalificacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GestionarEconomia.resx">
+      <DependentUpon>GestionarEconomia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionBeneficiario.resx">
+      <DependentUpon>GestionBeneficiario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionEconomica.resx">
       <DependentUpon>GestionEconomica.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InicioResponsable.resx">
+      <DependentUpon>InicioResponsable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

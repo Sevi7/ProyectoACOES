@@ -20,7 +20,7 @@ namespace ProyectoACOES
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Comunidad> lista = new List<Comunidad>();
 
-            foreach(Object[] tupla in miBD.Select("SELECT FROM Comunidad;")){
+            foreach(Object[] tupla in miBD.Select("SELECT * FROM Comunidad;")){
                 lista.Add(new Comunidad ((string) tupla[0]));
             }
 
@@ -32,7 +32,7 @@ namespace ProyectoACOES
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
             List<Comunidad> lista = new List<Comunidad>();
 
-            foreach (Object[] tupla in miBD.Select("SELECT FROM Comunidad WHERE nombre like '%" + buscador + "%';"))
+            foreach (Object[] tupla in miBD.Select("SELECT * FROM Comunidad WHERE nombre like '%" + buscador + "%';"))
             {
                 lista.Add(new Comunidad((string)tupla[0]));
             }
@@ -43,7 +43,7 @@ namespace ProyectoACOES
         public Comunidad(string name)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            Object[] tupla = miBD.Select("SELECT FROM Comunidad WHERE nombre ='" + name + "';")[0];
+            Object[] tupla = miBD.Select("SELECT * FROM Comunidad WHERE nombre ='" + name + "';")[0];
             nombre = (string)tupla[0];
             desc = (string)tupla[1];
         }

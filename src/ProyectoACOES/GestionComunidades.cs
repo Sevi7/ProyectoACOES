@@ -87,6 +87,7 @@ namespace ProyectoACOES
                     seleccionado = new Comunidad(tNombre.Text, tDescripcion.Text);
                     cargarGrid();
                     refrescarDatos();
+                    refrescarDatos();
                 }
                 else
                 {
@@ -108,6 +109,7 @@ namespace ProyectoACOES
                     if (tDescripcion.Text != seleccionado.DESCRIPCION) seleccionado.DESCRIPCION = tDescripcion.Text;
                     if (tNombre.Text != seleccionado.NOMBRE) seleccionado.NOMBRE = tNombre.Text;
                     cargarGrid();
+                    refrescarDatos();
                 }
             }
             catch (Exception ex)
@@ -125,6 +127,7 @@ namespace ProyectoACOES
                     seleccionado.borrar();
                     seleccionado = null;
                     cargarGrid();
+                    refrescarDatos();
                 }
             }
             catch (Exception ex)
@@ -137,6 +140,7 @@ namespace ProyectoACOES
         {
             seleccionado = null;
             cargarGrid();
+            refrescarDatos();
         }
 
         

@@ -54,5 +54,11 @@ namespace ProyectoACOES
             GestionNinio ninios = new GestionNinio();
             ninios.ShowDialog();
         }
+
+        private void bComunidades_Click(object sender, EventArgs e)
+        {
+            GestionComunidades gc = new GestionComunidades();
+            gc.ShowDialog();
+        }
     }
 }

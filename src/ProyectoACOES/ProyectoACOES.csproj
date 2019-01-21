@@ -50,16 +50,11 @@
       <DependentUpon>ACOESDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Apadrinamiento.cs" />
-    <Compile Include="AñadirNota.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AñadirNota.Designer.cs">
-      <DependentUpon>AñadirNota.cs</DependentUpon>
-    </Compile>
     <Compile Include="BDLibrary.cs" />
     <Compile Include="Agente.cs" />
     <Compile Include="Beneficiario.cs" />
     <Compile Include="Calificacion.cs" />
+    <Compile Include="Comunidad.cs" />
     <Compile Include="CuentaProyecto.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="CuentaTipoProyecto.cs" />
@@ -74,6 +69,12 @@
     </Compile>
     <Compile Include="GestionBeneficiario.Designer.cs">
       <DependentUpon>GestionBeneficiario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GestionComunidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionComunidades.Designer.cs">
+      <DependentUpon>GestionComunidades.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionEconomica.cs">
       <SubType>Form</SubType>
@@ -156,9 +157,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
-    <EmbeddedResource Include="AñadirNota.resx">
-      <DependentUpon>AñadirNota.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CrearNuevoProyecto.resx">
       <DependentUpon>CrearNuevoProyecto.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GestionBeneficiario.resx">
       <DependentUpon>GestionBeneficiario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GestionComunidades.resx">
+      <DependentUpon>GestionComunidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionEconomica.resx">
       <DependentUpon>GestionEconomica.cs</DependentUpon>

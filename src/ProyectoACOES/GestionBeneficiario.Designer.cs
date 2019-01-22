@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.tNIF = new System.Windows.Forms.Label();
             this.tNombre = new System.Windows.Forms.Label();
@@ -68,43 +70,57 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(240, 40);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(163, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(230, 39);
+            this.label1.Size = new System.Drawing.Size(413, 73);
             this.label1.TabIndex = 0;
             this.label1.Text = "Beneficiarios";
             // 
             // tNIF
             // 
             this.tNIF.AutoSize = true;
+            this.tNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tNIF.Location = new System.Drawing.Point(50, 282);
             this.tNIF.Name = "tNIF";
-            this.tNIF.Size = new System.Drawing.Size(24, 13);
+            this.tNIF.Size = new System.Drawing.Size(35, 20);
             this.tNIF.TabIndex = 2;
             this.tNIF.Text = "NIF";
             // 
             // tNombre
             // 
             this.tNombre.AutoSize = true;
-            this.tNombre.Location = new System.Drawing.Point(50, 312);
+            this.tNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tNombre.Location = new System.Drawing.Point(50, 328);
             this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(44, 13);
+            this.tNombre.Size = new System.Drawing.Size(65, 20);
             this.tNombre.TabIndex = 3;
             this.tNombre.Text = "Nombre";
             // 
             // tApellidos
             // 
             this.tApellidos.AutoSize = true;
-            this.tApellidos.Location = new System.Drawing.Point(50, 341);
+            this.tApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tApellidos.Location = new System.Drawing.Point(50, 373);
             this.tApellidos.Name = "tApellidos";
-            this.tApellidos.Size = new System.Drawing.Size(49, 13);
+            this.tApellidos.Size = new System.Drawing.Size(73, 20);
             this.tApellidos.TabIndex = 4;
             this.tApellidos.Text = "Apellidos";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nIFDataGridViewTextBoxColumn,
@@ -114,9 +130,17 @@
             this.responsableDataGridViewTextBoxColumn,
             this.numCuentaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.beneficiarioBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(54, 99);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(642, 148);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Size = new System.Drawing.Size(704, 152);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -169,78 +193,88 @@
             // tDireccion
             // 
             this.tDireccion.AutoSize = true;
-            this.tDireccion.Location = new System.Drawing.Point(50, 367);
+            this.tDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tDireccion.Location = new System.Drawing.Point(50, 416);
             this.tDireccion.Name = "tDireccion";
-            this.tDireccion.Size = new System.Drawing.Size(52, 13);
+            this.tDireccion.Size = new System.Drawing.Size(75, 20);
             this.tDireccion.TabIndex = 6;
             this.tDireccion.Text = "Direccion";
             // 
             // tNumeroCuenta
             // 
             this.tNumeroCuenta.AutoSize = true;
-            this.tNumeroCuenta.Location = new System.Drawing.Point(50, 392);
+            this.tNumeroCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tNumeroCuenta.Location = new System.Drawing.Point(50, 458);
             this.tNumeroCuenta.Name = "tNumeroCuenta";
-            this.tNumeroCuenta.Size = new System.Drawing.Size(95, 13);
+            this.tNumeroCuenta.Size = new System.Drawing.Size(140, 20);
             this.tNumeroCuenta.TabIndex = 7;
             this.tNumeroCuenta.Text = "Numero de cuenta";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 279);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox1.Location = new System.Drawing.Point(226, 279);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 20);
+            this.textBox1.Size = new System.Drawing.Size(167, 26);
             this.textBox1.TabIndex = 8;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(176, 305);
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox2.Location = new System.Drawing.Point(226, 321);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 20);
+            this.textBox2.Size = new System.Drawing.Size(167, 26);
             this.textBox2.TabIndex = 9;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(176, 333);
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox3.Location = new System.Drawing.Point(226, 365);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(167, 20);
+            this.textBox3.Size = new System.Drawing.Size(167, 26);
             this.textBox3.TabIndex = 10;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(176, 359);
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox4.Location = new System.Drawing.Point(226, 408);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 20);
+            this.textBox4.Size = new System.Drawing.Size(167, 26);
             this.textBox4.TabIndex = 11;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(176, 385);
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBox5.Location = new System.Drawing.Point(226, 451);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(167, 20);
+            this.textBox5.Size = new System.Drawing.Size(167, 26);
             this.textBox5.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(377, 279);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Location = new System.Drawing.Point(440, 282);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 13);
+            this.label7.Size = new System.Drawing.Size(114, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Observaciones";
             // 
             // tObservaciones
             // 
-            this.tObservaciones.Location = new System.Drawing.Point(380, 305);
+            this.tObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tObservaciones.Location = new System.Drawing.Point(443, 308);
             this.tObservaciones.Multiline = true;
             this.tObservaciones.Name = "tObservaciones";
-            this.tObservaciones.Size = new System.Drawing.Size(315, 100);
+            this.tObservaciones.Size = new System.Drawing.Size(315, 129);
             this.tObservaciones.TabIndex = 14;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(236, 420);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button1.Location = new System.Drawing.Point(226, 515);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(85, 29);
             this.button1.TabIndex = 15;
             this.button1.Text = "Añadir";
             this.button1.UseVisualStyleBackColor = true;
@@ -248,18 +282,20 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(340, 420);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button2.Location = new System.Drawing.Point(330, 515);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(85, 29);
             this.button2.TabIndex = 16;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(442, 420);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button3.Location = new System.Drawing.Point(432, 515);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(85, 29);
             this.button3.TabIndex = 17;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
@@ -267,9 +303,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(620, 420);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button4.Location = new System.Drawing.Point(610, 515);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(85, 29);
             this.button4.TabIndex = 18;
             this.button4.Text = "Limpiar";
             this.button4.UseVisualStyleBackColor = true;
@@ -293,7 +330,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 455);
+            this.ClientSize = new System.Drawing.Size(805, 592);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

@@ -26,17 +26,15 @@ namespace ProyectoACOES
 
         private void GestionBeneficiario_Load(object sender, EventArgs e)
         {
-            SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            dataGridView1.DataSource = miBD.Select("select NIF, Nombre, Apellidos, Responsable, Numero de Cuenta, Observaciones from beneficiario where eliminado !=1");
+            this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                seleccionado = new Beneficiario(tNIF.Text, tNIF.Text, tApellidos.Text, tObservaciones.Text, usuario, tNumeroCuenta.Text);
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                dataGridView1.DataSource = miBD.Select("select NIF, Nombre, Apellidos, Responsable, Numero de Cuenta, Observaciones from beneficiario where eliminado !=1");
+                seleccionado = new Beneficiario(tNIF.Text, tNombre.Text, tApellidos.Text, tNumeroCuenta.Text, usuario, tObservaciones.Text);
+                this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
                 RefrescaDatos();
             }
             catch(Exception ex)
@@ -51,8 +49,7 @@ namespace ProyectoACOES
             {
                 seleccionado.BorrarBeneficiario();
                 seleccionado = null;
-                SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                dataGridView1.DataSource = miBD.Select("select NIF, Nombre, Apellidos, Responsable, Numero de Cuenta, Observaciones from beneficiario where eliminado !=1");
+                this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
                 RefrescaDatos();
             }
             catch (Exception ex)
@@ -96,6 +93,13 @@ namespace ProyectoACOES
             this.Visible = false;
             InicioResponsable form1 = new InicioResponsable(usuario);
             form1.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            seleccionado = null;
+            RefrescaDatos();
+            this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
         }
     }
 }

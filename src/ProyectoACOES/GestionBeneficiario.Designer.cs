@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.tNIF = new System.Windows.Forms.Label();
-            this.tNombre = new System.Windows.Forms.Label();
-            this.tApellidos = new System.Windows.Forms.Label();
+            this.ca = new System.Windows.Forms.Label();
+            this.c = new System.Windows.Forms.Label();
+            this.cs = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.nIFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,13 +44,12 @@
             this.numCuentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.beneficiarioBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.aCOESDataSet = new ProyectoACOES.ACOESDataSet();
-            this.tDireccion = new System.Windows.Forms.Label();
-            this.tNumeroCuenta = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.vadfds = new System.Windows.Forms.Label();
+            this.tNIF = new System.Windows.Forms.TextBox();
+            this.tNombre = new System.Windows.Forms.TextBox();
+            this.tApellidos = new System.Windows.Forms.TextBox();
+            this.tDireccion = new System.Windows.Forms.TextBox();
+            this.tNumeroCuenta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tObservaciones = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -60,6 +59,8 @@
             this.beneficiarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.beneficiarioTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.BeneficiarioTableAdapter();
             this.beneficiarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button5 = new System.Windows.Forms.Button();
+            this.cds = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beneficiarioBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -77,35 +78,35 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Beneficiarios";
             // 
-            // tNIF
+            // ca
             // 
-            this.tNIF.AutoSize = true;
-            this.tNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNIF.Location = new System.Drawing.Point(50, 282);
-            this.tNIF.Name = "tNIF";
-            this.tNIF.Size = new System.Drawing.Size(35, 20);
-            this.tNIF.TabIndex = 2;
-            this.tNIF.Text = "NIF";
+            this.ca.AutoSize = true;
+            this.ca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.ca.Location = new System.Drawing.Point(50, 282);
+            this.ca.Name = "ca";
+            this.ca.Size = new System.Drawing.Size(35, 20);
+            this.ca.TabIndex = 2;
+            this.ca.Text = "NIF";
             // 
-            // tNombre
+            // c
             // 
-            this.tNombre.AutoSize = true;
-            this.tNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNombre.Location = new System.Drawing.Point(50, 328);
-            this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(65, 20);
-            this.tNombre.TabIndex = 3;
-            this.tNombre.Text = "Nombre";
+            this.c.AutoSize = true;
+            this.c.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.c.Location = new System.Drawing.Point(50, 328);
+            this.c.Name = "c";
+            this.c.Size = new System.Drawing.Size(65, 20);
+            this.c.TabIndex = 3;
+            this.c.Text = "Nombre";
             // 
-            // tApellidos
+            // cs
             // 
-            this.tApellidos.AutoSize = true;
-            this.tApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tApellidos.Location = new System.Drawing.Point(50, 373);
-            this.tApellidos.Name = "tApellidos";
-            this.tApellidos.Size = new System.Drawing.Size(73, 20);
-            this.tApellidos.TabIndex = 4;
-            this.tApellidos.Text = "Apellidos";
+            this.cs.AutoSize = true;
+            this.cs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cs.Location = new System.Drawing.Point(50, 373);
+            this.cs.Name = "cs";
+            this.cs.Size = new System.Drawing.Size(73, 20);
+            this.cs.TabIndex = 4;
+            this.cs.Text = "Apellidos";
             // 
             // dataGridView1
             // 
@@ -113,14 +114,14 @@
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nIFDataGridViewTextBoxColumn,
@@ -132,14 +133,14 @@
             this.dataGridView1.DataSource = this.beneficiarioBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(54, 99);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.Size = new System.Drawing.Size(704, 152);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -190,65 +191,55 @@
             this.aCOESDataSet.DataSetName = "ACOESDataSet";
             this.aCOESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // vadfds
+            // 
+            this.vadfds.AutoSize = true;
+            this.vadfds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.vadfds.Location = new System.Drawing.Point(50, 458);
+            this.vadfds.Name = "vadfds";
+            this.vadfds.Size = new System.Drawing.Size(140, 20);
+            this.vadfds.TabIndex = 7;
+            this.vadfds.Text = "Numero de cuenta";
+            // 
+            // tNIF
+            // 
+            this.tNIF.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tNIF.Location = new System.Drawing.Point(226, 279);
+            this.tNIF.Name = "tNIF";
+            this.tNIF.Size = new System.Drawing.Size(167, 26);
+            this.tNIF.TabIndex = 8;
+            // 
+            // tNombre
+            // 
+            this.tNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tNombre.Location = new System.Drawing.Point(226, 321);
+            this.tNombre.Name = "tNombre";
+            this.tNombre.Size = new System.Drawing.Size(167, 26);
+            this.tNombre.TabIndex = 9;
+            // 
+            // tApellidos
+            // 
+            this.tApellidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tApellidos.Location = new System.Drawing.Point(226, 365);
+            this.tApellidos.Name = "tApellidos";
+            this.tApellidos.Size = new System.Drawing.Size(167, 26);
+            this.tApellidos.TabIndex = 10;
+            // 
             // tDireccion
             // 
-            this.tDireccion.AutoSize = true;
             this.tDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tDireccion.Location = new System.Drawing.Point(50, 416);
+            this.tDireccion.Location = new System.Drawing.Point(226, 408);
             this.tDireccion.Name = "tDireccion";
-            this.tDireccion.Size = new System.Drawing.Size(75, 20);
-            this.tDireccion.TabIndex = 6;
-            this.tDireccion.Text = "Direccion";
+            this.tDireccion.Size = new System.Drawing.Size(167, 26);
+            this.tDireccion.TabIndex = 11;
             // 
             // tNumeroCuenta
             // 
-            this.tNumeroCuenta.AutoSize = true;
             this.tNumeroCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeroCuenta.Location = new System.Drawing.Point(50, 458);
+            this.tNumeroCuenta.Location = new System.Drawing.Point(226, 451);
             this.tNumeroCuenta.Name = "tNumeroCuenta";
-            this.tNumeroCuenta.Size = new System.Drawing.Size(140, 20);
-            this.tNumeroCuenta.TabIndex = 7;
-            this.tNumeroCuenta.Text = "Numero de cuenta";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox1.Location = new System.Drawing.Point(226, 279);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(167, 26);
-            this.textBox1.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox2.Location = new System.Drawing.Point(226, 321);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(167, 26);
-            this.textBox2.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox3.Location = new System.Drawing.Point(226, 365);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(167, 26);
-            this.textBox3.TabIndex = 10;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox4.Location = new System.Drawing.Point(226, 408);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(167, 26);
-            this.textBox4.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBox5.Location = new System.Drawing.Point(226, 451);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(167, 26);
-            this.textBox5.TabIndex = 12;
+            this.tNumeroCuenta.Size = new System.Drawing.Size(167, 26);
+            this.tNumeroCuenta.TabIndex = 12;
             // 
             // label7
             // 
@@ -304,11 +295,11 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button4.Location = new System.Drawing.Point(610, 515);
+            this.button4.Location = new System.Drawing.Point(54, 515);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 29);
             this.button4.TabIndex = 18;
-            this.button4.Text = "Limpiar";
+            this.button4.Text = "Salir";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -326,28 +317,50 @@
             this.beneficiarioBindingSource1.DataMember = "Beneficiario";
             this.beneficiarioBindingSource1.DataSource = this.aCOESDataSet;
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button5.Location = new System.Drawing.Point(673, 515);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 29);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "Limpiar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // cds
+            // 
+            this.cds.AutoSize = true;
+            this.cds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cds.Location = new System.Drawing.Point(50, 416);
+            this.cds.Name = "cds";
+            this.cds.Size = new System.Drawing.Size(75, 20);
+            this.cds.TabIndex = 6;
+            this.cds.Text = "Direccion";
+            // 
             // GestionBeneficiario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 592);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tObservaciones);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.tNumeroCuenta);
             this.Controls.Add(this.tDireccion);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tApellidos);
             this.Controls.Add(this.tNombre);
             this.Controls.Add(this.tNIF);
+            this.Controls.Add(this.vadfds);
+            this.Controls.Add(this.cds);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cs);
+            this.Controls.Add(this.c);
+            this.Controls.Add(this.ca);
             this.Controls.Add(this.label1);
             this.Name = "GestionBeneficiario";
             this.Text = "Gestion Beneficiario";
@@ -368,9 +381,9 @@
         private ACOESDataSet aCOESDataSet;
         private System.Windows.Forms.BindingSource beneficiarioBindingSource;
         private ACOESDataSetTableAdapters.BeneficiarioTableAdapter beneficiarioTableAdapter;
-        private System.Windows.Forms.Label tNIF;
-        private System.Windows.Forms.Label tNombre;
-        private System.Windows.Forms.Label tApellidos;
+        private System.Windows.Forms.Label ca;
+        private System.Windows.Forms.Label c;
+        private System.Windows.Forms.Label cs;
         private System.Windows.Forms.BindingSource beneficiarioBindingSource1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nIFDataGridViewTextBoxColumn;
@@ -380,18 +393,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn responsableDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numCuentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource beneficiarioBindingSource2;
-        private System.Windows.Forms.Label tDireccion;
-        private System.Windows.Forms.Label tNumeroCuenta;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label vadfds;
+        private System.Windows.Forms.TextBox tNIF;
+        private System.Windows.Forms.TextBox tNombre;
+        private System.Windows.Forms.TextBox tApellidos;
+        private System.Windows.Forms.TextBox tDireccion;
+        private System.Windows.Forms.TextBox tNumeroCuenta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tObservaciones;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label cds;
     }
 }

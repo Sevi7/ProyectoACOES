@@ -8758,8 +8758,8 @@ SELECT nombre, apellidos, observaciones, responsable, numCuenta, NIF, eliminado 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT nombre, apellidos, observaciones, responsable, numCuenta, NIF, eliminado F" +
-                "ROM Beneficiario";
+            this._commandCollection[0].CommandText = "SELECT        nombre, apellidos, observaciones, responsable, numCuenta, NIF, elim" +
+                "inado\r\nFROM            Beneficiario\r\nWHERE        (eliminado <> 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

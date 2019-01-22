@@ -59,7 +59,7 @@ namespace ProyectoACOES
         private void formularioResponsable(Usuario user1)
         {
             this.Visible = false;
-            Inicio form1 = new Inicio(user1);
+            InicioResponsable form1 = new InicioResponsable(user1);
             form1.ShowDialog();
         }
 

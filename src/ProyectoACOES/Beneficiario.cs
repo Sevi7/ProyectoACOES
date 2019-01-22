@@ -36,7 +36,7 @@ namespace ProyectoACOES
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
 
-            miBD.Insert("insert into Beneficiario values('" + n + "', '" + nom + "', '" + a + "', '" + ob + "', '" + res.nif_usuario + "', '" + num + "', 0");
+            miBD.Insert("insert into Beneficiario values('" + n + "', '" + nom + "', '" + a + "', '" + ob + "', '" + res.nif_usuario + "', '" + num + "', 0);");
 
             nif = n;
             nombre = nom;
@@ -49,7 +49,7 @@ namespace ProyectoACOES
         public void BorrarBeneficiario()
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            miBD.Update("update Beneficiario set eliminado = '" + 1 + "' where NIF=" + nif + ";");
+            miBD.Update("update Beneficiario set eliminado = " + 1 + " where NIF='" + nif + "';");
         }
 
 

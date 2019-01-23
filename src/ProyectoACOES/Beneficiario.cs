@@ -64,7 +64,7 @@ namespace ProyectoACOES
                 if (value != nif)
                 {
                     SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                    miBD.Update("update Beneficario set nif = '" + value + "' where nif=" + nif + ";");
+                    miBD.Update("update Beneficario set nif = '" + value + "' where nif='" + nif + "';");
                     nif = value;
                 }
 
@@ -82,7 +82,7 @@ namespace ProyectoACOES
                 if (value != nombre)
                 {
                     SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                    miBD.Update("update Beneficiario set Nombre = '" + value + "' where NIF=" + nif + ";");
+                    miBD.Update("update Beneficiario set Nombre = '" + value + "' where NIF='" + nif + "';");
                     nombre = value;
                 }
             }
@@ -99,7 +99,7 @@ namespace ProyectoACOES
                 if (value != apellidos)
                 {
                     SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                    miBD.Update("update Beneficiario set apellidos = '" + value + "' where NIF=" + nif + ";");
+                    miBD.Update("update Beneficiario set apellidos = '" + value + "' where NIF='" + nif + "';");
                     apellidos = value;
                 }
             }
@@ -116,7 +116,7 @@ namespace ProyectoACOES
                 if (value != observaciones)
                 {
                     SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                    miBD.Update("update Beneficiario set observaciones = '" + value + "' where NIF=" + nif + ";");
+                    miBD.Update("update Beneficiario set observaciones = '" + value + "' where NIF='" + nif + "';");
                     observaciones = value;
                 }
             }
@@ -130,10 +130,10 @@ namespace ProyectoACOES
             }
             set
             {
-                if (value != resposanble)
+                if (!value.Equals(resposanble))
                 {
                     SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                    miBD.Update("update Beneficiario set responsable = '" + value + "' where NIF=" + nif + ";");
+                    miBD.Update("update Beneficiario set responsable = '" + value.nif_usuario + "' where NIF='" + nif + "';");
                     resposanble = value;
                 }
             }
@@ -150,7 +150,7 @@ namespace ProyectoACOES
                 if (value != numCuenta)
                 {
                     SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                    miBD.Update("update Beneficiario set numCuenta = '" + value + "' where NIF=" + nif + ";");
+                    miBD.Update("update Beneficiario set numCuenta = '" + value + "' where NIF='" + nif + "';");
                     numCuenta = value;
                 }
             }

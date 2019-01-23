@@ -33,7 +33,7 @@ namespace ProyectoACOES
         {
             try
             {
-                seleccionado = new Beneficiario(tNIF.Text, tNombre.Text, tApellidos.Text, tNumeroCuenta.Text, usuario, tObservaciones.Text);
+                seleccionado = new Beneficiario(tNIF.Text, tNombre.Text, tApellidos.Text, tObservaciones.Text, usuario, tNumeroCuenta.Text);
                 this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
                 RefrescaDatos();
             }
@@ -100,6 +100,23 @@ namespace ProyectoACOES
             seleccionado = null;
             RefrescaDatos();
             this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                seleccionado.NIF = tNIF.Text;
+                seleccionado.Nombre = tNombre.Text;
+                seleccionado.Apellidos = tApellidos.Text;
+                seleccionado.NumCuenta = tNumeroCuenta.Text;
+                seleccionado.Resposable = usuario;
+                seleccionado.Observaciones = tObservaciones.Text;
+                this.beneficiarioTableAdapter.Fill(this.aCOESDataSet.Beneficiario);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

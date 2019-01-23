@@ -21,6 +21,7 @@ namespace ProyectoACOES
 
         private void GestionNinio_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'aCOESDataSet.Usuario' Puede moverla o quitarla según sea necesario.
             this.ninioTableAdapter.Fill(this.aCOESDataSet.Ninio);
         }
 

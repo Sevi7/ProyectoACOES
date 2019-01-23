@@ -66,6 +66,7 @@ namespace ProyectoACOES
             string nnombre = tNiño.Text.Substring(0, tNiño.Text.IndexOf(','));
             string napellidos = tNiño.Text.Substring(tNiño.Text.IndexOf(',') + 2);
             selec.niño = bd.tNinio.First(n => n.nombre == nnombre && n.apellidos == napellidos).codigo;
+            new Apadrinamiento(new Socio(selec.socio), new Ninio(selec.niño),usuario);
             selec.etiqueta = tCodigo.Text;
             bd.tEnvio.InsertOnSubmit(selec);
             bd.SubmitChanges();
@@ -73,7 +74,7 @@ namespace ProyectoACOES
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                  MessageBox.Show(ex.Message);
             }
         }
 
@@ -94,6 +95,7 @@ namespace ProyectoACOES
                 nuevo.niño = bd.tNinio.First(n => n.nombre == nnombre && n.apellidos == napellidos).codigo;
                 nuevo.etiqueta = tCodigo.Text;
                 id_selec = nuevo.etiqueta;
+                new Apadrinamiento(new Socio(selec.socio), new Ninio(selec.niño), usuario);
                 bd.tEnvio.InsertOnSubmit(nuevo);
                 bd.tEnvio.DeleteOnSubmit(selec);
                 bd.SubmitChanges();
@@ -108,7 +110,7 @@ namespace ProyectoACOES
                 string nnombre = tNiño.Text.Substring(0, tNiño.Text.IndexOf(','));
                 string napellidos = tNiño.Text.Substring(tNiño.Text.IndexOf(',') + 2);
                 selec.niño = bd.tNinio.First(n => n.nombre == nnombre && n.apellidos == napellidos).codigo;
-
+                new Apadrinamiento(new Socio(selec.socio), new Ninio(selec.niño), usuario);
                 bd.SubmitChanges();
             }
             
@@ -129,6 +131,8 @@ namespace ProyectoACOES
                 selec = (tEnvio)bd.tEnvio.First(en => en.etiqueta == id_selec);
                 bd.tEnvio.DeleteOnSubmit(selec);
                 bd.SubmitChanges();
+                dgEnvios.DataSource = from en in bd.tEnvio join s in bd.tSocio on en.socio equals s.codigo join n in bd.tNinio on en.niño equals n.codigo select new { Remitente = en.remitente, NombreSocio = s.nombre + " " + s.apellidos, NombreNiño = n.nombre + " " + n.apellidos, Código = en.etiqueta, DireccionSocio = s.direccion + ", " + s.codigoPostal + ", " + s.provincia, DireccionNiño = n.proyecto + ", " + n.comunidadAct };
+                bLimpiar_Click(null,null);
             }catch(Exception ex){
                 MessageBox.Show(ex.Message);
             }

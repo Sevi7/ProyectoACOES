@@ -42,23 +42,23 @@ namespace ProyectoACOES
             codigo = c;
             nombre = (string)tupla[1];
             apellidos = (string)tupla[2];
-            estado = (string)tupla[3];
-            nif = (string)tupla[4];
-            direccion = (string)tupla[5];
-            poblacion = (string)tupla[6];
+            if (tupla[3] != DBNull.Value) estado = (string)tupla[3];
+            if(tupla[4]!= DBNull.Value) nif = (string)tupla[4];
+            if (tupla[5] != DBNull.Value) direccion = (string)tupla[5];
+            if (tupla[6] != DBNull.Value) poblacion = (string)tupla[6];
             if (tupla[7] != DBNull.Value) codigoPostal = (int)tupla[7];
-            provincia = (string)tupla[8];
+            if (tupla[8] != DBNull.Value) provincia = (string)tupla[8];
             tlf = (int)tupla[9];
             if (tupla[10] != DBNull.Value) tlfSecundario = (int)tupla[10];
-            email = (string)tupla[11];
+            if (tupla[11] != DBNull.Value) email = (string)tupla[11];
             agente = new Usuario((string)tupla[12]);
-            relacion = (string)tupla[13];
+            if (tupla[13] != DBNull.Value) relacion = (string)tupla[13];
             if (tupla[14] != DBNull.Value) certificado = Convert.ToBoolean(tupla[14]);
-            sector = (string)tupla[15];
+            if (tupla[15] != DBNull.Value) sector = (string)tupla[15];
             if (tupla[16] != DBNull.Value) fechaAlta = Convert.ToDateTime(tupla[16]);
             if (tupla[17] != DBNull.Value) fechaBaja = Convert.ToDateTime(tupla[17]);
-            observaciones = (string)tupla[18];
-            numCuenta = (string)tupla[19];
+            if (tupla[18] != DBNull.Value)observaciones = (string)tupla[18];
+            if (tupla[19] != DBNull.Value)numCuenta = (string)tupla[19];
         }
 
         public Socio(string n, string ap, string e, string nif, string dir, string pob, int cp, string prov,

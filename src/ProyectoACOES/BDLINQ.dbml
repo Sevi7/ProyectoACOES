@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ACOES" Class="BDLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=ACOES;Integrated Security=True" SettingsObjectName="ProyectoACOES.Properties.Settings" SettingsPropertyName="ACOESConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Apadrinamiento" Member="tApadrinamiento">
+    <Type Name="tApadrinamiento">
+      <Column Name="socio" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ninio" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="agente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dinero" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="eliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Ninio_Apadrinamiento" Member="tNinio" ThisKey="ninio" OtherKey="codigo" Type="tNinio" IsForeignKey="true" />
+      <Association Name="Socio_Apadrinamiento" Member="tSocio" ThisKey="socio" OtherKey="codigo" Type="tSocio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ninio" Member="tNinio">
+    <Type Name="tNinio">
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidos" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="beca" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="agente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fechaNacimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaEntradaAcoes" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="proyecto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fechaEntradaProyecto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaSalidaProyecto" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaAlta" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="fechaSalidaAcoes" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="curso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="comunidadProc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="comunidadAct" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="eliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Ninio_Apadrinamiento" Member="tApadrinamiento" ThisKey="codigo" OtherKey="ninio" Type="tApadrinamiento" />
+      <Association Name="Ninio_Envio" Member="tEnvio" ThisKey="codigo" OtherKey="niño" Type="tEnvio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Socio" Member="tSocio">
+    <Type Name="tSocio">
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="apellidos" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nif" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="poblacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codigoPostal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="provincia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tlf" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tlfSecundario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="agente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="relacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="certificado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="sector" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fechaAlta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fechaBaja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="observaciones" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="numCuenta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="eliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Socio_Apadrinamiento" Member="tApadrinamiento" ThisKey="codigo" OtherKey="socio" Type="tApadrinamiento" />
+      <Association Name="Socio_Envio" Member="tEnvio" ThisKey="codigo" OtherKey="socio" Type="tEnvio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Envio" Member="tEnvio">
+    <Type Name="tEnvio">
+      <Column Name="remitente" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="niño" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="socio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="etiqueta" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Ninio_Envio" Member="tNinio" ThisKey="niño" OtherKey="codigo" Type="tNinio" IsForeignKey="true" />
+      <Association Name="Socio_Envio" Member="tSocio" ThisKey="socio" OtherKey="codigo" Type="tSocio" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

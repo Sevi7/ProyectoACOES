@@ -180,6 +180,13 @@ namespace ProyectoACOES
             dataGridView1.DataSource = tablaN;
         }
 
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Socios socios = new Socios(usuario);
+            socios.ShowDialog();
+        }
+
 
      }
 }

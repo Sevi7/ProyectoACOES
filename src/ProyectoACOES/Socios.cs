@@ -38,5 +38,12 @@ namespace ProyectoACOES
             ap.ShowDialog();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            ENVIOS en = new ENVIOS(usuario);
+            en.ShowDialog();
+        }
     }
 }

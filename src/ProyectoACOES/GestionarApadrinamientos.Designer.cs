@@ -44,6 +44,7 @@
             this.titulo = new System.Windows.Forms.Label();
             this.bApadrinar = new System.Windows.Forms.Button();
             this.bDesapadrinar = new System.Windows.Forms.Button();
+            this.bSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apadrinamientoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -148,7 +149,7 @@
             // 
             // bApadrinar
             // 
-            this.bApadrinar.Location = new System.Drawing.Point(188, 467);
+            this.bApadrinar.Location = new System.Drawing.Point(264, 467);
             this.bApadrinar.Name = "bApadrinar";
             this.bApadrinar.Size = new System.Drawing.Size(75, 23);
             this.bApadrinar.TabIndex = 41;
@@ -158,7 +159,7 @@
             // 
             // bDesapadrinar
             // 
-            this.bDesapadrinar.Location = new System.Drawing.Point(353, 467);
+            this.bDesapadrinar.Location = new System.Drawing.Point(381, 467);
             this.bDesapadrinar.Name = "bDesapadrinar";
             this.bDesapadrinar.Size = new System.Drawing.Size(98, 23);
             this.bDesapadrinar.TabIndex = 42;
@@ -166,12 +167,23 @@
             this.bDesapadrinar.UseVisualStyleBackColor = true;
             this.bDesapadrinar.Click += new System.EventHandler(this.bDesapadrinar_Click);
             // 
+            // bSalir
+            // 
+            this.bSalir.Location = new System.Drawing.Point(47, 447);
+            this.bSalir.Name = "bSalir";
+            this.bSalir.Size = new System.Drawing.Size(75, 43);
+            this.bSalir.TabIndex = 43;
+            this.bSalir.Text = "Salir";
+            this.bSalir.UseVisualStyleBackColor = true;
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
+            // 
             // GestionarApadrinamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(713, 530);
+            this.Controls.Add(this.bSalir);
             this.Controls.Add(this.bDesapadrinar);
             this.Controls.Add(this.bApadrinar);
             this.Controls.Add(this.tDinero);
@@ -212,5 +224,6 @@
         private System.Windows.Forms.Label titulo;
         private System.Windows.Forms.Button bApadrinar;
         private System.Windows.Forms.Button bDesapadrinar;
+        private System.Windows.Forms.Button bSalir;
     }
 }

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BDLINQ">
+  <DataContextMoniker Name="/BDLINQDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7a810fca-7b4e-4b84-88b1-18640c331fa9" absoluteBounds="4.75, 1.25, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BDLINQDataContext/tApadrinamiento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="34ac4054-cb62-4b5b-8a8c-b9ec3df73988" absoluteBounds="4.765, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31715752-124f-4ec4-abb7-8be2d81b9871" absoluteBounds="8.125, 1.25, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/BDLINQDataContext/tNinio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c44a55c1-892d-468f-91be-6a10b53d7bef" absoluteBounds="8.14, 1.71, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d105b296-6fc1-4c9e-b41c-4df1738bd583" absoluteBounds="0.75, 0.75, 2, 4.8477197265624987">
+      <DataClassMoniker Name="/BDLINQDataContext/tSocio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="756f57b1-782c-4446-b049-c77cb9b8cc37" absoluteBounds="0.765, 1.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 2.13544840494792); (6.75 : 2.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BDLINQDataContext/tNinio/Ninio_Apadrinamiento" />
+      <nodes>
+        <classShapeMoniker Id="31715752-124f-4ec4-abb7-8be2d81b9871" />
+        <classShapeMoniker Id="7a810fca-7b4e-4b84-88b1-18640c331fa9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.13544840494792); (4.75 : 2.13544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BDLINQDataContext/tSocio/Socio_Apadrinamiento" />
+      <nodes>
+        <classShapeMoniker Id="d105b296-6fc1-4c9e-b41c-4df1738bd583" />
+        <classShapeMoniker Id="7a810fca-7b4e-4b84-88b1-18640c331fa9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="506242c4-2108-4c50-940e-b9782b8f30a1" absoluteBounds="4.375, 4, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BDLINQDataContext/tEnvio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ff24686-5dda-4464-91f0-4273b7fbba38" absoluteBounds="4.39, 4.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.125 : 4.78929768880208); (6.375 : 4.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BDLINQDataContext/tNinio/Ninio_Envio" />
+      <nodes>
+        <classShapeMoniker Id="31715752-124f-4ec4-abb7-8be2d81b9871" />
+        <classShapeMoniker Id="506242c4-2108-4c50-940e-b9782b8f30a1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.78929768880208); (4.375 : 4.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BDLINQDataContext/tSocio/Socio_Envio" />
+      <nodes>
+        <classShapeMoniker Id="d105b296-6fc1-4c9e-b41c-4df1738bd583" />
+        <classShapeMoniker Id="506242c4-2108-4c50-940e-b9782b8f30a1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

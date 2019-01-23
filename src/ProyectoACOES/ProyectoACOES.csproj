@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,14 +51,31 @@
       <DependentUpon>ACOESDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Apadrinamiento.cs" />
+    <Compile Include="AñadirCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirCuenta.Designer.cs">
+      <DependentUpon>AñadirCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="BDLibrary.cs" />
     <Compile Include="Agente.cs" />
+    <Compile Include="BDLINQ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDLINQ.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Beneficiario.cs" />
     <Compile Include="Calificacion.cs" />
     <Compile Include="Comunidad.cs" />
     <Compile Include="CuentaProyecto.cs" />
     <Compile Include="Cuenta.cs" />
     <Compile Include="CuentaTipoProyecto.cs" />
+    <Compile Include="ENVIOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ENVIOS.Designer.cs">
+      <DependentUpon>ENVIOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionarEconomia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,11 +175,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="AñadirCuenta.resx">
+      <DependentUpon>AñadirCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="BDLINQ.dbml.layout">
+      <DependentUpon>BDLINQ.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="CrearNuevoProyecto.resx">
       <DependentUpon>CrearNuevoProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearNuevoTipoProyecto.resx">
       <DependentUpon>CrearNuevoTipoProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ENVIOS.resx">
+      <DependentUpon>ENVIOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarCalificacion.resx">
       <DependentUpon>GestionarCalificacion.cs</DependentUpon>
@@ -222,6 +249,11 @@
     <None Include="ACOESDataSet.xss">
       <DependentUpon>ACOESDataSet.xsd</DependentUpon>
     </None>
+    <None Include="BDLINQ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>BDLINQ.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -243,6 +275,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -2786,8 +2786,6 @@ namespace ProyectoACOES {
             
             private global::System.Data.DataColumn columnobservaciones;
             
-            private global::System.Data.DataColumn columneliminado;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public NinioDataTable() {
@@ -2967,14 +2965,6 @@ namespace ProyectoACOES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn eliminadoColumn {
-                get {
-                    return this.columneliminado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3027,8 +3017,7 @@ namespace ProyectoACOES {
                         string curso, 
                         string comunidadProc, 
                         string comunidadAct, 
-                        string observaciones, 
-                        bool eliminado) {
+                        string observaciones) {
                 NinioRow rowNinioRow = ((NinioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3048,8 +3037,7 @@ namespace ProyectoACOES {
                         curso,
                         comunidadProc,
                         comunidadAct,
-                        observaciones,
-                        eliminado};
+                        observaciones};
                 if ((parentUsuarioRowByFK_Beneficiario_Usuario != null)) {
                     columnValuesArray[6] = parentUsuarioRowByFK_Beneficiario_Usuario[0];
                 }
@@ -3103,7 +3091,6 @@ namespace ProyectoACOES {
                 this.columncomunidadProc = base.Columns["comunidadProc"];
                 this.columncomunidadAct = base.Columns["comunidadAct"];
                 this.columnobservaciones = base.Columns["observaciones"];
-                this.columneliminado = base.Columns["eliminado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3145,8 +3132,6 @@ namespace ProyectoACOES {
                 base.Columns.Add(this.columncomunidadAct);
                 this.columnobservaciones = new global::System.Data.DataColumn("observaciones", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnobservaciones);
-                this.columneliminado = new global::System.Data.DataColumn("eliminado", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columneliminado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncodigo}, true));
                 this.columncodigo.AutoIncrement = true;
@@ -3167,7 +3152,6 @@ namespace ProyectoACOES {
                 this.columncomunidadProc.MaxLength = 50;
                 this.columncomunidadAct.MaxLength = 50;
                 this.columnobservaciones.MaxLength = 100;
-                this.columneliminado.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6365,17 +6349,6 @@ namespace ProyectoACOES {
                 }
                 set {
                     this[this.tableNinio.observacionesColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool eliminado {
-                get {
-                    return ((bool)(this[this.tableNinio.eliminadoColumn]));
-                }
-                set {
-                    this[this.tableNinio.eliminadoColumn] = value;
                 }
             }
             
@@ -10642,7 +10615,6 @@ SELECT cuenta, tipoProyecto FROM CuentaTipoProyecto WHERE (cuenta = @cuenta) AND
             tableMapping.ColumnMappings.Add("comunidadProc", "comunidadProc");
             tableMapping.ColumnMappings.Add("comunidadAct", "comunidadAct");
             tableMapping.ColumnMappings.Add("observaciones", "observaciones");
-            tableMapping.ColumnMappings.Add("eliminado", "eliminado");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -10666,8 +10638,7 @@ SELECT cuenta, tipoProyecto FROM CuentaTipoProyecto WHERE (cuenta = @cuenta) AND
                 "dadProc = 1 AND [comunidadProc] IS NULL) OR ([comunidadProc] = @Original_comunid" +
                 "adProc)) AND ((@IsNull_comunidadAct = 1 AND [comunidadAct] IS NULL) OR ([comunid" +
                 "adAct] = @Original_comunidadAct)) AND ((@IsNull_observaciones = 1 AND [observaci" +
-                "ones] IS NULL) OR ([observaciones] = @Original_observaciones)) AND ([eliminado] " +
-                "= @Original_eliminado))";
+                "ones] IS NULL) OR ([observaciones] = @Original_observaciones)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -10702,11 +10673,10 @@ SELECT cuenta, tipoProyecto FROM CuentaTipoProyecto WHERE (cuenta = @cuenta) AND
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_comunidadAct", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comunidadAct", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_observaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eliminado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eliminado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Ninio] ([nombre], [apellidos], [estado], [beca], [sexo], [agente], [fechaNacimiento], [fechaEntradaAcoes], [proyecto], [fechaEntradaProyecto], [fechaSalidaProyecto], [fechaAlta], [fechaSalidaAcoes], [curso], [comunidadProc], [comunidadAct], [observaciones], [eliminado]) VALUES (@nombre, @apellidos, @estado, @beca, @sexo, @agente, @fechaNacimiento, @fechaEntradaAcoes, @proyecto, @fechaEntradaProyecto, @fechaSalidaProyecto, @fechaAlta, @fechaSalidaAcoes, @curso, @comunidadProc, @comunidadAct, @observaciones, @eliminado);
-SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, fechaEntradaAcoes, proyecto, fechaEntradaProyecto, fechaSalidaProyecto, fechaAlta, fechaSalidaAcoes, curso, comunidadProc, comunidadAct, observaciones, eliminado FROM Ninio WHERE (codigo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Ninio] ([nombre], [apellidos], [estado], [beca], [sexo], [agente], [fechaNacimiento], [fechaEntradaAcoes], [proyecto], [fechaEntradaProyecto], [fechaSalidaProyecto], [fechaAlta], [fechaSalidaAcoes], [curso], [comunidadProc], [comunidadAct], [observaciones]) VALUES (@nombre, @apellidos, @estado, @beca, @sexo, @agente, @fechaNacimiento, @fechaEntradaAcoes, @proyecto, @fechaEntradaProyecto, @fechaSalidaProyecto, @fechaAlta, @fechaSalidaAcoes, @curso, @comunidadProc, @comunidadAct, @observaciones);
+SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, fechaEntradaAcoes, proyecto, fechaEntradaProyecto, fechaSalidaProyecto, fechaAlta, fechaSalidaAcoes, curso, comunidadProc, comunidadAct, observaciones FROM Ninio WHERE (codigo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellidos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10725,7 +10695,6 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comunidadProc", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comunidadProc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comunidadAct", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comunidadAct", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eliminado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eliminado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Ninio] SET [nombre] = @nombre, [apellidos] = @apellidos, [estado] = @esta" +
@@ -10734,32 +10703,31 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
                 "[fechaEntradaProyecto] = @fechaEntradaProyecto, [fechaSalidaProyecto] = @fechaSa" +
                 "lidaProyecto, [fechaAlta] = @fechaAlta, [fechaSalidaAcoes] = @fechaSalidaAcoes, " +
                 "[curso] = @curso, [comunidadProc] = @comunidadProc, [comunidadAct] = @comunidadA" +
-                "ct, [observaciones] = @observaciones, [eliminado] = @eliminado WHERE (([codigo] " +
-                "= @Original_codigo) AND ([nombre] = @Original_nombre) AND ((@IsNull_apellidos = " +
-                "1 AND [apellidos] IS NULL) OR ([apellidos] = @Original_apellidos)) AND ((@IsNull" +
-                "_estado = 1 AND [estado] IS NULL) OR ([estado] = @Original_estado)) AND ((@IsNul" +
-                "l_beca = 1 AND [beca] IS NULL) OR ([beca] = @Original_beca)) AND ([sexo] = @Orig" +
-                "inal_sexo) AND ((@IsNull_agente = 1 AND [agente] IS NULL) OR ([agente] = @Origin" +
-                "al_agente)) AND ((@IsNull_fechaNacimiento = 1 AND [fechaNacimiento] IS NULL) OR " +
-                "([fechaNacimiento] = @Original_fechaNacimiento)) AND ((@IsNull_fechaEntradaAcoes" +
-                " = 1 AND [fechaEntradaAcoes] IS NULL) OR ([fechaEntradaAcoes] = @Original_fechaE" +
-                "ntradaAcoes)) AND ((@IsNull_proyecto = 1 AND [proyecto] IS NULL) OR ([proyecto] " +
-                "= @Original_proyecto)) AND ((@IsNull_fechaEntradaProyecto = 1 AND [fechaEntradaP" +
-                "royecto] IS NULL) OR ([fechaEntradaProyecto] = @Original_fechaEntradaProyecto)) " +
-                "AND ((@IsNull_fechaSalidaProyecto = 1 AND [fechaSalidaProyecto] IS NULL) OR ([fe" +
-                "chaSalidaProyecto] = @Original_fechaSalidaProyecto)) AND ((@IsNull_fechaAlta = 1" +
-                " AND [fechaAlta] IS NULL) OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_" +
-                "fechaSalidaAcoes = 1 AND [fechaSalidaAcoes] IS NULL) OR ([fechaSalidaAcoes] = @O" +
-                "riginal_fechaSalidaAcoes)) AND ((@IsNull_curso = 1 AND [curso] IS NULL) OR ([cur" +
-                "so] = @Original_curso)) AND ((@IsNull_comunidadProc = 1 AND [comunidadProc] IS N" +
-                "ULL) OR ([comunidadProc] = @Original_comunidadProc)) AND ((@IsNull_comunidadAct " +
-                "= 1 AND [comunidadAct] IS NULL) OR ([comunidadAct] = @Original_comunidadAct)) AN" +
-                "D ((@IsNull_observaciones = 1 AND [observaciones] IS NULL) OR ([observaciones] =" +
-                " @Original_observaciones)) AND ([eliminado] = @Original_eliminado));\r\nSELECT cod" +
-                "igo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, fechaEntrad" +
-                "aAcoes, proyecto, fechaEntradaProyecto, fechaSalidaProyecto, fechaAlta, fechaSal" +
-                "idaAcoes, curso, comunidadProc, comunidadAct, observaciones, eliminado FROM Nini" +
-                "o WHERE (codigo = @codigo)";
+                "ct, [observaciones] = @observaciones WHERE (([codigo] = @Original_codigo) AND ([" +
+                "nombre] = @Original_nombre) AND ((@IsNull_apellidos = 1 AND [apellidos] IS NULL)" +
+                " OR ([apellidos] = @Original_apellidos)) AND ((@IsNull_estado = 1 AND [estado] I" +
+                "S NULL) OR ([estado] = @Original_estado)) AND ((@IsNull_beca = 1 AND [beca] IS N" +
+                "ULL) OR ([beca] = @Original_beca)) AND ([sexo] = @Original_sexo) AND ((@IsNull_a" +
+                "gente = 1 AND [agente] IS NULL) OR ([agente] = @Original_agente)) AND ((@IsNull_" +
+                "fechaNacimiento = 1 AND [fechaNacimiento] IS NULL) OR ([fechaNacimiento] = @Orig" +
+                "inal_fechaNacimiento)) AND ((@IsNull_fechaEntradaAcoes = 1 AND [fechaEntradaAcoe" +
+                "s] IS NULL) OR ([fechaEntradaAcoes] = @Original_fechaEntradaAcoes)) AND ((@IsNul" +
+                "l_proyecto = 1 AND [proyecto] IS NULL) OR ([proyecto] = @Original_proyecto)) AND" +
+                " ((@IsNull_fechaEntradaProyecto = 1 AND [fechaEntradaProyecto] IS NULL) OR ([fec" +
+                "haEntradaProyecto] = @Original_fechaEntradaProyecto)) AND ((@IsNull_fechaSalidaP" +
+                "royecto = 1 AND [fechaSalidaProyecto] IS NULL) OR ([fechaSalidaProyecto] = @Orig" +
+                "inal_fechaSalidaProyecto)) AND ((@IsNull_fechaAlta = 1 AND [fechaAlta] IS NULL) " +
+                "OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_fechaSalidaAcoes = 1 AND [" +
+                "fechaSalidaAcoes] IS NULL) OR ([fechaSalidaAcoes] = @Original_fechaSalidaAcoes))" +
+                " AND ((@IsNull_curso = 1 AND [curso] IS NULL) OR ([curso] = @Original_curso)) AN" +
+                "D ((@IsNull_comunidadProc = 1 AND [comunidadProc] IS NULL) OR ([comunidadProc] =" +
+                " @Original_comunidadProc)) AND ((@IsNull_comunidadAct = 1 AND [comunidadAct] IS " +
+                "NULL) OR ([comunidadAct] = @Original_comunidadAct)) AND ((@IsNull_observaciones " +
+                "= 1 AND [observaciones] IS NULL) OR ([observaciones] = @Original_observaciones))" +
+                ");\r\nSELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimient" +
+                "o, fechaEntradaAcoes, proyecto, fechaEntradaProyecto, fechaSalidaProyecto, fecha" +
+                "Alta, fechaSalidaAcoes, curso, comunidadProc, comunidadAct, observaciones FROM N" +
+                "inio WHERE (codigo = @codigo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellidos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -10778,7 +10746,6 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comunidadProc", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comunidadProc", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comunidadAct", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comunidadAct", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eliminado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eliminado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_apellidos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellidos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -10812,7 +10779,6 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_comunidadAct", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comunidadAct", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_observaciones", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eliminado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eliminado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -10829,10 +10795,10 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, fe" +
-                "chaEntradaAcoes, proyecto, fechaEntradaProyecto, fechaSalidaProyecto, fechaAlta," +
-                " fechaSalidaAcoes, curso, comunidadProc, comunidadAct, observaciones, eliminado " +
-                "FROM Ninio";
+            this._commandCollection[0].CommandText = @"SELECT        codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, fechaEntradaAcoes, proyecto, fechaEntradaProyecto, fechaSalidaProyecto, fechaAlta, fechaSalidaAcoes, curso, comunidadProc, comunidadAct, 
+                         observaciones
+FROM            Ninio
+WHERE        (eliminado <> 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -10911,8 +10877,7 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
                     string Original_curso, 
                     string Original_comunidadProc, 
                     string Original_comunidadAct, 
-                    string Original_observaciones, 
-                    bool Original_eliminado) {
+                    string Original_observaciones) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_codigo));
             if ((Original_nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_nombre");
@@ -11046,7 +11011,6 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[32].Value = ((string)(Original_observaciones));
             }
-            this.Adapter.DeleteCommand.Parameters[33].Value = ((bool)(Original_eliminado));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11084,8 +11048,7 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
                     string curso, 
                     string comunidadProc, 
                     string comunidadAct, 
-                    string observaciones, 
-                    bool eliminado) {
+                    string observaciones) {
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
@@ -11188,7 +11151,6 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(observaciones));
             }
-            this.Adapter.InsertCommand.Parameters[17].Value = ((bool)(eliminado));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11227,7 +11189,6 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
                     string comunidadProc, 
                     string comunidadAct, 
                     string observaciones, 
-                    bool eliminado, 
                     int Original_codigo, 
                     string Original_nombre, 
                     string Original_apellidos, 
@@ -11246,7 +11207,6 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
                     string Original_comunidadProc, 
                     string Original_comunidadAct, 
                     string Original_observaciones, 
-                    bool Original_eliminado, 
                     int codigo) {
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
@@ -11350,142 +11310,140 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(observaciones));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((bool)(eliminado));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_codigo));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_codigo));
             if ((Original_nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_nombre");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_nombre));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_nombre));
             }
             if ((Original_apellidos == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_apellidos));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_apellidos));
             }
             if ((Original_estado == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_estado));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_estado));
             }
             if ((Original_beca == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_beca));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_beca));
             }
             if ((Original_sexo == null)) {
                 throw new global::System.ArgumentNullException("Original_sexo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_sexo));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_sexo));
             }
             if ((Original_agente == null)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_agente));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_agente));
             }
             if ((Original_fechaNacimiento.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(Original_fechaNacimiento.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(Original_fechaNacimiento.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             if ((Original_fechaEntradaAcoes.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Original_fechaEntradaAcoes.Value));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_fechaEntradaAcoes.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             if ((Original_proyecto.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((int)(Original_proyecto.Value));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_proyecto.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
             }
             if ((Original_fechaEntradaProyecto.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((System.DateTime)(Original_fechaEntradaProyecto.Value));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((System.DateTime)(Original_fechaEntradaProyecto.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             if ((Original_fechaSalidaProyecto.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_fechaSalidaProyecto.Value));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_fechaSalidaProyecto.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             if ((Original_fechaAlta.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((System.DateTime)(Original_fechaAlta.Value));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(Original_fechaAlta.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             if ((Original_fechaSalidaAcoes.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((System.DateTime)(Original_fechaSalidaAcoes.Value));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((System.DateTime)(Original_fechaSalidaAcoes.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
             }
             if ((Original_curso == null)) {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((string)(Original_curso));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_curso));
             }
             if ((Original_comunidadProc == null)) {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_comunidadProc));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((string)(Original_comunidadProc));
             }
             if ((Original_comunidadAct == null)) {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_comunidadAct));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_comunidadAct));
             }
             if ((Original_observaciones == null)) {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_observaciones));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((string)(Original_observaciones));
             }
-            this.Adapter.UpdateCommand.Parameters[51].Value = ((bool)(Original_eliminado));
-            this.Adapter.UpdateCommand.Parameters[52].Value = ((int)(codigo));
+            this.Adapter.UpdateCommand.Parameters[50].Value = ((int)(codigo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -11524,7 +11482,6 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
                     string comunidadProc, 
                     string comunidadAct, 
                     string observaciones, 
-                    bool eliminado, 
                     int Original_codigo, 
                     string Original_nombre, 
                     string Original_apellidos, 
@@ -11542,9 +11499,8 @@ SELECT codigo, nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, f
                     string Original_curso, 
                     string Original_comunidadProc, 
                     string Original_comunidadAct, 
-                    string Original_observaciones, 
-                    bool Original_eliminado) {
-            return this.Update(nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, fechaEntradaAcoes, proyecto, fechaEntradaProyecto, fechaSalidaProyecto, fechaAlta, fechaSalidaAcoes, curso, comunidadProc, comunidadAct, observaciones, eliminado, Original_codigo, Original_nombre, Original_apellidos, Original_estado, Original_beca, Original_sexo, Original_agente, Original_fechaNacimiento, Original_fechaEntradaAcoes, Original_proyecto, Original_fechaEntradaProyecto, Original_fechaSalidaProyecto, Original_fechaAlta, Original_fechaSalidaAcoes, Original_curso, Original_comunidadProc, Original_comunidadAct, Original_observaciones, Original_eliminado, Original_codigo);
+                    string Original_observaciones) {
+            return this.Update(nombre, apellidos, estado, beca, sexo, agente, fechaNacimiento, fechaEntradaAcoes, proyecto, fechaEntradaProyecto, fechaSalidaProyecto, fechaAlta, fechaSalidaAcoes, curso, comunidadProc, comunidadAct, observaciones, Original_codigo, Original_nombre, Original_apellidos, Original_estado, Original_beca, Original_sexo, Original_agente, Original_fechaNacimiento, Original_fechaEntradaAcoes, Original_proyecto, Original_fechaEntradaProyecto, Original_fechaSalidaProyecto, Original_fechaAlta, Original_fechaSalidaAcoes, Original_curso, Original_comunidadProc, Original_comunidadAct, Original_observaciones, Original_codigo);
         }
     }
     

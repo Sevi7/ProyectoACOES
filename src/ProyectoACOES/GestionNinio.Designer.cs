@@ -93,12 +93,15 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.tAgente = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.UsuarioTableAdapter();
+            this.tAgente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ninioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tCurso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -106,6 +109,7 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoDataGridViewTextBoxColumn,
@@ -148,6 +152,7 @@
             this.codigoDataGridViewTextBoxColumn.HeaderText = "codigo";
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
             this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codigoDataGridViewTextBoxColumn.Width = 64;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -155,7 +160,7 @@
             this.nombreDataGridViewTextBoxColumn.FillWeight = 218.264F;
             this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.Width = 87;
+            this.nombreDataGridViewTextBoxColumn.Width = 67;
             // 
             // apellidosDataGridViewTextBoxColumn
             // 
@@ -163,7 +168,7 @@
             this.apellidosDataGridViewTextBoxColumn.FillWeight = 189.1662F;
             this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
             this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
-            this.apellidosDataGridViewTextBoxColumn.Width = 75;
+            this.apellidosDataGridViewTextBoxColumn.Width = 73;
             // 
             // estadoDataGridViewTextBoxColumn
             // 
@@ -171,7 +176,7 @@
             this.estadoDataGridViewTextBoxColumn.FillWeight = 164.1437F;
             this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
             this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.Width = 65;
+            this.estadoDataGridViewTextBoxColumn.Width = 64;
             // 
             // becaDataGridViewTextBoxColumn
             // 
@@ -187,7 +192,7 @@
             this.sexoDataGridViewTextBoxColumn.FillWeight = 124.1215F;
             this.sexoDataGridViewTextBoxColumn.HeaderText = "sexo";
             this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            this.sexoDataGridViewTextBoxColumn.Width = 50;
+            this.sexoDataGridViewTextBoxColumn.Width = 54;
             // 
             // agenteDataGridViewTextBoxColumn
             // 
@@ -195,7 +200,7 @@
             this.agenteDataGridViewTextBoxColumn.FillWeight = 108.2089F;
             this.agenteDataGridViewTextBoxColumn.HeaderText = "agente";
             this.agenteDataGridViewTextBoxColumn.Name = "agenteDataGridViewTextBoxColumn";
-            this.agenteDataGridViewTextBoxColumn.Width = 42;
+            this.agenteDataGridViewTextBoxColumn.Width = 65;
             // 
             // fechaNacimientoDataGridViewTextBoxColumn
             // 
@@ -203,7 +208,7 @@
             this.fechaNacimientoDataGridViewTextBoxColumn.FillWeight = 94.52498F;
             this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "fechaNacimiento";
             this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
-            this.fechaNacimientoDataGridViewTextBoxColumn.Width = 38;
+            this.fechaNacimientoDataGridViewTextBoxColumn.Width = 112;
             // 
             // fechaEntradaAcoesDataGridViewTextBoxColumn
             // 
@@ -211,7 +216,7 @@
             this.fechaEntradaAcoesDataGridViewTextBoxColumn.FillWeight = 82.75754F;
             this.fechaEntradaAcoesDataGridViewTextBoxColumn.HeaderText = "fechaEntradaAcoes";
             this.fechaEntradaAcoesDataGridViewTextBoxColumn.Name = "fechaEntradaAcoesDataGridViewTextBoxColumn";
-            this.fechaEntradaAcoesDataGridViewTextBoxColumn.Width = 33;
+            this.fechaEntradaAcoesDataGridViewTextBoxColumn.Width = 126;
             // 
             // proyectoDataGridViewTextBoxColumn
             // 
@@ -219,7 +224,7 @@
             this.proyectoDataGridViewTextBoxColumn.FillWeight = 72.63821F;
             this.proyectoDataGridViewTextBoxColumn.HeaderText = "proyecto";
             this.proyectoDataGridViewTextBoxColumn.Name = "proyectoDataGridViewTextBoxColumn";
-            this.proyectoDataGridViewTextBoxColumn.Width = 29;
+            this.proyectoDataGridViewTextBoxColumn.Width = 73;
             // 
             // fechaEntradaProyectoDataGridViewTextBoxColumn
             // 
@@ -227,7 +232,7 @@
             this.fechaEntradaProyectoDataGridViewTextBoxColumn.FillWeight = 63.93617F;
             this.fechaEntradaProyectoDataGridViewTextBoxColumn.HeaderText = "fechaEntradaProyecto";
             this.fechaEntradaProyectoDataGridViewTextBoxColumn.Name = "fechaEntradaProyectoDataGridViewTextBoxColumn";
-            this.fechaEntradaProyectoDataGridViewTextBoxColumn.Width = 25;
+            this.fechaEntradaProyectoDataGridViewTextBoxColumn.Width = 138;
             // 
             // fechaSalidaProyectoDataGridViewTextBoxColumn
             // 
@@ -235,7 +240,7 @@
             this.fechaSalidaProyectoDataGridViewTextBoxColumn.FillWeight = 56.4529F;
             this.fechaSalidaProyectoDataGridViewTextBoxColumn.HeaderText = "fechaSalidaProyecto";
             this.fechaSalidaProyectoDataGridViewTextBoxColumn.Name = "fechaSalidaProyectoDataGridViewTextBoxColumn";
-            this.fechaSalidaProyectoDataGridViewTextBoxColumn.Width = 22;
+            this.fechaSalidaProyectoDataGridViewTextBoxColumn.Width = 130;
             // 
             // fechaAltaDataGridViewTextBoxColumn
             // 
@@ -243,7 +248,7 @@
             this.fechaAltaDataGridViewTextBoxColumn.FillWeight = 50.01769F;
             this.fechaAltaDataGridViewTextBoxColumn.HeaderText = "fechaAlta";
             this.fechaAltaDataGridViewTextBoxColumn.Name = "fechaAltaDataGridViewTextBoxColumn";
-            this.fechaAltaDataGridViewTextBoxColumn.Width = 20;
+            this.fechaAltaDataGridViewTextBoxColumn.Width = 77;
             // 
             // fechaSalidaAcoesDataGridViewTextBoxColumn
             // 
@@ -251,7 +256,7 @@
             this.fechaSalidaAcoesDataGridViewTextBoxColumn.FillWeight = 44.48378F;
             this.fechaSalidaAcoesDataGridViewTextBoxColumn.HeaderText = "fechaSalidaAcoes";
             this.fechaSalidaAcoesDataGridViewTextBoxColumn.Name = "fechaSalidaAcoesDataGridViewTextBoxColumn";
-            this.fechaSalidaAcoesDataGridViewTextBoxColumn.Width = 18;
+            this.fechaSalidaAcoesDataGridViewTextBoxColumn.Width = 118;
             // 
             // cursoDataGridViewTextBoxColumn
             // 
@@ -259,7 +264,7 @@
             this.cursoDataGridViewTextBoxColumn.FillWeight = 39.72493F;
             this.cursoDataGridViewTextBoxColumn.HeaderText = "curso";
             this.cursoDataGridViewTextBoxColumn.Name = "cursoDataGridViewTextBoxColumn";
-            this.cursoDataGridViewTextBoxColumn.Width = 16;
+            this.cursoDataGridViewTextBoxColumn.Width = 58;
             // 
             // comunidadProcDataGridViewTextBoxColumn
             // 
@@ -267,7 +272,7 @@
             this.comunidadProcDataGridViewTextBoxColumn.FillWeight = 35.63258F;
             this.comunidadProcDataGridViewTextBoxColumn.HeaderText = "comunidadProc";
             this.comunidadProcDataGridViewTextBoxColumn.Name = "comunidadProcDataGridViewTextBoxColumn";
-            this.comunidadProcDataGridViewTextBoxColumn.Width = 14;
+            this.comunidadProcDataGridViewTextBoxColumn.Width = 106;
             // 
             // comunidadActDataGridViewTextBoxColumn
             // 
@@ -275,7 +280,6 @@
             this.comunidadActDataGridViewTextBoxColumn.FillWeight = 32.1134F;
             this.comunidadActDataGridViewTextBoxColumn.HeaderText = "comunidadAct";
             this.comunidadActDataGridViewTextBoxColumn.Name = "comunidadActDataGridViewTextBoxColumn";
-            this.comunidadActDataGridViewTextBoxColumn.Width = 12;
             // 
             // observacionesDataGridViewTextBoxColumn
             // 
@@ -283,7 +287,7 @@
             this.observacionesDataGridViewTextBoxColumn.FillWeight = 29.08709F;
             this.observacionesDataGridViewTextBoxColumn.HeaderText = "observaciones";
             this.observacionesDataGridViewTextBoxColumn.Name = "observacionesDataGridViewTextBoxColumn";
-            this.observacionesDataGridViewTextBoxColumn.Width = 12;
+            this.observacionesDataGridViewTextBoxColumn.Width = 101;
             // 
             // ninioBindingSource
             // 
@@ -685,14 +689,6 @@
             this.label16.TabIndex = 102;
             this.label16.Text = "Agente";
             // 
-            // tAgente
-            // 
-            this.tAgente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tAgente.Location = new System.Drawing.Point(163, 629);
-            this.tAgente.Name = "tAgente";
-            this.tAgente.Size = new System.Drawing.Size(173, 26);
-            this.tAgente.TabIndex = 103;
-            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -704,14 +700,31 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataMember = "Usuario";
+            this.usuarioBindingSource.DataSource = this.aCOESDataSet;
+            // 
+            // usuarioTableAdapter
+            // 
+            this.usuarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // tAgente
+            // 
+            this.tAgente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tAgente.Location = new System.Drawing.Point(163, 626);
+            this.tAgente.Name = "tAgente";
+            this.tAgente.Size = new System.Drawing.Size(173, 26);
+            this.tAgente.TabIndex = 105;
+            // 
             // GestionNinio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(851, 766);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.tAgente);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -761,6 +774,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ninioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tCurso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -831,7 +845,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox tAgente;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
+        private ACOESDataSetTableAdapters.UsuarioTableAdapter usuarioTableAdapter;
+        private System.Windows.Forms.TextBox tAgente;
     }
 }

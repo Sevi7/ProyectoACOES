@@ -155,6 +155,7 @@ namespace ProyectoACOES
                 {
                     Apadrinamiento seleccionado = new Apadrinamiento(new Socio(Int32.Parse(dataGridView1.SelectedRows[0].Cells[1].Value.ToString())), new Ninio(Int32.Parse(dataGridView1.SelectedRows[0].Cells[3].Value.ToString())), usuario);
                     seleccionado.eliminarApadrinamiento(usuario);
+                    
                     tSocio.Text = "";
                     tNiño.Text = "";
                     tDinero.Text = "";

@@ -1,6 +1,6 @@
 ﻿namespace ProyectoACOES
 {
-    partial class Socios
+    partial class InicioResponsable
     {
         /// <summary>
         /// Required designer variable.
@@ -35,34 +35,34 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(128, 76);
+            this.button1.Location = new System.Drawing.Point(83, 73);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 36);
+            this.button1.Size = new System.Drawing.Size(223, 30);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Gestion de Socios";
+            this.button1.Text = "Gestion Económica";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button2.Location = new System.Drawing.Point(128, 136);
+            this.button2.Location = new System.Drawing.Point(83, 123);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(231, 36);
+            this.button2.Size = new System.Drawing.Size(223, 30);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Gestion de Apadrinamientos";
+            this.button2.Text = "Gestion Beneficiarios";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Socios
+            // InicioResponsable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(491, 244);
+            this.ClientSize = new System.Drawing.Size(391, 237);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Socios";
-            this.Text = "Socios";
+            this.Name = "InicioResponsable";
+            this.Text = "InicioResponsable";
             this.ResumeLayout(false);
 
         }

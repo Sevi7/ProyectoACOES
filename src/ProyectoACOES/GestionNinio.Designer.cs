@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +103,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -124,15 +127,24 @@
             this.comunidadActDataGridViewTextBoxColumn,
             this.observacionesDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.ninioBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 78);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(43, 78);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(665, 184);
+            this.dataGridView1.Size = new System.Drawing.Size(757, 184);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "codigo";
+            this.codigoDataGridViewTextBoxColumn.FillWeight = 252.1009F;
             this.codigoDataGridViewTextBoxColumn.HeaderText = "codigo";
             this.codigoDataGridViewTextBoxColumn.Name = "codigoDataGridViewTextBoxColumn";
             this.codigoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -140,104 +152,138 @@
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.FillWeight = 218.264F;
             this.nombreDataGridViewTextBoxColumn.HeaderText = "nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.Width = 87;
             // 
             // apellidosDataGridViewTextBoxColumn
             // 
             this.apellidosDataGridViewTextBoxColumn.DataPropertyName = "apellidos";
+            this.apellidosDataGridViewTextBoxColumn.FillWeight = 189.1662F;
             this.apellidosDataGridViewTextBoxColumn.HeaderText = "apellidos";
             this.apellidosDataGridViewTextBoxColumn.Name = "apellidosDataGridViewTextBoxColumn";
+            this.apellidosDataGridViewTextBoxColumn.Width = 75;
             // 
             // estadoDataGridViewTextBoxColumn
             // 
             this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.FillWeight = 164.1437F;
             this.estadoDataGridViewTextBoxColumn.HeaderText = "estado";
             this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.Width = 65;
             // 
             // becaDataGridViewTextBoxColumn
             // 
             this.becaDataGridViewTextBoxColumn.DataPropertyName = "beca";
+            this.becaDataGridViewTextBoxColumn.FillWeight = 142.6257F;
             this.becaDataGridViewTextBoxColumn.HeaderText = "beca";
             this.becaDataGridViewTextBoxColumn.Name = "becaDataGridViewTextBoxColumn";
+            this.becaDataGridViewTextBoxColumn.Width = 56;
             // 
             // sexoDataGridViewTextBoxColumn
             // 
             this.sexoDataGridViewTextBoxColumn.DataPropertyName = "sexo";
+            this.sexoDataGridViewTextBoxColumn.FillWeight = 124.1215F;
             this.sexoDataGridViewTextBoxColumn.HeaderText = "sexo";
             this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            this.sexoDataGridViewTextBoxColumn.Width = 50;
             // 
             // agenteDataGridViewTextBoxColumn
             // 
             this.agenteDataGridViewTextBoxColumn.DataPropertyName = "agente";
+            this.agenteDataGridViewTextBoxColumn.FillWeight = 108.2089F;
             this.agenteDataGridViewTextBoxColumn.HeaderText = "agente";
             this.agenteDataGridViewTextBoxColumn.Name = "agenteDataGridViewTextBoxColumn";
+            this.agenteDataGridViewTextBoxColumn.Width = 42;
             // 
             // fechaNacimientoDataGridViewTextBoxColumn
             // 
             this.fechaNacimientoDataGridViewTextBoxColumn.DataPropertyName = "fechaNacimiento";
+            this.fechaNacimientoDataGridViewTextBoxColumn.FillWeight = 94.52498F;
             this.fechaNacimientoDataGridViewTextBoxColumn.HeaderText = "fechaNacimiento";
             this.fechaNacimientoDataGridViewTextBoxColumn.Name = "fechaNacimientoDataGridViewTextBoxColumn";
+            this.fechaNacimientoDataGridViewTextBoxColumn.Width = 38;
             // 
             // fechaEntradaAcoesDataGridViewTextBoxColumn
             // 
             this.fechaEntradaAcoesDataGridViewTextBoxColumn.DataPropertyName = "fechaEntradaAcoes";
+            this.fechaEntradaAcoesDataGridViewTextBoxColumn.FillWeight = 82.75754F;
             this.fechaEntradaAcoesDataGridViewTextBoxColumn.HeaderText = "fechaEntradaAcoes";
             this.fechaEntradaAcoesDataGridViewTextBoxColumn.Name = "fechaEntradaAcoesDataGridViewTextBoxColumn";
+            this.fechaEntradaAcoesDataGridViewTextBoxColumn.Width = 33;
             // 
             // proyectoDataGridViewTextBoxColumn
             // 
             this.proyectoDataGridViewTextBoxColumn.DataPropertyName = "proyecto";
+            this.proyectoDataGridViewTextBoxColumn.FillWeight = 72.63821F;
             this.proyectoDataGridViewTextBoxColumn.HeaderText = "proyecto";
             this.proyectoDataGridViewTextBoxColumn.Name = "proyectoDataGridViewTextBoxColumn";
+            this.proyectoDataGridViewTextBoxColumn.Width = 29;
             // 
             // fechaEntradaProyectoDataGridViewTextBoxColumn
             // 
             this.fechaEntradaProyectoDataGridViewTextBoxColumn.DataPropertyName = "fechaEntradaProyecto";
+            this.fechaEntradaProyectoDataGridViewTextBoxColumn.FillWeight = 63.93617F;
             this.fechaEntradaProyectoDataGridViewTextBoxColumn.HeaderText = "fechaEntradaProyecto";
             this.fechaEntradaProyectoDataGridViewTextBoxColumn.Name = "fechaEntradaProyectoDataGridViewTextBoxColumn";
+            this.fechaEntradaProyectoDataGridViewTextBoxColumn.Width = 25;
             // 
             // fechaSalidaProyectoDataGridViewTextBoxColumn
             // 
             this.fechaSalidaProyectoDataGridViewTextBoxColumn.DataPropertyName = "fechaSalidaProyecto";
+            this.fechaSalidaProyectoDataGridViewTextBoxColumn.FillWeight = 56.4529F;
             this.fechaSalidaProyectoDataGridViewTextBoxColumn.HeaderText = "fechaSalidaProyecto";
             this.fechaSalidaProyectoDataGridViewTextBoxColumn.Name = "fechaSalidaProyectoDataGridViewTextBoxColumn";
+            this.fechaSalidaProyectoDataGridViewTextBoxColumn.Width = 22;
             // 
             // fechaAltaDataGridViewTextBoxColumn
             // 
             this.fechaAltaDataGridViewTextBoxColumn.DataPropertyName = "fechaAlta";
+            this.fechaAltaDataGridViewTextBoxColumn.FillWeight = 50.01769F;
             this.fechaAltaDataGridViewTextBoxColumn.HeaderText = "fechaAlta";
             this.fechaAltaDataGridViewTextBoxColumn.Name = "fechaAltaDataGridViewTextBoxColumn";
+            this.fechaAltaDataGridViewTextBoxColumn.Width = 20;
             // 
             // fechaSalidaAcoesDataGridViewTextBoxColumn
             // 
             this.fechaSalidaAcoesDataGridViewTextBoxColumn.DataPropertyName = "fechaSalidaAcoes";
+            this.fechaSalidaAcoesDataGridViewTextBoxColumn.FillWeight = 44.48378F;
             this.fechaSalidaAcoesDataGridViewTextBoxColumn.HeaderText = "fechaSalidaAcoes";
             this.fechaSalidaAcoesDataGridViewTextBoxColumn.Name = "fechaSalidaAcoesDataGridViewTextBoxColumn";
+            this.fechaSalidaAcoesDataGridViewTextBoxColumn.Width = 18;
             // 
             // cursoDataGridViewTextBoxColumn
             // 
             this.cursoDataGridViewTextBoxColumn.DataPropertyName = "curso";
+            this.cursoDataGridViewTextBoxColumn.FillWeight = 39.72493F;
             this.cursoDataGridViewTextBoxColumn.HeaderText = "curso";
             this.cursoDataGridViewTextBoxColumn.Name = "cursoDataGridViewTextBoxColumn";
+            this.cursoDataGridViewTextBoxColumn.Width = 16;
             // 
             // comunidadProcDataGridViewTextBoxColumn
             // 
             this.comunidadProcDataGridViewTextBoxColumn.DataPropertyName = "comunidadProc";
+            this.comunidadProcDataGridViewTextBoxColumn.FillWeight = 35.63258F;
             this.comunidadProcDataGridViewTextBoxColumn.HeaderText = "comunidadProc";
             this.comunidadProcDataGridViewTextBoxColumn.Name = "comunidadProcDataGridViewTextBoxColumn";
+            this.comunidadProcDataGridViewTextBoxColumn.Width = 14;
             // 
             // comunidadActDataGridViewTextBoxColumn
             // 
             this.comunidadActDataGridViewTextBoxColumn.DataPropertyName = "comunidadAct";
+            this.comunidadActDataGridViewTextBoxColumn.FillWeight = 32.1134F;
             this.comunidadActDataGridViewTextBoxColumn.HeaderText = "comunidadAct";
             this.comunidadActDataGridViewTextBoxColumn.Name = "comunidadActDataGridViewTextBoxColumn";
+            this.comunidadActDataGridViewTextBoxColumn.Width = 12;
             // 
             // observacionesDataGridViewTextBoxColumn
             // 
             this.observacionesDataGridViewTextBoxColumn.DataPropertyName = "observaciones";
+            this.observacionesDataGridViewTextBoxColumn.FillWeight = 29.08709F;
             this.observacionesDataGridViewTextBoxColumn.HeaderText = "observaciones";
             this.observacionesDataGridViewTextBoxColumn.Name = "observacionesDataGridViewTextBoxColumn";
+            this.observacionesDataGridViewTextBoxColumn.Width = 12;
             // 
             // ninioBindingSource
             // 
@@ -256,189 +302,211 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(227, 21);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 42F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(231, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 39);
+            this.label1.Size = new System.Drawing.Size(408, 64);
             this.label1.TabIndex = 1;
             this.label1.Text = "Niños/Jovenes";
             // 
             // tObservaciones
             // 
-            this.tObservaciones.Location = new System.Drawing.Point(436, 473);
+            this.tObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tObservaciones.Location = new System.Drawing.Point(424, 582);
             this.tObservaciones.Multiline = true;
             this.tObservaciones.Name = "tObservaciones";
-            this.tObservaciones.Size = new System.Drawing.Size(200, 90);
+            this.tObservaciones.Size = new System.Drawing.Size(388, 95);
             this.tObservaciones.TabIndex = 84;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(335, 550);
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label20.Location = new System.Drawing.Point(420, 559);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(78, 13);
+            this.label20.Size = new System.Drawing.Size(114, 20);
             this.label20.TabIndex = 83;
             this.label20.Text = "Observaciones";
             // 
             // tFechaSalidaP
             // 
-            this.tFechaSalidaP.Location = new System.Drawing.Point(436, 378);
+            this.tFechaSalidaP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tFechaSalidaP.Location = new System.Drawing.Point(600, 433);
             this.tFechaSalidaP.Name = "tFechaSalidaP";
-            this.tFechaSalidaP.Size = new System.Drawing.Size(200, 20);
+            this.tFechaSalidaP.Size = new System.Drawing.Size(200, 26);
             this.tFechaSalidaP.TabIndex = 82;
             // 
             // tFechaEntradaP
             // 
-            this.tFechaEntradaP.Location = new System.Drawing.Point(436, 342);
+            this.tFechaEntradaP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tFechaEntradaP.Location = new System.Drawing.Point(600, 382);
             this.tFechaEntradaP.Name = "tFechaEntradaP";
-            this.tFechaEntradaP.Size = new System.Drawing.Size(200, 20);
+            this.tFechaEntradaP.Size = new System.Drawing.Size(200, 26);
             this.tFechaEntradaP.TabIndex = 81;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(335, 417);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label19.Location = new System.Drawing.Point(420, 484);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(72, 13);
+            this.label19.Size = new System.Drawing.Size(106, 20);
             this.label19.TabIndex = 80;
             this.label19.Text = "Fecha de alta";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(335, 371);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label18.Location = new System.Drawing.Point(420, 438);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 26);
+            this.label18.Size = new System.Drawing.Size(121, 40);
             this.label18.TabIndex = 79;
             this.label18.Text = "Fecha de salida\r\nen el proyecto\r\n";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(293, 303);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label17.Location = new System.Drawing.Point(293, 297);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(0, 13);
+            this.label17.Size = new System.Drawing.Size(0, 20);
             this.label17.TabIndex = 77;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(42, 473);
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label15.Location = new System.Drawing.Point(39, 519);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 26);
+            this.label15.Size = new System.Drawing.Size(118, 40);
             this.label15.TabIndex = 70;
             this.label15.Text = "Comunidad \r\nde procedencia\r\n";
             // 
             // tComunidadP
             // 
-            this.tComunidadP.Location = new System.Drawing.Point(129, 479);
+            this.tComunidadP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tComunidadP.Location = new System.Drawing.Point(163, 533);
             this.tComunidadP.Name = "tComunidadP";
-            this.tComunidadP.Size = new System.Drawing.Size(173, 20);
+            this.tComunidadP.Size = new System.Drawing.Size(173, 26);
             this.tComunidadP.TabIndex = 68;
             // 
             // tProyecto
             // 
-            this.tProyecto.Location = new System.Drawing.Point(129, 420);
+            this.tProyecto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tProyecto.Location = new System.Drawing.Point(163, 445);
             this.tProyecto.Name = "tProyecto";
-            this.tProyecto.Size = new System.Drawing.Size(173, 20);
+            this.tProyecto.Size = new System.Drawing.Size(173, 26);
             this.tProyecto.TabIndex = 66;
             // 
             // tBeca
             // 
-            this.tBeca.Location = new System.Drawing.Point(129, 355);
+            this.tBeca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tBeca.Location = new System.Drawing.Point(163, 382);
             this.tBeca.Name = "tBeca";
-            this.tBeca.Size = new System.Drawing.Size(173, 20);
+            this.tBeca.Size = new System.Drawing.Size(173, 26);
             this.tBeca.TabIndex = 64;
             // 
             // tEstado
             // 
-            this.tEstado.Location = new System.Drawing.Point(129, 329);
+            this.tEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tEstado.Location = new System.Drawing.Point(163, 349);
             this.tEstado.Name = "tEstado";
-            this.tEstado.Size = new System.Drawing.Size(173, 20);
+            this.tEstado.Size = new System.Drawing.Size(173, 26);
             this.tEstado.TabIndex = 63;
             // 
             // tApellido
             // 
-            this.tApellido.Location = new System.Drawing.Point(129, 303);
+            this.tApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tApellido.Location = new System.Drawing.Point(163, 316);
             this.tApellido.Name = "tApellido";
-            this.tApellido.Size = new System.Drawing.Size(173, 20);
+            this.tApellido.Size = new System.Drawing.Size(173, 26);
             this.tApellido.TabIndex = 62;
             // 
             // tNombre
             // 
-            this.tNombre.Location = new System.Drawing.Point(129, 277);
+            this.tNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tNombre.Location = new System.Drawing.Point(163, 282);
             this.tNombre.Name = "tNombre";
-            this.tNombre.Size = new System.Drawing.Size(173, 20);
+            this.tNombre.Size = new System.Drawing.Size(173, 26);
             this.tNombre.TabIndex = 60;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label13.Location = new System.Drawing.Point(324, 384);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 13);
+            this.label13.Size = new System.Drawing.Size(0, 20);
             this.label13.TabIndex = 59;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 454);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.Location = new System.Drawing.Point(43, 479);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(34, 13);
+            this.label8.Size = new System.Drawing.Size(51, 20);
             this.label8.TabIndex = 54;
             this.label8.Text = "Curso";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 428);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Location = new System.Drawing.Point(42, 448);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.Size = new System.Drawing.Size(71, 20);
             this.label7.TabIndex = 53;
             this.label7.Text = "Proyecto";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 389);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Location = new System.Drawing.Point(43, 415);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.Size = new System.Drawing.Size(45, 20);
             this.label6.TabIndex = 52;
             this.label6.Text = "Sexo";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 363);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(42, 384);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.Size = new System.Drawing.Size(46, 20);
             this.label5.TabIndex = 51;
             this.label5.Text = "Beca";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 337);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(42, 352);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.Size = new System.Drawing.Size(60, 20);
             this.label4.TabIndex = 50;
             this.label4.Text = "Estado";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 311);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(42, 319);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 49;
             this.label3.Text = "Apellidos";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(42, 285);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 48;
             this.label2.Text = "Nombre";
             // 
@@ -454,108 +522,121 @@
             // 
             // tSexo
             // 
+            this.tSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tSexo.FormattingEnabled = true;
             this.tSexo.Items.AddRange(new object[] {
             "Hombre",
             "Mujer",
             "Otros"});
-            this.tSexo.Location = new System.Drawing.Point(129, 380);
+            this.tSexo.Location = new System.Drawing.Point(163, 414);
             this.tSexo.Name = "tSexo";
-            this.tSexo.Size = new System.Drawing.Size(173, 34);
+            this.tSexo.Size = new System.Drawing.Size(173, 25);
             this.tSexo.TabIndex = 87;
             // 
             // tCurso
             // 
-            this.tCurso.Location = new System.Drawing.Point(129, 447);
+            this.tCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tCurso.Location = new System.Drawing.Point(163, 477);
             this.tCurso.Name = "tCurso";
-            this.tCurso.Size = new System.Drawing.Size(173, 20);
+            this.tCurso.Size = new System.Drawing.Size(173, 26);
             this.tCurso.TabIndex = 10;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(42, 510);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label9.Location = new System.Drawing.Point(42, 572);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 39);
+            this.label9.Size = new System.Drawing.Size(94, 60);
             this.label9.TabIndex = 88;
             this.label9.Text = "Comunidad \r\nactual\r\n\r\n";
             // 
             // tComunidadA
             // 
-            this.tComunidadA.Location = new System.Drawing.Point(129, 516);
+            this.tComunidadA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tComunidadA.Location = new System.Drawing.Point(163, 582);
             this.tComunidadA.Name = "tComunidadA";
-            this.tComunidadA.Size = new System.Drawing.Size(173, 20);
+            this.tComunidadA.Size = new System.Drawing.Size(173, 26);
             this.tComunidadA.TabIndex = 89;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(335, 303);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label10.Location = new System.Drawing.Point(420, 332);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 26);
+            this.label10.Size = new System.Drawing.Size(124, 40);
             this.label10.TabIndex = 90;
             this.label10.Text = "Fecha de\r\nentrada ACOES";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(335, 271);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label11.Location = new System.Drawing.Point(420, 277);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 26);
+            this.label11.Size = new System.Drawing.Size(86, 40);
             this.label11.TabIndex = 91;
             this.label11.Text = "Fecha de\r\nnacimiento\r\n";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(335, 336);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label12.Location = new System.Drawing.Point(420, 382);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(95, 26);
+            this.label12.Size = new System.Drawing.Size(139, 40);
             this.label12.TabIndex = 92;
             this.label12.Text = "Fecha de entrada \r\nen proyecto actual";
             // 
             // tFechaNacimiento
             // 
-            this.tFechaNacimiento.Location = new System.Drawing.Point(436, 274);
+            this.tFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tFechaNacimiento.Location = new System.Drawing.Point(600, 282);
             this.tFechaNacimiento.Name = "tFechaNacimiento";
-            this.tFechaNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.tFechaNacimiento.Size = new System.Drawing.Size(200, 26);
             this.tFechaNacimiento.TabIndex = 93;
             // 
             // tFechaEntradaACOES
             // 
-            this.tFechaEntradaACOES.Location = new System.Drawing.Point(436, 309);
+            this.tFechaEntradaACOES.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tFechaEntradaACOES.Location = new System.Drawing.Point(600, 333);
             this.tFechaEntradaACOES.Name = "tFechaEntradaACOES";
-            this.tFechaEntradaACOES.Size = new System.Drawing.Size(200, 20);
+            this.tFechaEntradaACOES.Size = new System.Drawing.Size(200, 26);
             this.tFechaEntradaACOES.TabIndex = 94;
             // 
             // tFechaAlta
             // 
-            this.tFechaAlta.Location = new System.Drawing.Point(436, 410);
+            this.tFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tFechaAlta.Location = new System.Drawing.Point(600, 479);
             this.tFechaAlta.Name = "tFechaAlta";
-            this.tFechaAlta.Size = new System.Drawing.Size(200, 20);
+            this.tFechaAlta.Size = new System.Drawing.Size(200, 26);
             this.tFechaAlta.TabIndex = 95;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(335, 441);
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label14.Location = new System.Drawing.Point(420, 505);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(73, 26);
+            this.label14.Size = new System.Drawing.Size(110, 40);
             this.label14.TabIndex = 96;
             this.label14.Text = "Fecha de\r\nsalida ACOES\r\n";
             // 
             // tFechaSalidACOES
             // 
-            this.tFechaSalidACOES.Location = new System.Drawing.Point(436, 443);
+            this.tFechaSalidACOES.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tFechaSalidACOES.Location = new System.Drawing.Point(600, 519);
             this.tFechaSalidACOES.Name = "tFechaSalidACOES";
-            this.tFechaSalidACOES.Size = new System.Drawing.Size(200, 20);
+            this.tFechaSalidACOES.Size = new System.Drawing.Size(200, 26);
             this.tFechaSalidACOES.TabIndex = 97;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(330, 582);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button1.Location = new System.Drawing.Point(392, 710);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(89, 28);
             this.button1.TabIndex = 98;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = true;
@@ -563,9 +644,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(249, 582);
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button2.Location = new System.Drawing.Point(297, 710);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(89, 28);
             this.button2.TabIndex = 99;
             this.button2.Text = "Insertar";
             this.button2.UseVisualStyleBackColor = true;
@@ -573,9 +655,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(411, 582);
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button3.Location = new System.Drawing.Point(487, 710);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(89, 28);
             this.button3.TabIndex = 100;
             this.button3.Text = "Eliminar";
             this.button3.UseVisualStyleBackColor = true;
@@ -583,9 +666,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(602, 582);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button4.Location = new System.Drawing.Point(664, 710);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(89, 28);
             this.button4.TabIndex = 101;
             this.button4.Text = "Limpiar";
             this.button4.UseVisualStyleBackColor = true;
@@ -594,24 +678,27 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(42, 554);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label16.Location = new System.Drawing.Point(43, 632);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
+            this.label16.Size = new System.Drawing.Size(61, 20);
             this.label16.TabIndex = 102;
             this.label16.Text = "Agente";
             // 
             // tAgente
             // 
-            this.tAgente.Location = new System.Drawing.Point(129, 547);
+            this.tAgente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tAgente.Location = new System.Drawing.Point(163, 629);
             this.tAgente.Name = "tAgente";
-            this.tAgente.Size = new System.Drawing.Size(173, 20);
+            this.tAgente.Size = new System.Drawing.Size(173, 26);
             this.tAgente.TabIndex = 103;
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 582);
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button5.Location = new System.Drawing.Point(74, 710);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(89, 28);
             this.button5.TabIndex = 104;
             this.button5.Text = "Salir";
             this.button5.UseVisualStyleBackColor = true;
@@ -621,7 +708,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 617);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(851, 766);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.tAgente);
             this.Controls.Add(this.label16);

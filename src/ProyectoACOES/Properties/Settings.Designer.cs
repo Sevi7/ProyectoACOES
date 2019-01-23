@@ -25,16 +25,6 @@ namespace ProyectoACOES.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=ACOES;Integrated Security=True")]
-        public string ACOESConnectionString {
-            get {
-                return ((string)(this["ACOESConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
         public string BD_SERVER {
             get {
@@ -48,6 +38,16 @@ namespace ProyectoACOES.Properties {
         public string BD_NAME {
             get {
                 return ((string)(this["BD_NAME"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=ACOES;Integrated Security=True")]
+        public string ACOESConnectionString {
+            get {
+                return ((string)(this["ACOESConnectionString"]));
             }
         }
     }

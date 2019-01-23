@@ -33,6 +33,8 @@ namespace ProyectoACOES
                     formulario(user1);
                 } else if (user1.rol_usuario == "R001")
                 {
+                    formularioResponsable(user1);
+
 
                 } else if (user1.rol_usuario == "A001") { 
                     formularioAgente(user1);   
@@ -51,6 +53,13 @@ namespace ProyectoACOES
         {
             this.Visible = false;
             Socios form1 = new Socios(user1);
+            form1.ShowDialog();
+        }
+
+        private void formularioResponsable(Usuario user1)
+        {
+            this.Visible = false;
+            InicioResponsable form1 = new InicioResponsable(user1);
             form1.ShowDialog();
         }
 

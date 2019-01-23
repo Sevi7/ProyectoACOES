@@ -49,6 +49,11 @@ namespace ProyectoACOES
            
         }
 
+        private void CrearNuevoTipoProyecto_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

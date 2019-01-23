@@ -252,7 +252,7 @@ namespace ProyectoACOES
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             InicioResponsable i = new InicioResponsable(us);
             i.ShowDialog();
         }

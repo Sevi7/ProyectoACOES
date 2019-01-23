@@ -55,7 +55,7 @@ namespace ProyectoACOES
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Close();
+            Hide();
             Inicio I = new Inicio();
             I.ShowDialog();
         }

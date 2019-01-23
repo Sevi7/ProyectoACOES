@@ -59,6 +59,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -187,9 +189,9 @@
             this.fechaDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cuentaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 30);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(745, 150);
             this.dataGridView1.TabIndex = 16;
             // 
             // idDataGridViewTextBoxColumn
@@ -306,11 +308,31 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(522, 305);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Proyecto:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(501, 245);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "TipoProyecto:";
+            // 
             // GestionEconomica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 501);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -373,5 +395,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

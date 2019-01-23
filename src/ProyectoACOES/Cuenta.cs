@@ -19,6 +19,7 @@ namespace ProyectoACOES
         private double cantidad;
         private DateTime fecha;
         private string descripcion;
+        private int validacion;
 
         public Cuenta(int id)
         {
@@ -31,6 +32,7 @@ namespace ProyectoACOES
             this.cantidad =Convert.ToDouble(cuenta[4]);
             this.fecha = Convert.ToDateTime(cuenta[5]);
             this.descripcion = (string)cuenta[6];
+            this.validacion = Convert.ToInt32(cuenta[7]);
 
 
         }
@@ -38,13 +40,14 @@ namespace ProyectoACOES
         public Cuenta(string t, string n, string cat, double cant, DateTime f, string des)
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            bd.Insert("Insert into Cuenta values('" + t + "','" + n + "','" + cat + "'," + cant + ",'" + f.ToString("yyyy-MM-dd") + "','" + des + "');");
+            bd.Insert("Insert into Cuenta values('" + t + "','" + n + "','" + cat + "'," + cant + ",'" + f.ToString("yyyy-MM-dd") + "','" + des + "','"+0+"');");
             this.id = Convert.ToInt32(bd.Select("SELECT max(id) from Cuenta")[0][0]);
             this.tipo = t;
             this.nombre = n;
             this.categoria = cat;
             this.cantidad = cant;
             this.fecha = f;
+            this.validacion = 0;
 
 
         }
@@ -150,6 +153,24 @@ namespace ProyectoACOES
                     miBD.Update("update Cuenta set descripcion = '" + value + "' where id=" + id + ";");
                     descripcion = value;
                 }
+            }
+        }
+        public int Validacion
+        {
+            get
+            {
+                return validacion;
+            }
+            set
+            {
+                if(value != validacion)
+                {
+                    SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
+                    miBD.Update("update Cuenta set validado = '" + value + "' where id=" + id + ";");
+                    validacion = value;
+
+                }
+
             }
         }
 

@@ -29,43 +29,6 @@ namespace ProyectoACOES
             inicializar();
         }
 
-        
-
-
-        private void b1_Click(object sender, EventArgs e)
-        {
-            SqlConnection sql = new SqlConnection("Data Source=" + BD_SERVER + ";" + " Initial Catalog =" + BD_NAME + "; Integrated Security = True");
-            SqlCommand cm = new SqlCommand("Select nombre from TipoProyecto;", sql);
-            sql.Open();
-            SqlDataReader rd = cm.ExecuteReader();
-
-            while (rd.Read() == true)
-            {
-                comboBox1.Items.Add(rd[0]);
-            }
-            sql.Close();
-        }
-
-        private void b2_Click(object sender, EventArgs e)
-        {
-            string tipo = comboBox1.SelectedItem.ToString();
-            if (comboBox1.SelectedItem != null)
-            {
-                SqlConnection sql = new SqlConnection("Data Source=" + BD_SERVER + ";" + " Initial Catalog =" + BD_NAME + "; Integrated Security = True");
-                SqlCommand cm = new SqlCommand("Select nombre from Proyecto where tipo_proyecto = '" + tipo + "';", sql);
-                sql.Open();
-                SqlDataReader rd = cm.ExecuteReader();
-
-                while (rd.Read() == true)
-                {
-                    comboBox2.Items.Add(rd[0]);
-                }
-                comboBox2.Items.Add("Tipo Proyecto");
-                sql.Close();
-            }
-
-        }
-
         private void consultar_Click(object sender, EventArgs e)
         {
             consultar2();
@@ -122,7 +85,7 @@ namespace ProyectoACOES
                 string a6 = des.Text;
 
                 Cuenta c = new Cuenta(a1, a2, a3, a4, a5, a6);
-
+            
 
                 if (p == "Tipo Proyecto")
                 {
@@ -136,6 +99,7 @@ namespace ProyectoACOES
                     int id = Convert.ToInt32(ob[0]);
                     CuentaProyecto cp = new CuentaProyecto(id, c.Id);
                 }
+                consultar2();
                 refrescarDatos();
 
             }
@@ -201,14 +165,14 @@ namespace ProyectoACOES
                 {
                     if (t == "Ambos")
                     {
-                        da = new SqlDataAdapter("Select c.* from Cuenta c,(Select cuenta from CuentaTipoProyecto where tipoProyecto = '" + tproyecto + "') t where t.cuenta = c.id;", sql);
+                        da = new SqlDataAdapter("Select c.* from Cuenta c,(Select cuenta from CuentaTipoProyecto where tipoProyecto = '" + tproyecto + "') t where t.cuenta = c.id and validado = 1;", sql);
 
                         da.Fill(dt);
                         dataGridView1.DataSource = dt;
                     }
                     else
                     {
-                        da = new SqlDataAdapter("Select c.* from Cuenta c,(Select cuenta from CuentaTipoProyecto where tipoProyecto = '" + tproyecto + "') t where t.cuenta = c.id and c.tipo= '" + t + "';", sql);
+                        da = new SqlDataAdapter("Select c.* from Cuenta c,(Select cuenta from CuentaTipoProyecto where tipoProyecto = '" + tproyecto + "') t where t.cuenta = c.id and c.tipo= '" + t + "'and validado = 1;", sql);
 
                         da.Fill(dt);
                         dataGridView1.DataSource = dt;
@@ -225,13 +189,13 @@ namespace ProyectoACOES
                     if (t == "Ambos")
                     {
 
-                        da = new SqlDataAdapter("Select c.* from Cuenta c,(Select cuenta from CuentaProyecto where id = " + id + ") t where t.cuenta = c.id;", sql);
+                        da = new SqlDataAdapter("Select c.* from Cuenta c,(Select cuenta from CuentaProyecto where id = " + id + ") t where t.cuenta = c.id and validado = 1;", sql);
                         da.Fill(dt);
                         dataGridView1.DataSource = dt;
                     }
                     else
                     {
-                        da = new SqlDataAdapter("Select c.* from Cuenta c,(Select cuenta from CuentaProyecto where id = '" + id + "') t where t.cuenta = c.id and c.tipo= '" + t + "';", sql);
+                        da = new SqlDataAdapter("Select c.* from Cuenta c,(Select cuenta from CuentaProyecto where id = '" + id + "') t where t.cuenta = c.id and c.tipo= '" + t + "'and validado = 1;", sql);
                         da.Fill(dt);
                         dataGridView1.DataSource = dt;
 
@@ -252,6 +216,45 @@ namespace ProyectoACOES
             }
         }
 
-        
+        private void comboBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+            SqlConnection sql = new SqlConnection("Data Source=" + BD_SERVER + ";" + " Initial Catalog =" + BD_NAME + "; Integrated Security = True");
+            SqlCommand cm = new SqlCommand("Select nombre from TipoProyecto;", sql);
+            sql.Open();
+            SqlDataReader rd = cm.ExecuteReader();
+
+            while (rd.Read() == true)
+            {
+                comboBox1.Items.Add(rd[0]);
+            }
+            sql.Close();
+        }
+
+        private void comboBox2_MouseClick(object sender, MouseEventArgs e)
+        {
+            string tipo = comboBox1.SelectedItem.ToString();
+            if (comboBox1.SelectedItem != null)
+            {
+                SqlConnection sql = new SqlConnection("Data Source=" + BD_SERVER + ";" + " Initial Catalog =" + BD_NAME + "; Integrated Security = True");
+                SqlCommand cm = new SqlCommand("Select nombre from Proyecto where tipo_proyecto = '" + tipo + "';", sql);
+                sql.Open();
+                SqlDataReader rd = cm.ExecuteReader();
+
+                while (rd.Read() == true)
+                {
+                    comboBox2.Items.Add(rd[0]);
+                }
+                comboBox2.Items.Add("Tipo Proyecto");
+                sql.Close();
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+            InicioResponsable i = new InicioResponsable(us);
+            i.ShowDialog();
+        }
     }
 }

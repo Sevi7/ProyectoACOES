@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.b1 = new System.Windows.Forms.Button();
-            this.b2 = new System.Windows.Forms.Button();
             this.consultar = new System.Windows.Forms.Button();
             this.ben = new System.Windows.Forms.ComboBox();
             this.tipo = new System.Windows.Forms.ComboBox();
@@ -60,6 +58,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -68,10 +67,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(602, 242);
+            this.comboBox1.Location = new System.Drawing.Point(600, 242);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBox1_MouseClick);
             // 
             // comboBox2
             // 
@@ -80,26 +80,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(123, 21);
             this.comboBox2.TabIndex = 1;
-            // 
-            // b1
-            // 
-            this.b1.Location = new System.Drawing.Point(464, 242);
-            this.b1.Name = "b1";
-            this.b1.Size = new System.Drawing.Size(92, 23);
-            this.b1.TabIndex = 2;
-            this.b1.Text = "TipoProyecto";
-            this.b1.UseVisualStyleBackColor = true;
-            this.b1.Click += new System.EventHandler(this.b1_Click);
-            // 
-            // b2
-            // 
-            this.b2.Location = new System.Drawing.Point(464, 302);
-            this.b2.Name = "b2";
-            this.b2.Size = new System.Drawing.Size(92, 23);
-            this.b2.TabIndex = 3;
-            this.b2.Text = "Proyecto";
-            this.b2.UseVisualStyleBackColor = true;
-            this.b2.Click += new System.EventHandler(this.b2_Click);
+            this.comboBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.comboBox2_MouseClick);
             // 
             // consultar
             // 
@@ -178,7 +159,7 @@
             // 
             // añadir
             // 
-            this.añadir.Location = new System.Drawing.Point(182, 466);
+            this.añadir.Location = new System.Drawing.Point(237, 466);
             this.añadir.Name = "añadir";
             this.añadir.Size = new System.Drawing.Size(75, 23);
             this.añadir.TabIndex = 14;
@@ -270,7 +251,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(648, 443);
+            this.button1.Location = new System.Drawing.Point(58, 466);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -280,7 +261,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(467, 466);
+            this.button2.Location = new System.Drawing.Point(399, 466);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 18;
@@ -315,11 +296,22 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Fecha:";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(671, 466);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 22;
+            this.button3.Text = "SALIR";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // GestionEconomica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 501);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -337,8 +329,6 @@
             this.Controls.Add(this.tipo);
             this.Controls.Add(this.ben);
             this.Controls.Add(this.consultar);
-            this.Controls.Add(this.b2);
-            this.Controls.Add(this.b1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Name = "GestionEconomica";
@@ -355,8 +345,6 @@
 
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button b1;
-        private System.Windows.Forms.Button b2;
         private System.Windows.Forms.Button consultar;
         private System.Windows.Forms.ComboBox ben;
         private System.Windows.Forms.ComboBox tipo;
@@ -384,5 +372,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
     }
 }

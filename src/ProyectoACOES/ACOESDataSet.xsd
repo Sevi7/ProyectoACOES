@@ -1136,6 +1136,7 @@ SELECT nif, alias, contraseña, correo, rol FROM Usuario WHERE (nif = @nif)</Com
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="validado" msprop:Generator_ColumnVarNameInTable="columnvalidado" msprop:Generator_ColumnPropNameInRow="validado" msprop:Generator_ColumnPropNameInTable="validadoColumn" msprop:Generator_UserColumnName="validado" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -76,6 +76,12 @@
     <Compile Include="ENVIOS.Designer.cs">
       <DependentUpon>ENVIOS.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Validacion.Designer.cs">
+      <DependentUpon>Validacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionarEconomia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ENVIOS.resx">
       <DependentUpon>ENVIOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Validacion.resx">
+      <DependentUpon>Validacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionarCalificacion.resx">
       <DependentUpon>GestionarCalificacion.cs</DependentUpon>

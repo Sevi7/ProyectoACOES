@@ -56,5 +56,10 @@ namespace ProyectoACOES
         {
             this.cuentaTableAdapter1.Fill(this.aCOESDataSet.Cuenta);
         }
+
+        private void eliminar_Click(object sender, EventArgs e)
+        {
+            seleccionado.borrarCuenta();
+        }
     }
 }

@@ -1853,6 +1853,8 @@ namespace ProyectoACOES {
             
             private global::System.Data.DataColumn columndescripcion;
             
+            private global::System.Data.DataColumn columnvalidado;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public CuentaDataTable() {
@@ -1944,6 +1946,14 @@ namespace ProyectoACOES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn validadoColumn {
+                get {
+                    return this.columnvalidado;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1979,7 +1989,7 @@ namespace ProyectoACOES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CuentaRow AddCuentaRow(string tipo, string nombre, string categoria, decimal cantidad, System.DateTime fecha, string descripcion) {
+            public CuentaRow AddCuentaRow(string tipo, string nombre, string categoria, decimal cantidad, System.DateTime fecha, string descripcion, string validado) {
                 CuentaRow rowCuentaRow = ((CuentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1988,7 +1998,8 @@ namespace ProyectoACOES {
                         categoria,
                         cantidad,
                         fecha,
-                        descripcion};
+                        descripcion,
+                        validado};
                 rowCuentaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCuentaRow);
                 return rowCuentaRow;
@@ -2025,6 +2036,7 @@ namespace ProyectoACOES {
                 this.columncantidad = base.Columns["cantidad"];
                 this.columnfecha = base.Columns["fecha"];
                 this.columndescripcion = base.Columns["descripcion"];
+                this.columnvalidado = base.Columns["validado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2044,6 +2056,8 @@ namespace ProyectoACOES {
                 base.Columns.Add(this.columnfecha);
                 this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndescripcion);
+                this.columnvalidado = new global::System.Data.DataColumn("validado", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalidado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -5838,6 +5852,22 @@ namespace ProyectoACOES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string validado {
+                get {
+                    try {
+                        return ((string)(this[this.tableCuenta.validadoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'validado\' de la tabla \'Cuenta\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCuenta.validadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IstipoNull() {
                 return this.IsNull(this.tableCuenta.tipoColumn);
             }
@@ -5906,6 +5936,18 @@ namespace ProyectoACOES {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetdescripcionNull() {
                 this[this.tableCuenta.descripcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsvalidadoNull() {
+                return this.IsNull(this.tableCuenta.validadoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetvalidadoNull() {
+                this[this.tableCuenta.validadoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

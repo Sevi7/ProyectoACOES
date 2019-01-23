@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BDLibrary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,8 @@ namespace ProyectoACOES
     public partial class GestionNinio : Form
     {
         private Ninio seleccionado = null;
+        private static string BD_SERVER = Properties.Settings.Default.BD_SERVER;
+        private static string BD_NAME = Properties.Settings.Default.BD_NAME;
 
         public GestionNinio()
         {
@@ -21,8 +24,16 @@ namespace ProyectoACOES
 
         private void GestionNinio_Load(object sender, EventArgs e)
         {
+            SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
             // TODO: esta línea de código carga datos en la tabla 'aCOESDataSet.Usuario' Puede moverla o quitarla según sea necesario.
             this.ninioTableAdapter.Fill(this.aCOESDataSet.Ninio);
+
+            foreach (Object[] tupla in bd.Select("SELECT * from Usuario where rol='A001';"))
+            {
+                tAgente.AutoCompleteCustomSource.Add(tupla[0].ToString());
+            }
+            tAgente.AutoCompleteMode = AutoCompleteMode.Suggest;
+            tAgente.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)

@@ -67,7 +67,7 @@ namespace ProyectoACOES
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
 
             miBD.Insert("insert into Socio values('" + n + "', '" + ap + "','" + e + "', '" + nif + "', '" + dir + "', '" + pob + "', " +
-                 cp + ", '" + prov + "', " + tlf + ", " + tlf2 + ", '" + em + "','" + ag.nif_usuario + "','" + rel + "',convert(bit,'" + cer + "'), '" + sec + "', '" + fA.ToString("yyyy-MM-dd") + "', '" +
+                 cp + ", '" + prov + "', " + tlf + ", " + tlf2 + ", '" + em + "','" + ag.nif_usuario + "','" + rel + "',convert(bit,'" + cer + "'), '" + sec + "','" + fA.ToString("yyyy-MM-dd") + "','" +
                  fB.ToString("yyyy-MM-dd") + "', '" + ob + "', '" + numC + "',0);");
 
             codigo = Convert.ToInt32(miBD.Select("select max(Codigo) from Socio;")[0][0]);

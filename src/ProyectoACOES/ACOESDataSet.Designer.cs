@@ -3676,8 +3676,6 @@ namespace ProyectoACOES {
             
             private global::System.Data.DataColumn columnnumCuenta;
             
-            private global::System.Data.DataColumn columneliminado;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public SocioDataTable() {
@@ -3873,14 +3871,6 @@ namespace ProyectoACOES {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn eliminadoColumn {
-                get {
-                    return this.columneliminado;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3935,8 +3925,7 @@ namespace ProyectoACOES {
                         System.DateTime fechaAlta, 
                         System.DateTime fechaBaja, 
                         string observaciones, 
-                        string numCuenta, 
-                        bool eliminado) {
+                        string numCuenta) {
                 SocioRow rowSocioRow = ((SocioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3958,8 +3947,7 @@ namespace ProyectoACOES {
                         fechaAlta,
                         fechaBaja,
                         observaciones,
-                        numCuenta,
-                        eliminado};
+                        numCuenta};
                 if ((parentUsuarioRowByFK_Socio_Usuario != null)) {
                     columnValuesArray[12] = parentUsuarioRowByFK_Socio_Usuario[0];
                 }
@@ -4012,7 +4000,6 @@ namespace ProyectoACOES {
                 this.columnfechaBaja = base.Columns["fechaBaja"];
                 this.columnobservaciones = base.Columns["observaciones"];
                 this.columnnumCuenta = base.Columns["numCuenta"];
-                this.columneliminado = base.Columns["eliminado"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4058,8 +4045,6 @@ namespace ProyectoACOES {
                 base.Columns.Add(this.columnobservaciones);
                 this.columnnumCuenta = new global::System.Data.DataColumn("numCuenta", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumCuenta);
-                this.columneliminado = new global::System.Data.DataColumn("eliminado", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columneliminado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columncodigo}, true));
                 this.columncodigo.AutoIncrement = true;
@@ -4084,7 +4069,6 @@ namespace ProyectoACOES {
                 this.columnsector.MaxLength = 50;
                 this.columnobservaciones.MaxLength = 250;
                 this.columnnumCuenta.MaxLength = 50;
-                this.columneliminado.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7035,17 +7019,6 @@ namespace ProyectoACOES {
                 }
                 set {
                     this[this.tableSocio.numCuentaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool eliminado {
-                get {
-                    return ((bool)(this[this.tableSocio.eliminadoColumn]));
-                }
-                set {
-                    this[this.tableSocio.eliminadoColumn] = value;
                 }
             }
             
@@ -12078,31 +12051,30 @@ SELECT id, nombre, tipo_proyecto, coordinador, responsable, localidad FROM Proye
             tableMapping.ColumnMappings.Add("fechaBaja", "fechaBaja");
             tableMapping.ColumnMappings.Add("observaciones", "observaciones");
             tableMapping.ColumnMappings.Add("numCuenta", "numCuenta");
-            tableMapping.ColumnMappings.Add("eliminado", "eliminado");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Socio] WHERE (([codigo] = @Original_codigo) AND ([nombre] = @O" +
-                "riginal_nombre) AND ((@IsNull_apellidos = 1 AND [apellidos] IS NULL) OR ([apelli" +
-                "dos] = @Original_apellidos)) AND ((@IsNull_estado = 1 AND [estado] IS NULL) OR (" +
-                "[estado] = @Original_estado)) AND ((@IsNull_nif = 1 AND [nif] IS NULL) OR ([nif]" +
-                " = @Original_nif)) AND ((@IsNull_direccion = 1 AND [direccion] IS NULL) OR ([dir" +
-                "eccion] = @Original_direccion)) AND ((@IsNull_poblacion = 1 AND [poblacion] IS N" +
-                "ULL) OR ([poblacion] = @Original_poblacion)) AND ((@IsNull_codigoPostal = 1 AND " +
-                "[codigoPostal] IS NULL) OR ([codigoPostal] = @Original_codigoPostal)) AND ((@IsN" +
-                "ull_provincia = 1 AND [provincia] IS NULL) OR ([provincia] = @Original_provincia" +
-                ")) AND ([tlf] = @Original_tlf) AND ((@IsNull_tlfSecundario = 1 AND [tlfSecundari" +
-                "o] IS NULL) OR ([tlfSecundario] = @Original_tlfSecundario)) AND ((@IsNull_email " +
-                "= 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ([agente] = @Origin" +
-                "al_agente) AND ((@IsNull_relacion = 1 AND [relacion] IS NULL) OR ([relacion] = @" +
-                "Original_relacion)) AND ((@IsNull_certificado = 1 AND [certificado] IS NULL) OR " +
-                "([certificado] = @Original_certificado)) AND ((@IsNull_sector = 1 AND [sector] I" +
-                "S NULL) OR ([sector] = @Original_sector)) AND ((@IsNull_fechaAlta = 1 AND [fecha" +
-                "Alta] IS NULL) OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_fechaBaja =" +
-                " 1 AND [fechaBaja] IS NULL) OR ([fechaBaja] = @Original_fechaBaja)) AND ((@IsNul" +
-                "l_observaciones = 1 AND [observaciones] IS NULL) OR ([observaciones] = @Original" +
-                "_observaciones)) AND ((@IsNull_numCuenta = 1 AND [numCuenta] IS NULL) OR ([numCu" +
-                "enta] = @Original_numCuenta)) AND ([eliminado] = @Original_eliminado))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Socio] WHERE (([codigo] = @Original_codigo) AND ([nombre] = @Origina" +
+                "l_nombre) AND ((@IsNull_apellidos = 1 AND [apellidos] IS NULL) OR ([apellidos] =" +
+                " @Original_apellidos)) AND ((@IsNull_estado = 1 AND [estado] IS NULL) OR ([estad" +
+                "o] = @Original_estado)) AND ((@IsNull_nif = 1 AND [nif] IS NULL) OR ([nif] = @Or" +
+                "iginal_nif)) AND ((@IsNull_direccion = 1 AND [direccion] IS NULL) OR ([direccion" +
+                "] = @Original_direccion)) AND ((@IsNull_poblacion = 1 AND [poblacion] IS NULL) O" +
+                "R ([poblacion] = @Original_poblacion)) AND ((@IsNull_codigoPostal = 1 AND [codig" +
+                "oPostal] IS NULL) OR ([codigoPostal] = @Original_codigoPostal)) AND ((@IsNull_pr" +
+                "ovincia = 1 AND [provincia] IS NULL) OR ([provincia] = @Original_provincia)) AND" +
+                " ([tlf] = @Original_tlf) AND ((@IsNull_tlfSecundario = 1 AND [tlfSecundario] IS " +
+                "NULL) OR ([tlfSecundario] = @Original_tlfSecundario)) AND ((@IsNull_email = 1 AN" +
+                "D [email] IS NULL) OR ([email] = @Original_email)) AND ([agente] = @Original_age" +
+                "nte) AND ((@IsNull_relacion = 1 AND [relacion] IS NULL) OR ([relacion] = @Origin" +
+                "al_relacion)) AND ((@IsNull_certificado = 1 AND [certificado] IS NULL) OR ([cert" +
+                "ificado] = @Original_certificado)) AND ((@IsNull_sector = 1 AND [sector] IS NULL" +
+                ") OR ([sector] = @Original_sector)) AND ((@IsNull_fechaAlta = 1 AND [fechaAlta] " +
+                "IS NULL) OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_fechaBaja = 1 AND" +
+                " [fechaBaja] IS NULL) OR ([fechaBaja] = @Original_fechaBaja)) AND ((@IsNull_obse" +
+                "rvaciones = 1 AND [observaciones] IS NULL) OR ([observaciones] = @Original_obser" +
+                "vaciones)) AND ((@IsNull_numCuenta = 1 AND [numCuenta] IS NULL) OR ([numCuenta] " +
+                "= @Original_numCuenta)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -12140,11 +12112,10 @@ SELECT id, nombre, tipo_proyecto, coordinador, responsable, localidad FROM Proye
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numCuenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numCuenta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numCuenta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numCuenta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eliminado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eliminado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Socio] ([nombre], [apellidos], [estado], [nif], [direccion], [poblacion], [codigoPostal], [provincia], [tlf], [tlfSecundario], [email], [agente], [relacion], [certificado], [sector], [fechaAlta], [fechaBaja], [observaciones], [numCuenta], [eliminado]) VALUES (@nombre, @apellidos, @estado, @nif, @direccion, @poblacion, @codigoPostal, @provincia, @tlf, @tlfSecundario, @email, @agente, @relacion, @certificado, @sector, @fechaAlta, @fechaBaja, @observaciones, @numCuenta, @eliminado);
-SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPostal, provincia, tlf, tlfSecundario, email, agente, relacion, certificado, sector, fechaAlta, fechaBaja, observaciones, numCuenta, eliminado FROM Socio WHERE (codigo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Socio] ([nombre], [apellidos], [estado], [nif], [direccion], [poblacion], [codigoPostal], [provincia], [tlf], [tlfSecundario], [email], [agente], [relacion], [certificado], [sector], [fechaAlta], [fechaBaja], [observaciones], [numCuenta]) VALUES (@nombre, @apellidos, @estado, @nif, @direccion, @poblacion, @codigoPostal, @provincia, @tlf, @tlfSecundario, @email, @agente, @relacion, @certificado, @sector, @fechaAlta, @fechaBaja, @observaciones, @numCuenta);
+SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPostal, provincia, tlf, tlfSecundario, email, agente, relacion, certificado, sector, fechaAlta, fechaBaja, observaciones, numCuenta FROM Socio WHERE (codigo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellidos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12165,40 +12136,38 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaBaja", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaBaja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numCuenta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numCuenta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eliminado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eliminado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Socio] SET [nombre] = @nombre, [apellidos] = @apellidos, [estado] =" +
-                " @estado, [nif] = @nif, [direccion] = @direccion, [poblacion] = @poblacion, [cod" +
-                "igoPostal] = @codigoPostal, [provincia] = @provincia, [tlf] = @tlf, [tlfSecundar" +
-                "io] = @tlfSecundario, [email] = @email, [agente] = @agente, [relacion] = @relaci" +
-                "on, [certificado] = @certificado, [sector] = @sector, [fechaAlta] = @fechaAlta, " +
-                "[fechaBaja] = @fechaBaja, [observaciones] = @observaciones, [numCuenta] = @numCu" +
-                "enta, [eliminado] = @eliminado WHERE (([codigo] = @Original_codigo) AND ([nombre" +
-                "] = @Original_nombre) AND ((@IsNull_apellidos = 1 AND [apellidos] IS NULL) OR ([" +
-                "apellidos] = @Original_apellidos)) AND ((@IsNull_estado = 1 AND [estado] IS NULL" +
-                ") OR ([estado] = @Original_estado)) AND ((@IsNull_nif = 1 AND [nif] IS NULL) OR " +
-                "([nif] = @Original_nif)) AND ((@IsNull_direccion = 1 AND [direccion] IS NULL) OR" +
-                " ([direccion] = @Original_direccion)) AND ((@IsNull_poblacion = 1 AND [poblacion" +
-                "] IS NULL) OR ([poblacion] = @Original_poblacion)) AND ((@IsNull_codigoPostal = " +
-                "1 AND [codigoPostal] IS NULL) OR ([codigoPostal] = @Original_codigoPostal)) AND " +
-                "((@IsNull_provincia = 1 AND [provincia] IS NULL) OR ([provincia] = @Original_pro" +
-                "vincia)) AND ([tlf] = @Original_tlf) AND ((@IsNull_tlfSecundario = 1 AND [tlfSec" +
-                "undario] IS NULL) OR ([tlfSecundario] = @Original_tlfSecundario)) AND ((@IsNull_" +
-                "email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ([agente] = @" +
-                "Original_agente) AND ((@IsNull_relacion = 1 AND [relacion] IS NULL) OR ([relacio" +
-                "n] = @Original_relacion)) AND ((@IsNull_certificado = 1 AND [certificado] IS NUL" +
-                "L) OR ([certificado] = @Original_certificado)) AND ((@IsNull_sector = 1 AND [sec" +
-                "tor] IS NULL) OR ([sector] = @Original_sector)) AND ((@IsNull_fechaAlta = 1 AND " +
-                "[fechaAlta] IS NULL) OR ([fechaAlta] = @Original_fechaAlta)) AND ((@IsNull_fecha" +
-                "Baja = 1 AND [fechaBaja] IS NULL) OR ([fechaBaja] = @Original_fechaBaja)) AND ((" +
-                "@IsNull_observaciones = 1 AND [observaciones] IS NULL) OR ([observaciones] = @Or" +
-                "iginal_observaciones)) AND ((@IsNull_numCuenta = 1 AND [numCuenta] IS NULL) OR (" +
-                "[numCuenta] = @Original_numCuenta)) AND ([eliminado] = @Original_eliminado));\r\nS" +
-                "ELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPostal" +
-                ", provincia, tlf, tlfSecundario, email, agente, relacion, certificado, sector, f" +
-                "echaAlta, fechaBaja, observaciones, numCuenta, eliminado FROM Socio WHERE (codig" +
-                "o = @codigo)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [Socio] SET [nombre] = @nombre, [apellidos] = @apellidos, [estado] = @esta" +
+                "do, [nif] = @nif, [direccion] = @direccion, [poblacion] = @poblacion, [codigoPos" +
+                "tal] = @codigoPostal, [provincia] = @provincia, [tlf] = @tlf, [tlfSecundario] = " +
+                "@tlfSecundario, [email] = @email, [agente] = @agente, [relacion] = @relacion, [c" +
+                "ertificado] = @certificado, [sector] = @sector, [fechaAlta] = @fechaAlta, [fecha" +
+                "Baja] = @fechaBaja, [observaciones] = @observaciones, [numCuenta] = @numCuenta W" +
+                "HERE (([codigo] = @Original_codigo) AND ([nombre] = @Original_nombre) AND ((@IsN" +
+                "ull_apellidos = 1 AND [apellidos] IS NULL) OR ([apellidos] = @Original_apellidos" +
+                ")) AND ((@IsNull_estado = 1 AND [estado] IS NULL) OR ([estado] = @Original_estad" +
+                "o)) AND ((@IsNull_nif = 1 AND [nif] IS NULL) OR ([nif] = @Original_nif)) AND ((@" +
+                "IsNull_direccion = 1 AND [direccion] IS NULL) OR ([direccion] = @Original_direcc" +
+                "ion)) AND ((@IsNull_poblacion = 1 AND [poblacion] IS NULL) OR ([poblacion] = @Or" +
+                "iginal_poblacion)) AND ((@IsNull_codigoPostal = 1 AND [codigoPostal] IS NULL) OR" +
+                " ([codigoPostal] = @Original_codigoPostal)) AND ((@IsNull_provincia = 1 AND [pro" +
+                "vincia] IS NULL) OR ([provincia] = @Original_provincia)) AND ([tlf] = @Original_" +
+                "tlf) AND ((@IsNull_tlfSecundario = 1 AND [tlfSecundario] IS NULL) OR ([tlfSecund" +
+                "ario] = @Original_tlfSecundario)) AND ((@IsNull_email = 1 AND [email] IS NULL) O" +
+                "R ([email] = @Original_email)) AND ([agente] = @Original_agente) AND ((@IsNull_r" +
+                "elacion = 1 AND [relacion] IS NULL) OR ([relacion] = @Original_relacion)) AND ((" +
+                "@IsNull_certificado = 1 AND [certificado] IS NULL) OR ([certificado] = @Original" +
+                "_certificado)) AND ((@IsNull_sector = 1 AND [sector] IS NULL) OR ([sector] = @Or" +
+                "iginal_sector)) AND ((@IsNull_fechaAlta = 1 AND [fechaAlta] IS NULL) OR ([fechaA" +
+                "lta] = @Original_fechaAlta)) AND ((@IsNull_fechaBaja = 1 AND [fechaBaja] IS NULL" +
+                ") OR ([fechaBaja] = @Original_fechaBaja)) AND ((@IsNull_observaciones = 1 AND [o" +
+                "bservaciones] IS NULL) OR ([observaciones] = @Original_observaciones)) AND ((@Is" +
+                "Null_numCuenta = 1 AND [numCuenta] IS NULL) OR ([numCuenta] = @Original_numCuent" +
+                "a)));\r\nSELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codi" +
+                "goPostal, provincia, tlf, tlfSecundario, email, agente, relacion, certificado, s" +
+                "ector, fechaAlta, fechaBaja, observaciones, numCuenta FROM Socio WHERE (codigo =" +
+                " @codigo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellidos", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellidos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12219,7 +12188,6 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@fechaBaja", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "fechaBaja", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numCuenta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numCuenta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@eliminado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eliminado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_apellidos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellidos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -12256,7 +12224,6 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_observaciones", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "observaciones", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numCuenta", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numCuenta", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numCuenta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numCuenta", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_eliminado", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "eliminado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -12273,9 +12240,9 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPostal" +
-                ", provincia, tlf, tlfSecundario, email, agente, relacion, certificado, sector, f" +
-                "echaAlta, fechaBaja, observaciones, numCuenta, eliminado FROM dbo.Socio";
+            this._commandCollection[0].CommandText = @"SELECT        codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPostal, provincia, tlf, tlfSecundario, email, agente, relacion, certificado, sector, fechaAlta, fechaBaja, observaciones, numCuenta
+FROM            Socio
+WHERE        (eliminado <> 1)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12356,8 +12323,7 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
                     global::System.Nullable<global::System.DateTime> Original_fechaAlta, 
                     global::System.Nullable<global::System.DateTime> Original_fechaBaja, 
                     string Original_observaciones, 
-                    string Original_numCuenta, 
-                    bool Original_eliminado) {
+                    string Original_numCuenta) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_codigo));
             if ((Original_nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_nombre");
@@ -12500,7 +12466,6 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
                 this.Adapter.DeleteCommand.Parameters[34].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((string)(Original_numCuenta));
             }
-            this.Adapter.DeleteCommand.Parameters[36].Value = ((bool)(Original_eliminado));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12540,8 +12505,7 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
                     global::System.Nullable<global::System.DateTime> fechaAlta, 
                     global::System.Nullable<global::System.DateTime> fechaBaja, 
                     string observaciones, 
-                    string numCuenta, 
-                    bool eliminado) {
+                    string numCuenta) {
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
@@ -12651,7 +12615,6 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = ((string)(numCuenta));
             }
-            this.Adapter.InsertCommand.Parameters[19].Value = ((bool)(eliminado));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12692,7 +12655,6 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
                     global::System.Nullable<global::System.DateTime> fechaBaja, 
                     string observaciones, 
                     string numCuenta, 
-                    bool eliminado, 
                     int Original_codigo, 
                     string Original_nombre, 
                     string Original_apellidos, 
@@ -12713,7 +12675,6 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
                     global::System.Nullable<global::System.DateTime> Original_fechaBaja, 
                     string Original_observaciones, 
                     string Original_numCuenta, 
-                    bool Original_eliminado, 
                     int codigo) {
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
@@ -12824,151 +12785,149 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(numCuenta));
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((bool)(eliminado));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_codigo));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_codigo));
             if ((Original_nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_nombre");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_nombre));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_nombre));
             }
             if ((Original_apellidos == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_apellidos));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_apellidos));
             }
             if ((Original_estado == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_estado));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_estado));
             }
             if ((Original_nif == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_nif));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_nif));
             }
             if ((Original_direccion == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_direccion));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_direccion));
             }
             if ((Original_poblacion == null)) {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_poblacion));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_poblacion));
             }
             if ((Original_codigoPostal.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((int)(Original_codigoPostal.Value));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((int)(Original_codigoPostal.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             if ((Original_provincia == null)) {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_provincia));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_provincia));
             }
-            this.Adapter.UpdateCommand.Parameters[36].Value = ((int)(Original_tlf));
+            this.Adapter.UpdateCommand.Parameters[35].Value = ((int)(Original_tlf));
             if ((Original_tlfSecundario.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[38].Value = ((int)(Original_tlfSecundario.Value));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((int)(Original_tlfSecundario.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[38].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             if ((Original_email == null)) {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_email));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_email));
             }
             if ((Original_agente == null)) {
                 throw new global::System.ArgumentNullException("Original_agente");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_agente));
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((string)(Original_agente));
             }
             if ((Original_relacion == null)) {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_relacion));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((string)(Original_relacion));
             }
             if ((Original_certificado.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[45].Value = ((bool)(Original_certificado.Value));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[44].Value = ((bool)(Original_certificado.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[44].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[45].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[44].Value = global::System.DBNull.Value;
             }
             if ((Original_sector == null)) {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[47].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[46].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_sector));
+                this.Adapter.UpdateCommand.Parameters[45].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[46].Value = ((string)(Original_sector));
             }
             if ((Original_fechaAlta.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[49].Value = ((System.DateTime)(Original_fechaAlta.Value));
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[48].Value = ((System.DateTime)(Original_fechaAlta.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[48].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[49].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[47].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             if ((Original_fechaBaja.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[51].Value = ((System.DateTime)(Original_fechaBaja.Value));
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[50].Value = ((System.DateTime)(Original_fechaBaja.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[50].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[51].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[50].Value = global::System.DBNull.Value;
             }
             if ((Original_observaciones == null)) {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[53].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[53].Value = ((string)(Original_observaciones));
+                this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((string)(Original_observaciones));
             }
             if ((Original_numCuenta == null)) {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[55].Value = ((string)(Original_numCuenta));
+                this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((string)(Original_numCuenta));
             }
-            this.Adapter.UpdateCommand.Parameters[56].Value = ((bool)(Original_eliminado));
-            this.Adapter.UpdateCommand.Parameters[57].Value = ((int)(codigo));
+            this.Adapter.UpdateCommand.Parameters[55].Value = ((int)(codigo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -13009,7 +12968,6 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
                     global::System.Nullable<global::System.DateTime> fechaBaja, 
                     string observaciones, 
                     string numCuenta, 
-                    bool eliminado, 
                     int Original_codigo, 
                     string Original_nombre, 
                     string Original_apellidos, 
@@ -13029,9 +12987,8 @@ SELECT codigo, nombre, apellidos, estado, nif, direccion, poblacion, codigoPosta
                     global::System.Nullable<global::System.DateTime> Original_fechaAlta, 
                     global::System.Nullable<global::System.DateTime> Original_fechaBaja, 
                     string Original_observaciones, 
-                    string Original_numCuenta, 
-                    bool Original_eliminado) {
-            return this.Update(nombre, apellidos, estado, nif, direccion, poblacion, codigoPostal, provincia, tlf, tlfSecundario, email, agente, relacion, certificado, sector, fechaAlta, fechaBaja, observaciones, numCuenta, eliminado, Original_codigo, Original_nombre, Original_apellidos, Original_estado, Original_nif, Original_direccion, Original_poblacion, Original_codigoPostal, Original_provincia, Original_tlf, Original_tlfSecundario, Original_email, Original_agente, Original_relacion, Original_certificado, Original_sector, Original_fechaAlta, Original_fechaBaja, Original_observaciones, Original_numCuenta, Original_eliminado, Original_codigo);
+                    string Original_numCuenta) {
+            return this.Update(nombre, apellidos, estado, nif, direccion, poblacion, codigoPostal, provincia, tlf, tlfSecundario, email, agente, relacion, certificado, sector, fechaAlta, fechaBaja, observaciones, numCuenta, Original_codigo, Original_nombre, Original_apellidos, Original_estado, Original_nif, Original_direccion, Original_poblacion, Original_codigoPostal, Original_provincia, Original_tlf, Original_tlfSecundario, Original_email, Original_agente, Original_relacion, Original_certificado, Original_sector, Original_fechaAlta, Original_fechaBaja, Original_observaciones, Original_numCuenta, Original_codigo);
         }
     }
     

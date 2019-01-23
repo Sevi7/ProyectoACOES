@@ -101,9 +101,11 @@ namespace ProyectoACOES
                 int cp = 0, tlf2 = 0;
                 if (tCodigoPostal.Text != "") cp = Convert.ToInt32(tCodigoPostal.Text);
                 if (tTelefonoMovil.Text != "") tlf2 = Convert.ToInt32(tTelefonoMovil.Text);
+                if (tTelefonoFijo.Text == "") MessageBox.Show("Es obligatorio introducir un telefono fijo.");
+                if (tNIF.Text == "") MessageBox.Show("Es obligatorio introducir un NIF");
                 seleccionado = new Socio(tNombre.Text, tApellido.Text, tEstado.Text, tNIF.Text, tDireccion.Text, tPoblacion.Text,
                     cp, tProvincia.Text, Convert.ToInt32(tTelefonoFijo.Text), tlf2,
-                    tCorreoElectronico.Text, new Usuario(tAgente.Text), tRelacion.Text, tCertificado.Checked, tSector.Text, tFechaAlta.Value,
+                    tCorreoElectronico.Text, usuario, tRelacion.Text, tCertificado.Checked, tSector.Text, tFechaAlta.Value,
                     tFechaBaja.Value, tObservaciones.Text, tNumeroCuenta.Text);
 
                 this.socioTableAdapter.Fill(this.aCOESDataSet.Socio);
@@ -132,7 +134,7 @@ namespace ProyectoACOES
                 if ("" != tTelefonoFijo.Text) seleccionado.Tlf = Convert.ToInt32(tTelefonoFijo.Text);
                 if ("" != tTelefonoMovil.Text) seleccionado.TlfSecundario = Convert.ToInt32(tTelefonoMovil.Text);
                 seleccionado.Email = tCorreoElectronico.Text;
-                if (seleccionado.Agente.nif_usuario != tAgente.Text) seleccionado.Agente = new Usuario(tAgente.Text);
+                seleccionado.Agente = usuario;
                 seleccionado.Relacion = tRelacion.Text;
                 seleccionado.Certificado = tCertificado.Checked;
                 seleccionado.Sector = tSector.Text;

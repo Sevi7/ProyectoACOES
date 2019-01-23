@@ -48,7 +48,6 @@
             this.tNIF = new System.Windows.Forms.TextBox();
             this.tNombre = new System.Windows.Forms.TextBox();
             this.tApellidos = new System.Windows.Forms.TextBox();
-            this.tDireccion = new System.Windows.Forms.TextBox();
             this.tNumeroCuenta = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tObservaciones = new System.Windows.Forms.TextBox();
@@ -60,7 +59,6 @@
             this.beneficiarioTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.BeneficiarioTableAdapter();
             this.beneficiarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button5 = new System.Windows.Forms.Button();
-            this.cds = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beneficiarioBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -72,7 +70,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(163, 9);
+            this.label1.Location = new System.Drawing.Point(181, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(413, 73);
             this.label1.TabIndex = 0;
@@ -195,7 +193,7 @@
             // 
             this.vadfds.AutoSize = true;
             this.vadfds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.vadfds.Location = new System.Drawing.Point(50, 458);
+            this.vadfds.Location = new System.Drawing.Point(50, 417);
             this.vadfds.Name = "vadfds";
             this.vadfds.Size = new System.Drawing.Size(140, 20);
             this.vadfds.TabIndex = 7;
@@ -225,18 +223,10 @@
             this.tApellidos.Size = new System.Drawing.Size(167, 26);
             this.tApellidos.TabIndex = 10;
             // 
-            // tDireccion
-            // 
-            this.tDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tDireccion.Location = new System.Drawing.Point(226, 408);
-            this.tDireccion.Name = "tDireccion";
-            this.tDireccion.Size = new System.Drawing.Size(167, 26);
-            this.tDireccion.TabIndex = 11;
-            // 
             // tNumeroCuenta
             // 
             this.tNumeroCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tNumeroCuenta.Location = new System.Drawing.Point(226, 451);
+            this.tNumeroCuenta.Location = new System.Drawing.Point(226, 411);
             this.tNumeroCuenta.Name = "tNumeroCuenta";
             this.tNumeroCuenta.Size = new System.Drawing.Size(167, 26);
             this.tNumeroCuenta.TabIndex = 12;
@@ -263,7 +253,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(226, 515);
+            this.button1.Location = new System.Drawing.Point(226, 473);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 29);
             this.button1.TabIndex = 15;
@@ -274,17 +264,18 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button2.Location = new System.Drawing.Point(330, 515);
+            this.button2.Location = new System.Drawing.Point(330, 473);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 29);
             this.button2.TabIndex = 16;
             this.button2.Text = "Modificar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button3.Location = new System.Drawing.Point(432, 515);
+            this.button3.Location = new System.Drawing.Point(432, 473);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 29);
             this.button3.TabIndex = 17;
@@ -295,7 +286,7 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button4.Location = new System.Drawing.Point(54, 515);
+            this.button4.Location = new System.Drawing.Point(54, 473);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 29);
             this.button4.TabIndex = 18;
@@ -320,7 +311,7 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button5.Location = new System.Drawing.Point(673, 515);
+            this.button5.Location = new System.Drawing.Point(673, 473);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 29);
             this.button5.TabIndex = 19;
@@ -328,21 +319,11 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // cds
-            // 
-            this.cds.AutoSize = true;
-            this.cds.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.cds.Location = new System.Drawing.Point(50, 416);
-            this.cds.Name = "cds";
-            this.cds.Size = new System.Drawing.Size(75, 20);
-            this.cds.TabIndex = 6;
-            this.cds.Text = "Direccion";
-            // 
             // GestionBeneficiario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 592);
+            this.ClientSize = new System.Drawing.Size(801, 543);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -351,12 +332,10 @@
             this.Controls.Add(this.tObservaciones);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tNumeroCuenta);
-            this.Controls.Add(this.tDireccion);
             this.Controls.Add(this.tApellidos);
             this.Controls.Add(this.tNombre);
             this.Controls.Add(this.tNIF);
             this.Controls.Add(this.vadfds);
-            this.Controls.Add(this.cds);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cs);
             this.Controls.Add(this.c);
@@ -397,7 +376,6 @@
         private System.Windows.Forms.TextBox tNIF;
         private System.Windows.Forms.TextBox tNombre;
         private System.Windows.Forms.TextBox tApellidos;
-        private System.Windows.Forms.TextBox tDireccion;
         private System.Windows.Forms.TextBox tNumeroCuenta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tObservaciones;
@@ -406,6 +384,5 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label cds;
     }
 }

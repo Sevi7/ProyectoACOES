@@ -75,7 +75,9 @@ namespace ProyectoACOES
 
         private void bSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
+            Inicio form1 = new Inicio();
+            form1.ShowDialog();
         }
 
         private void bInsertar_Click(object sender, EventArgs e)

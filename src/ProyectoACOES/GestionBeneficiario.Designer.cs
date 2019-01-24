@@ -323,6 +323,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(801, 543);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -342,6 +344,7 @@
             this.Controls.Add(this.ca);
             this.Controls.Add(this.label1);
             this.Name = "GestionBeneficiario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Beneficiario";
             this.Load += new System.EventHandler(this.GestionBeneficiario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

@@ -266,6 +266,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(828, 722);
             this.Controls.Add(this.bCrearProyecto);
             this.Controls.Add(this.label9);
@@ -290,6 +291,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.titulo);
             this.Name = "CrearNuevoProyecto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Nuevo Proyecto";
             this.ResumeLayout(false);
             this.PerformLayout();

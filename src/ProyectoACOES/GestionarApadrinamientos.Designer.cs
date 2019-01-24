@@ -182,6 +182,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(713, 530);
             this.Controls.Add(this.bSalir);
             this.Controls.Add(this.bDesapadrinar);
@@ -197,6 +198,7 @@
             this.Controls.Add(this.titulo);
             this.Controls.Add(this.dataGridView1);
             this.Name = "GestionarApadrinamientos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.GestionarApadrinamientos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

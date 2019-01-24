@@ -208,6 +208,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(744, 719);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tBuscador);
@@ -224,6 +226,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "GestionComunidades";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionComunidades";
             this.Load += new System.EventHandler(this.Comunidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

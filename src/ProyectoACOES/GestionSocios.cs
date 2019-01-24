@@ -58,7 +58,6 @@ namespace ProyectoACOES
                 tTelefonoFijo.Text = "";
                 tTelefonoMovil.Text = "";
                 tCorreoElectronico.Text = "";
-                tAgente.Text = "";
                 tRelacion.Text = "";
                 tSector.Text = "";
                 tObservaciones.Text = "";
@@ -83,7 +82,6 @@ namespace ProyectoACOES
                 if (seleccionado.TlfSecundario != 0) tTelefonoMovil.Text = Convert.ToString(seleccionado.TlfSecundario);
                 else tTelefonoMovil.Text = "";
                 tCorreoElectronico.Text = Convert.ToString(seleccionado.Email);
-                tAgente.Text = seleccionado.Agente.nif_usuario;
                 tRelacion.Text = seleccionado.Relacion;
                 tSector.Text = seleccionado.Sector;
                 tFechaAlta.Value = seleccionado.FechaAlta;
@@ -109,6 +107,7 @@ namespace ProyectoACOES
                     tFechaBaja.Value, tObservaciones.Text, tNumeroCuenta.Text);
 
                 this.socioTableAdapter.Fill(this.aCOESDataSet.Socio);
+                seleccionado = null;
                 RefrescaDatos();
             }
             catch (Exception ex)

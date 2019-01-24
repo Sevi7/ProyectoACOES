@@ -197,6 +197,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(689, 620);
             this.Controls.Add(this.bLimpiar);
             this.Controls.Add(this.bSalir);
@@ -214,6 +215,7 @@
             this.Controls.Add(this.lAsignatura);
             this.Controls.Add(this.titulo);
             this.Name = "ENVIOS";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ENVIOS";
             this.Load += new System.EventHandler(this.ENVIOS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgEnvios)).EndInit();

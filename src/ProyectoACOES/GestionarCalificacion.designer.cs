@@ -235,6 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(688, 735);
             this.Controls.Add(this.bSalir);
             this.Controls.Add(this.tNota);
@@ -253,6 +254,7 @@
             this.Controls.Add(this.lAsignatura);
             this.Controls.Add(this.titulo);
             this.Name = "GestionarCalificacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AñadirNota";
             this.Load += new System.EventHandler(this.GestionarCalificacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlumnos)).EndInit();

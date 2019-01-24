@@ -39,7 +39,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tNombre = new System.Windows.Forms.TextBox();
@@ -55,7 +54,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.tTelefonoMovil = new System.Windows.Forms.TextBox();
             this.tCorreoElectronico = new System.Windows.Forms.TextBox();
-            this.tAgente = new System.Windows.Forms.TextBox();
             this.tRelacion = new System.Windows.Forms.TextBox();
             this.tCertificado = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -119,9 +117,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(55, 338);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.Size = new System.Drawing.Size(85, 20);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
+            this.label2.Text = "Nombre (*)";
             // 
             // label3
             // 
@@ -203,21 +201,11 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Correo electrónico";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label11.Location = new System.Drawing.Point(397, 402);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(61, 20);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Agente";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label12.Location = new System.Drawing.Point(397, 435);
+            this.label12.Location = new System.Drawing.Point(397, 405);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(71, 20);
             this.label12.TabIndex = 11;
@@ -246,9 +234,9 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label14.Location = new System.Drawing.Point(55, 595);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(95, 20);
+            this.label14.Size = new System.Drawing.Size(115, 20);
             this.label14.TabIndex = 14;
-            this.label14.Text = "Telefono fijo";
+            this.label14.Text = "Telefono fijo (*)";
             // 
             // tApellido
             // 
@@ -340,20 +328,10 @@
             this.tCorreoElectronico.Size = new System.Drawing.Size(200, 26);
             this.tCorreoElectronico.TabIndex = 25;
             // 
-            // tAgente
-            // 
-            this.tAgente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.tAgente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.tAgente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tAgente.Location = new System.Drawing.Point(560, 399);
-            this.tAgente.Name = "tAgente";
-            this.tAgente.Size = new System.Drawing.Size(200, 26);
-            this.tAgente.TabIndex = 26;
-            // 
             // tRelacion
             // 
             this.tRelacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tRelacion.Location = new System.Drawing.Point(560, 432);
+            this.tRelacion.Location = new System.Drawing.Point(560, 402);
             this.tRelacion.Name = "tRelacion";
             this.tRelacion.Size = new System.Drawing.Size(200, 26);
             this.tRelacion.TabIndex = 27;
@@ -375,7 +353,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label16.Location = new System.Drawing.Point(397, 468);
+            this.label16.Location = new System.Drawing.Point(397, 437);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(56, 20);
             this.label16.TabIndex = 29;
@@ -393,7 +371,7 @@
             // tSector
             // 
             this.tSector.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tSector.Location = new System.Drawing.Point(560, 465);
+            this.tSector.Location = new System.Drawing.Point(560, 434);
             this.tSector.Name = "tSector";
             this.tSector.Size = new System.Drawing.Size(200, 26);
             this.tSector.TabIndex = 31;
@@ -402,7 +380,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label18.Location = new System.Drawing.Point(397, 500);
+            this.label18.Location = new System.Drawing.Point(397, 472);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(106, 20);
             this.label18.TabIndex = 32;
@@ -412,7 +390,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label19.Location = new System.Drawing.Point(397, 532);
+            this.label19.Location = new System.Drawing.Point(397, 505);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(110, 20);
             this.label19.TabIndex = 33;
@@ -421,7 +399,7 @@
             // tFechaAlta
             // 
             this.tFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tFechaAlta.Location = new System.Drawing.Point(560, 498);
+            this.tFechaAlta.Location = new System.Drawing.Point(560, 467);
             this.tFechaAlta.Name = "tFechaAlta";
             this.tFechaAlta.Size = new System.Drawing.Size(200, 26);
             this.tFechaAlta.TabIndex = 34;
@@ -429,7 +407,7 @@
             // tFechaBaja
             // 
             this.tFechaBaja.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tFechaBaja.Location = new System.Drawing.Point(560, 532);
+            this.tFechaBaja.Location = new System.Drawing.Point(560, 500);
             this.tFechaBaja.Name = "tFechaBaja";
             this.tFechaBaja.Size = new System.Drawing.Size(200, 26);
             this.tFechaBaja.TabIndex = 35;
@@ -438,7 +416,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label20.Location = new System.Drawing.Point(397, 570);
+            this.label20.Location = new System.Drawing.Point(397, 535);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(114, 20);
             this.label20.TabIndex = 36;
@@ -447,7 +425,7 @@
             // tObservaciones
             // 
             this.tObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tObservaciones.Location = new System.Drawing.Point(560, 567);
+            this.tObservaciones.Location = new System.Drawing.Point(560, 532);
             this.tObservaciones.Multiline = true;
             this.tObservaciones.Name = "tObservaciones";
             this.tObservaciones.Size = new System.Drawing.Size(200, 90);
@@ -698,6 +676,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(819, 766);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tNumeroCuenta);
@@ -718,7 +697,6 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.tCertificado);
             this.Controls.Add(this.tRelacion);
-            this.Controls.Add(this.tAgente);
             this.Controls.Add(this.tCorreoElectronico);
             this.Controls.Add(this.tTelefonoMovil);
             this.Controls.Add(this.label15);
@@ -734,7 +712,6 @@
             this.Controls.Add(this.tNombre);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -746,6 +723,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "GestionSocios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Socios";
             this.Load += new System.EventHandler(this.GestionSocios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -768,7 +746,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox tNombre;
@@ -784,7 +761,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox tTelefonoMovil;
         private System.Windows.Forms.TextBox tCorreoElectronico;
-        private System.Windows.Forms.TextBox tAgente;
         private System.Windows.Forms.TextBox tRelacion;
         private System.Windows.Forms.CheckBox tCertificado;
         private System.Windows.Forms.Label label16;

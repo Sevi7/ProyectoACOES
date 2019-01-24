@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace ProyectoACOES
 {
-    public partial class Socios : Form
+    public partial class InicioAgente : Form
     {
         private Usuario usuario;
-        public Socios()
+        public InicioAgente()
         {
             InitializeComponent();
         }
-        public Socios(Usuario u)
+        public InicioAgente(Usuario u)
         {
             usuario = u;
             InitializeComponent();
@@ -44,6 +44,13 @@ namespace ProyectoACOES
             this.Visible = false;
             ENVIOS en = new ENVIOS(usuario);
             en.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Login log = new Login();
+            log.ShowDialog();
         }
     }
 }

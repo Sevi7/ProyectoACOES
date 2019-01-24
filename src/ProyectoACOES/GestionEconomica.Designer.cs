@@ -64,6 +64,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -74,7 +75,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(600, 242);
+            this.comboBox1.Location = new System.Drawing.Point(604, 282);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
@@ -83,7 +84,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(600, 302);
+            this.comboBox2.Location = new System.Drawing.Point(604, 342);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(123, 21);
             this.comboBox2.TabIndex = 1;
@@ -91,7 +92,7 @@
             // 
             // consultar
             // 
-            this.consultar.Location = new System.Drawing.Point(318, 466);
+            this.consultar.Location = new System.Drawing.Point(322, 506);
             this.consultar.Name = "consultar";
             this.consultar.Size = new System.Drawing.Size(75, 23);
             this.consultar.TabIndex = 5;
@@ -102,7 +103,7 @@
             // ben
             // 
             this.ben.FormattingEnabled = true;
-            this.ben.Location = new System.Drawing.Point(146, 242);
+            this.ben.Location = new System.Drawing.Point(150, 282);
             this.ben.Name = "ben";
             this.ben.Size = new System.Drawing.Size(121, 21);
             this.ben.TabIndex = 6;
@@ -110,7 +111,7 @@
             // tipo
             // 
             this.tipo.FormattingEnabled = true;
-            this.tipo.Location = new System.Drawing.Point(146, 199);
+            this.tipo.Location = new System.Drawing.Point(150, 239);
             this.tipo.Name = "tipo";
             this.tipo.Size = new System.Drawing.Size(121, 21);
             this.tipo.TabIndex = 7;
@@ -118,7 +119,7 @@
             // cat
             // 
             this.cat.FormattingEnabled = true;
-            this.cat.Location = new System.Drawing.Point(146, 282);
+            this.cat.Location = new System.Drawing.Point(150, 322);
             this.cat.Name = "cat";
             this.cat.Size = new System.Drawing.Size(121, 21);
             this.cat.TabIndex = 8;
@@ -126,7 +127,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 199);
+            this.label1.Location = new System.Drawing.Point(83, 239);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 9;
@@ -135,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 242);
+            this.label2.Location = new System.Drawing.Point(52, 282);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 10;
@@ -144,7 +145,7 @@
             // Categoria
             // 
             this.Categoria.AutoSize = true;
-            this.Categoria.Location = new System.Drawing.Point(55, 282);
+            this.Categoria.Location = new System.Drawing.Point(59, 322);
             this.Categoria.Name = "Categoria";
             this.Categoria.Size = new System.Drawing.Size(56, 13);
             this.Categoria.TabIndex = 11;
@@ -152,21 +153,21 @@
             // 
             // des
             // 
-            this.des.Location = new System.Drawing.Point(146, 423);
+            this.des.Location = new System.Drawing.Point(150, 463);
             this.des.Name = "des";
             this.des.Size = new System.Drawing.Size(285, 20);
             this.des.TabIndex = 12;
             // 
             // date
             // 
-            this.date.Location = new System.Drawing.Point(146, 381);
+            this.date.Location = new System.Drawing.Point(150, 421);
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(200, 20);
             this.date.TabIndex = 13;
             // 
             // añadir
             // 
-            this.añadir.Location = new System.Drawing.Point(237, 466);
+            this.añadir.Location = new System.Drawing.Point(241, 506);
             this.añadir.Name = "añadir";
             this.añadir.Size = new System.Drawing.Size(75, 23);
             this.añadir.TabIndex = 14;
@@ -176,7 +177,7 @@
             // 
             // cant
             // 
-            this.cant.Location = new System.Drawing.Point(146, 329);
+            this.cant.Location = new System.Drawing.Point(150, 369);
             this.cant.Name = "cant";
             this.cant.Size = new System.Drawing.Size(55, 20);
             this.cant.TabIndex = 15;
@@ -195,7 +196,7 @@
             this.descripcionDataGridViewTextBoxColumn,
             this.validadoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cuentaBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(24, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 70);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(764, 150);
             this.dataGridView1.TabIndex = 16;
@@ -270,7 +271,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(58, 466);
+            this.button1.Location = new System.Drawing.Point(62, 506);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -280,7 +281,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(399, 466);
+            this.button2.Location = new System.Drawing.Point(403, 506);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 18;
@@ -291,7 +292,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(55, 332);
+            this.label3.Location = new System.Drawing.Point(59, 372);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 19;
@@ -300,7 +301,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(44, 423);
+            this.label4.Location = new System.Drawing.Point(48, 463);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 20;
@@ -309,7 +310,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(55, 387);
+            this.label5.Location = new System.Drawing.Point(59, 427);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 21;
@@ -317,7 +318,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(671, 466);
+            this.button3.Location = new System.Drawing.Point(675, 506);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 22;
@@ -328,7 +329,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(522, 305);
+            this.label6.Location = new System.Drawing.Point(526, 345);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 23;
@@ -337,7 +338,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(501, 245);
+            this.label7.Location = new System.Drawing.Point(505, 285);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 24;
@@ -348,13 +349,25 @@
             this.cuentaBindingSource1.DataMember = "Cuenta";
             this.cuentaBindingSource1.DataSource = this.aCOESDataSet;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(253, -6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(326, 73);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Economía";
+            // 
             // GestionEconomica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 501);
+            this.BackColor = System.Drawing.Color.Gold;
+            this.ClientSize = new System.Drawing.Size(804, 550);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button3);
@@ -427,5 +440,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn validadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource cuentaBindingSource2;
         private System.Windows.Forms.BindingSource cuentaBindingSource1;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -58,11 +58,11 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button3.Location = new System.Drawing.Point(152, 164);
+            this.button3.Location = new System.Drawing.Point(249, 195);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(79, 34);
+            this.button3.Size = new System.Drawing.Size(130, 30);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Salir";
+            this.button3.Text = "Cerrar Sesión";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -72,6 +72,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(391, 237);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

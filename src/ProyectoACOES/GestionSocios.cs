@@ -176,7 +176,7 @@ namespace ProyectoACOES
         private void button1_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            Socios socios = new Socios(usuario);
+            InicioAgente socios = new InicioAgente(usuario);
             socios.ShowDialog();
         }
     }

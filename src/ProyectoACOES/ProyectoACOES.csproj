@@ -122,11 +122,11 @@
     <Compile Include="InicioResponsable.Designer.cs">
       <DependentUpon>InicioResponsable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Socios.cs">
+    <Compile Include="InicioAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Socios.Designer.cs">
-      <DependentUpon>Socios.cs</DependentUpon>
+    <Compile Include="InicioAgente.Designer.cs">
+      <DependentUpon>InicioAgente.cs</DependentUpon>
     </Compile>
     <Compile Include="GestionNinio.cs">
       <SubType>Form</SubType>
@@ -248,8 +248,8 @@
     <EmbeddedResource Include="Registro.resx">
       <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Socios.resx">
-      <DependentUpon>Socios.cs</DependentUpon>
+    <EmbeddedResource Include="InicioAgente.resx">
+      <DependentUpon>InicioAgente.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ACOESDataSet.xsc">
       <DependentUpon>ACOESDataSet.xsd</DependentUpon>

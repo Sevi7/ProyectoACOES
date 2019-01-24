@@ -31,7 +31,6 @@
             this.crearTipoProyecto = new System.Windows.Forms.Button();
             this.crearProyecto = new System.Windows.Forms.Button();
             this.bNota = new System.Windows.Forms.Button();
-            this.bApadrinamientos = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.bComunidades = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -72,17 +71,6 @@
             this.bNota.UseVisualStyleBackColor = true;
             this.bNota.Click += new System.EventHandler(this.bNota_Click);
             // 
-            // bApadrinamientos
-            // 
-            this.bApadrinamientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.bApadrinamientos.Location = new System.Drawing.Point(38, 133);
-            this.bApadrinamientos.Name = "bApadrinamientos";
-            this.bApadrinamientos.Size = new System.Drawing.Size(206, 34);
-            this.bApadrinamientos.TabIndex = 8;
-            this.bApadrinamientos.Text = "Gestion Apadrinamientos";
-            this.bApadrinamientos.UseVisualStyleBackColor = true;
-            this.bApadrinamientos.Click += new System.EventHandler(this.bApadrinamientos_Click);
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
@@ -109,7 +97,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button2.Location = new System.Drawing.Point(38, 187);
+            this.button2.Location = new System.Drawing.Point(38, 133);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(206, 34);
             this.button2.TabIndex = 11;
@@ -120,11 +108,11 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button3.Location = new System.Drawing.Point(331, 187);
+            this.button3.Location = new System.Drawing.Point(375, 212);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 34);
+            this.button3.Size = new System.Drawing.Size(138, 28);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Salir";
+            this.button3.Text = "Cerrar Sesión";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -135,12 +123,12 @@
             this.AutoScroll = true;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(525, 252);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.bComunidades);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.bApadrinamientos);
             this.Controls.Add(this.bNota);
             this.Controls.Add(this.crearProyecto);
             this.Controls.Add(this.crearTipoProyecto);
@@ -155,7 +143,6 @@
         private System.Windows.Forms.Button crearTipoProyecto;
         private System.Windows.Forms.Button crearProyecto;
         private System.Windows.Forms.Button bNota;
-        private System.Windows.Forms.Button bApadrinamientos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bComunidades;
         private System.Windows.Forms.Button button2;

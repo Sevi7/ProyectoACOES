@@ -43,6 +43,7 @@
             this.aCOESDataSet = new ProyectoACOES.ACOESDataSet();
             this.cuentaTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.CuentaTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
@@ -51,7 +52,7 @@
             // bComunidades
             // 
             this.bComunidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.bComunidades.Location = new System.Drawing.Point(357, 172);
+            this.bComunidades.Location = new System.Drawing.Point(369, 311);
             this.bComunidades.Name = "bComunidades";
             this.bComunidades.Size = new System.Drawing.Size(97, 34);
             this.bComunidades.TabIndex = 11;
@@ -73,7 +74,7 @@
             this.descripcionDataGridViewTextBoxColumn,
             this.validadoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.cuentaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 139);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(840, 150);
             this.dataGridView1.TabIndex = 12;
@@ -144,7 +145,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button1.Location = new System.Drawing.Point(730, 172);
+            this.button1.Location = new System.Drawing.Point(742, 311);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 34);
             this.button1.TabIndex = 13;
@@ -152,13 +153,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Gold;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(249, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(409, 73);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Validaciones";
+            // 
             // Validacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(852, 220);
+            this.BackColor = System.Drawing.Color.Gold;
+            this.ClientSize = new System.Drawing.Size(873, 349);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bComunidades);
@@ -170,6 +184,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -189,5 +204,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn validadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
     }
 }

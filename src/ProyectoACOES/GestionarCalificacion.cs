@@ -32,7 +32,7 @@ namespace ProyectoACOES
         private void iniciarTabla()
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            string consultaSelect = "SELECT Codigo, Nombre, Apellidos, fechaNacimiento, Curso FROM Ninio;";
+            string consultaSelect = "SELECT Codigo, Nombre, Apellidos, fechaNacimiento, Curso FROM Ninio WHERE eliminado = 1;";
             DataTable tablaN = new DataTable();
             SqlDataAdapter adaptador = new SqlDataAdapter(consultaSelect, bd.cadenaConexionSQLNCLI);
             adaptador.Fill(tablaN);
@@ -204,6 +204,13 @@ namespace ProyectoACOES
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void bSalir_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Inicio form1 = new Inicio();
+            form1.ShowDialog();
         }
     }
 }

@@ -50,6 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.bCrearProyecto = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listaSocios
@@ -261,6 +262,16 @@
             this.bCrearProyecto.UseVisualStyleBackColor = true;
             this.bCrearProyecto.Click += new System.EventHandler(this.bCrearProyecto_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 774);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CrearNuevoProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,6 +280,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(828, 722);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.bCrearProyecto);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.listaNiños);
@@ -323,5 +335,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button bCrearProyecto;
+        private System.Windows.Forms.Button button1;
     }
 }

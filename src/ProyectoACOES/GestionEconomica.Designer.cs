@@ -50,8 +50,10 @@
             this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.validadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentaBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.aCOESDataSet = new ProyectoACOES.ACOESDataSet();
+            this.cuentaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuentaTableAdapter = new ProyectoACOES.ACOESDataSetTableAdapters.CuentaTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -61,9 +63,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.cuentaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -123,27 +128,27 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(79, 199);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Tipo:";
+            this.label1.Text = "Tipo*";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(48, 242);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Beneficiario:";
+            this.label2.Text = "Beneficiario*";
             // 
             // Categoria
             // 
             this.Categoria.AutoSize = true;
             this.Categoria.Location = new System.Drawing.Point(55, 282);
             this.Categoria.Name = "Categoria";
-            this.Categoria.Size = new System.Drawing.Size(55, 13);
+            this.Categoria.Size = new System.Drawing.Size(56, 13);
             this.Categoria.TabIndex = 11;
-            this.Categoria.Text = "Categoria:";
+            this.Categoria.Text = "Categoria*";
             // 
             // des
             // 
@@ -187,11 +192,12 @@
             this.categoriaDataGridViewTextBoxColumn,
             this.cantidadDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.cuentaBindingSource;
+            this.descripcionDataGridViewTextBoxColumn,
+            this.validadoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.cuentaBindingSource2;
             this.dataGridView1.Location = new System.Drawing.Point(24, 30);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(745, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 150);
             this.dataGridView1.TabIndex = 16;
             // 
             // idDataGridViewTextBoxColumn
@@ -237,15 +243,26 @@
             this.descripcionDataGridViewTextBoxColumn.HeaderText = "descripcion";
             this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
             // 
-            // cuentaBindingSource
+            // validadoDataGridViewTextBoxColumn
             // 
-            this.cuentaBindingSource.DataMember = "Cuenta";
-            this.cuentaBindingSource.DataSource = this.aCOESDataSet;
+            this.validadoDataGridViewTextBoxColumn.DataPropertyName = "validado";
+            this.validadoDataGridViewTextBoxColumn.HeaderText = "validado";
+            this.validadoDataGridViewTextBoxColumn.Name = "validadoDataGridViewTextBoxColumn";
+            // 
+            // cuentaBindingSource2
+            // 
+            this.cuentaBindingSource2.DataMember = "Cuenta";
+            this.cuentaBindingSource2.DataSource = this.aCOESDataSet;
             // 
             // aCOESDataSet
             // 
             this.aCOESDataSet.DataSetName = "ACOESDataSet";
             this.aCOESDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // cuentaBindingSource
+            // 
+            this.cuentaBindingSource.DataMember = "Cuenta";
+            this.cuentaBindingSource.DataSource = this.aCOESDataSet;
             // 
             // cuentaTableAdapter
             // 
@@ -276,27 +293,27 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(55, 332);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Cantidad:";
+            this.label3.Text = "Cantidad*";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(44, 423);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 13);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Descripción:";
+            this.label4.Text = "Descripción*";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(55, 387);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Fecha:";
+            this.label5.Text = "Fecha*";
             // 
             // button3
             // 
@@ -313,18 +330,23 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(522, 305);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 13);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Proyecto:";
+            this.label6.Text = "Proyecto*";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(501, 245);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 24;
-            this.label7.Text = "TipoProyecto:";
+            this.label7.Text = "TipoProyecto*";
+            // 
+            // cuentaBindingSource1
+            // 
+            this.cuentaBindingSource1.DataMember = "Cuenta";
+            this.cuentaBindingSource1.DataSource = this.aCOESDataSet;
             // 
             // GestionEconomica
             // 
@@ -356,8 +378,10 @@
             this.Name = "GestionEconomica";
             this.Text = "Gestion Economica";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aCOESDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cuentaBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,13 +406,6 @@
         private ACOESDataSet aCOESDataSet;
         private System.Windows.Forms.BindingSource cuentaBindingSource;
         private ACOESDataSetTableAdapters.CuentaTableAdapter cuentaTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label3;
@@ -397,5 +414,15 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn validadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource cuentaBindingSource2;
+        private System.Windows.Forms.BindingSource cuentaBindingSource1;
     }
 }

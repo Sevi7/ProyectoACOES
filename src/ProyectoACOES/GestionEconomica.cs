@@ -36,13 +36,14 @@ namespace ProyectoACOES
         private void inicializar()
         {
             SqlConnection sql = new SqlConnection("Data Source=" + BD_SERVER + ";" + " Initial Catalog =" + BD_NAME + "; Integrated Security = True");
-            SqlCommand cm = new SqlCommand("Select nombre from Beneficiario;", sql);
+            SqlCommand cm = new SqlCommand("Select nombre, apellidos from Beneficiario;", sql);
             sql.Open();
             SqlDataReader rd = cm.ExecuteReader();
 
             while (rd.Read() == true)
             {
-                ben.Items.Add(rd[0]);
+                string p = (string)rd[0] +" "+ rd[1];
+                ben.Items.Add(p);
             }
             sql.Close();
 
@@ -85,7 +86,7 @@ namespace ProyectoACOES
                 string a6 = des.Text;
 
                 Cuenta c = new Cuenta(a1, a2, a3, a4, a5, a6);
-            
+
 
                 if (p == "Tipo Proyecto")
                 {
@@ -136,18 +137,18 @@ namespace ProyectoACOES
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
-           
-                var id = this.dataGridView1.CurrentRow.Cells[0].Value;
-                int i = Convert.ToInt32(id);
-                seleccionado = new Cuenta(i);
-                seleccionado.borrarCuenta();
-                seleccionado = null;
-                consultar2();
-                
 
-            
-            
+
+            var id = this.dataGridView1.CurrentRow.Cells[0].Value;
+            int i = Convert.ToInt32(id);
+            seleccionado = new Cuenta(i);
+            seleccionado.borrarCuenta();
+            seleccionado = null;
+            consultar2();
+
+
+
+
 
         }
 
@@ -204,7 +205,7 @@ namespace ProyectoACOES
 
                 }
 
-                
+
 
 
 
@@ -256,5 +257,8 @@ namespace ProyectoACOES
             InicioResponsable i = new InicioResponsable(us);
             i.ShowDialog();
         }
+
+
     }
 }
+

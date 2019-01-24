@@ -45,6 +45,7 @@
             this.bEliminar = new System.Windows.Forms.Button();
             this.bLimpiar = new System.Windows.Forms.Button();
             this.tNota = new System.Windows.Forms.TextBox();
+            this.bSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCalificaciones)).BeginInit();
             this.SuspendLayout();
@@ -218,12 +219,24 @@
             this.tNota.TabIndex = 18;
             this.tNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.soloNumeros);
             // 
+            // bSalir
+            // 
+            this.bSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.bSalir.Location = new System.Drawing.Point(25, 677);
+            this.bSalir.Name = "bSalir";
+            this.bSalir.Size = new System.Drawing.Size(81, 30);
+            this.bSalir.TabIndex = 19;
+            this.bSalir.Text = "Salir";
+            this.bSalir.UseVisualStyleBackColor = true;
+            this.bSalir.Click += new System.EventHandler(this.bSalir_Click);
+            // 
             // GestionarCalificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(688, 735);
+            this.Controls.Add(this.bSalir);
             this.Controls.Add(this.tNota);
             this.Controls.Add(this.bLimpiar);
             this.Controls.Add(this.bEliminar);
@@ -266,5 +279,6 @@
         private System.Windows.Forms.Button bEliminar;
         private System.Windows.Forms.Button bLimpiar;
         private System.Windows.Forms.TextBox tNota;
+        private System.Windows.Forms.Button bSalir;
     }
 }

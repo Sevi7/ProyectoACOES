@@ -26,7 +26,7 @@ namespace ProyectoACOES
         private void crearTipoProyecto_Click(object sender, EventArgs e)
         {
             Hide();
-            CrearNuevoTipoProyecto tipoProyecto = new CrearNuevoTipoProyecto();
+            CrearNuevoTipoProyecto tipoProyecto = new CrearNuevoTipoProyecto(usuario);
             tipoProyecto.ShowDialog();
             
         }
@@ -34,7 +34,7 @@ namespace ProyectoACOES
         private void crearProyecto_Click(object sender, EventArgs e)
         {
             Hide();
-            CrearNuevoProyecto nuevo = new CrearNuevoProyecto();
+            CrearNuevoProyecto nuevo = new CrearNuevoProyecto(usuario);
             nuevo.ShowDialog();
             
 

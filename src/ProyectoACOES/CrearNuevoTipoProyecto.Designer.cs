@@ -111,11 +111,12 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(136, 504);
+            this.label6.Location = new System.Drawing.Point(130, 504);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 20);
+            this.label6.Size = new System.Drawing.Size(59, 20);
             this.label6.TabIndex = 6;
-            this.label6.Text = "NIF";
+            this.label6.Text = "Código";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // tNombre
             // 

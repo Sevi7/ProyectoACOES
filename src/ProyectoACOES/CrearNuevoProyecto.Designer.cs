@@ -46,7 +46,7 @@
             this.tLocalidad = new System.Windows.Forms.TextBox();
             this.listaNiños = new System.Windows.Forms.ListBox();
             this.bAñadirNiño = new System.Windows.Forms.Button();
-            this.tBeneficiario = new System.Windows.Forms.TextBox();
+            this.tNiño = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.bCrearProyecto = new System.Windows.Forms.Button();
@@ -223,13 +223,13 @@
             this.bAñadirNiño.UseVisualStyleBackColor = true;
             this.bAñadirNiño.Click += new System.EventHandler(this.bAñadirNiño_Click);
             // 
-            // tBeneficiario
+            // tNiño
             // 
-            this.tBeneficiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.tBeneficiario.Location = new System.Drawing.Point(176, 666);
-            this.tBeneficiario.Name = "tBeneficiario";
-            this.tBeneficiario.Size = new System.Drawing.Size(161, 26);
-            this.tBeneficiario.TabIndex = 31;
+            this.tNiño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tNiño.Location = new System.Drawing.Point(176, 666);
+            this.tNiño.Name = "tNiño";
+            this.tNiño.Size = new System.Drawing.Size(161, 26);
+            this.tNiño.TabIndex = 31;
             // 
             // label8
             // 
@@ -285,7 +285,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.listaNiños);
             this.Controls.Add(this.bAñadirNiño);
-            this.Controls.Add(this.tBeneficiario);
+            this.Controls.Add(this.tNiño);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tLocalidad);
             this.Controls.Add(this.label7);
@@ -306,6 +306,7 @@
             this.Name = "CrearNuevoProyecto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear Nuevo Proyecto";
+            this.Load += new System.EventHandler(this.CrearNuevoProyecto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,7 +332,7 @@
         private System.Windows.Forms.TextBox tLocalidad;
         private System.Windows.Forms.ListBox listaNiños;
         private System.Windows.Forms.Button bAñadirNiño;
-        private System.Windows.Forms.TextBox tBeneficiario;
+        private System.Windows.Forms.TextBox tNiño;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button bCrearProyecto;

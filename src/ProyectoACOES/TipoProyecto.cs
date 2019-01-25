@@ -45,7 +45,7 @@ namespace ProyectoACOES
                 coordinador = new Usuario(tupla[2].ToString());
                 responsable = new Usuario(tupla[3].ToString());
                 foreach(Object[] so in bd.Select("Select * from Socio_TipoProyecto where tipoProyecto='"+nombre+"';")){
-                    sociosdonantes.Add(new Socio(Int32.Parse(so[0].ToString())));
+                    //sociosdonantes.Add(new Socio(Int32.Parse(so[0].ToString())));
                 }
             }
         }

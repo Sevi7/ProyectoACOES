@@ -54,14 +54,14 @@ namespace ProyectoACOES
 
         private void bCrearProyecto_Click(object sender, EventArgs e)
         {
-            try{
+            //try{
                 new Proyecto(tNombre.Text, new TipoProyecto(tTipoProyecto.Text), new Usuario(tCoordinador.Text), new Usuario(tResponsable.Text), tLocalidad.Text, socios, ninios);
                 this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //}
+           // catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
 
         }
 

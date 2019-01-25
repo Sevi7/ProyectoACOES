@@ -20,7 +20,7 @@ namespace ProyectoACOES
         public Calificacion(Ninio b, String a, DateTime f)
         {
             SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            object[] tupla = miBD.Select("select * from Calificacion where Asignatura = '" + a + "' and Fecha = '" + f + "' and Ninio = " + b.Codigo + ";")[0];
+            object[] tupla = miBD.Select("select * from Calificacion where Asignatura = '" + a + "' and Fecha = '" + f.ToString("yyyy-MM-dd") + "' and Ninio = " + b.Codigo + ";")[0];
 
             ninio = new Ninio((int)tupla[0]);
             nota = (int)tupla[1];
@@ -54,7 +54,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Calificacion set nota = '" + value + "' where ninio= " + ninio.Codigo + " and asignatura = '" + asignatura + "' and fecha = '" + fecha + "';");
+                miBD.Update("update Calificacion set nota = '" + value + "' where ninio= " + ninio.Codigo + " and asignatura = '" + asignatura + "' and fecha = '" + fecha.ToString("yyyy-MM-dd") + "';");
                 nota = value;
             }
         }
@@ -68,7 +68,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Calificacion set Asignatura = '" + value + "' where ninio= " + ninio.Codigo + " and fecha = '" + fecha + "';");
+                miBD.Update("update Calificacion set Asignatura = '" + value + "' where ninio= " + ninio.Codigo + " and fecha = '" + fecha.ToString("yyyy-MM-dd") + "';");
                 asignatura = value;
             }
         }
@@ -82,7 +82,7 @@ namespace ProyectoACOES
             set
             {
                 SQLSERVERDB miBD = new SQLSERVERDB(BD_SERVER, BD_NAME);
-                miBD.Update("update Calificacion set fecha = '" + value + "' where ninio= " + ninio.Codigo + " and asignatura = '" + asignatura + "';");
+                miBD.Update("update Calificacion set fecha = '" + value.ToString("yyyy-MM-dd") + "' where ninio= " + ninio.Codigo + " and asignatura = '" + asignatura + "';");
                 fecha = value;
             }
         }

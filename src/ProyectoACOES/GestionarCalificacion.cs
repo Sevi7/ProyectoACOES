@@ -32,7 +32,7 @@ namespace ProyectoACOES
         private void iniciarTabla()
         {
             SQLSERVERDB bd = new SQLSERVERDB(BD_SERVER, BD_NAME);
-            string consultaSelect = "SELECT Codigo, Nombre, Apellidos, fechaNacimiento, Curso FROM Ninio WHERE eliminado = 1;";
+            string consultaSelect = "SELECT Codigo, Nombre, Apellidos, fechaNacimiento, Curso FROM Ninio WHERE eliminado = 0;";
             DataTable tablaN = new DataTable();
             SqlDataAdapter adaptador = new SqlDataAdapter(consultaSelect, bd.cadenaConexionSQLNCLI);
             adaptador.Fill(tablaN);

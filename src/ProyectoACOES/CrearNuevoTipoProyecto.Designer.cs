@@ -44,6 +44,7 @@
             this.listaSocios = new System.Windows.Forms.ListBox();
             this.bCrear = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titulo
@@ -199,6 +200,16 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Nuevo Tipo de Proyecto";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(24, 638);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CrearNuevoTipoProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +218,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Gold;
             this.ClientSize = new System.Drawing.Size(818, 685);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.bCrear);
             this.Controls.Add(this.listaSocios);
@@ -250,5 +262,6 @@
         private System.Windows.Forms.ListBox listaSocios;
         private System.Windows.Forms.Button bCrear;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

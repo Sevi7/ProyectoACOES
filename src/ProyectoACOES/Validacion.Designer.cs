@@ -52,11 +52,11 @@
             // bComunidades
             // 
             this.bComunidades.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.bComunidades.Location = new System.Drawing.Point(369, 311);
+            this.bComunidades.Location = new System.Drawing.Point(408, 311);
             this.bComunidades.Name = "bComunidades";
-            this.bComunidades.Size = new System.Drawing.Size(97, 34);
+            this.bComunidades.Size = new System.Drawing.Size(98, 34);
             this.bComunidades.TabIndex = 11;
-            this.bComunidades.Text = "validar";
+            this.bComunidades.Text = "Validar";
             this.bComunidades.UseVisualStyleBackColor = true;
             this.bComunidades.Click += new System.EventHandler(this.bComunidades_Click);
             // 
@@ -149,7 +149,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 34);
             this.button1.TabIndex = 13;
-            this.button1.Text = "SALIR";
+            this.button1.Text = "Salir";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -158,7 +158,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Gold;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(249, 33);
+            this.label1.Location = new System.Drawing.Point(244, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(409, 73);
             this.label1.TabIndex = 14;
